@@ -1,0 +1,30 @@
+.carrosel-div{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    height: 30%;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.imagem-carrosel{
+    display: flex;
+    justify-content: center;
+    text-align: center;    
+    max-height: 620px;
+    margin: 0 auto;
+    border-radius: 80px;
+    opacity: 1;
+    transition: .3s ease;
+}
+
+
+.imagem-carrosel:hover {
+    box-shadow: 0 0 25px 1px rgba(4, 72, 4, 0.5);
+    opacity: 0.8;
+  }
+
+

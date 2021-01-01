@@ -1,0 +1,38 @@
+.footer-footer{
+
+    height: 70px;
+    background-color: rgb(12, 114, 63);    
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer-ul{
+
+
+   font-size: 12px; 
+   margin: 0 auto
+  
+   
+   
+ 
+}
+
+.footer-mavs{
+
+    font: bold;
+    
+
+}
+
+.footer-ul li{
+
+    display: inline-block;
+    vertical-align: center;
+    margin-right: 30px;
+    color: white;
+  
+    ;
+}

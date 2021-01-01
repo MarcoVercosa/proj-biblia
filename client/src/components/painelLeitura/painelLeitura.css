@@ -1,0 +1,84 @@
+
+.painelleitura-article{
+
+    margin:15px 0 15px 10px;
+    background-color: rgb(237, 233, 233);
+    width: 65%;
+    border-radius: 25px;
+    padding: 15px;
+    display: inline-block;
+
+}
+
+.painelleitura-article-paragrafo{
+
+    font-family: 'Lora', serif;
+    font-size: 22px;
+}
+
+.painelleitura-article-h3{
+
+    font-family: 'Lora', serif;
+    font-size: 30px
+
+}
+
+.painelleitura-article-ul {
+
+    display:flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 15px;
+    background-color:#3f9168;
+    border-radius: 15px;
+    margin: 0 auto;
+ 
+}
+.painelleitura-article-li {
+    font-family: 'Lora', serif;
+    font-size: 27px;
+    cursor: pointer;
+    color: White;      
+}
+
+.painelleitura-article-select{
+
+    font-family: 'Lora', serif;
+    font-size: 27px;
+    cursor: pointer;
+    border-radius: 12px;
+    margin-left: 4px;
+    background-color: #91bba6;
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+
+.painelleitura-menu{
+        display: inline-block;
+        width: 30%;
+        vertical-align: top;
+        background-color: #19a582;
+        border-radius: 20px;
+        margin-left: 15px;
+}
+
+.menu-painelleitura-ul{
+    list-style: none;
+    
+}
+
+.menu-painelleitura-li{
+
+    margin: 0 auto;      
+    padding: 15px;
+    border-radius: 15px;
+    color: white; 
+    transition: all 500ms ease;
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    text-decoration: none;
+}
+.icone{
+    margin-right: 15px;
+}
