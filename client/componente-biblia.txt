@@ -1,0 +1,69 @@
+export default function Biblia() {
+
+    const [dadosURL, setDadosUrl] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+
+        axios.get("https://raw.githubusercontent.com/thiagobodruk/biblia/master/json/nvi.json")
+            // .then((recebe) => recebe.json())
+            .then((json) => {
+
+                return Exibe(json)
+
+            })
+        function Exibe(recebe) {
+
+            console.log(recebe.data)
+            setDadosUrl(recebe.data)
+            setLoading(false)
+
+        }
+
+    }, [])
+
+
+    if (loading) {
+
+        return (
+            <h1>Carregando</h1>
+        )
+    }
+
+
+
+
+    return (
+        <article>
+
+            <SearchAppBar />
+            <Menu />
+
+            <h1>{dadosURL[8].name}</h1>
+
+
+
+            {dadosURL[8].chapters.map((resposta, index) => {
+
+                return (
+                    <>
+                        <h3 key={index}>Capítulo {index + 1}</h3>
+
+                        {resposta.map((recebe, index) => {
+                            return (
+                                <p key={index}>{index + 1} {recebe}</p>
+                            )
+                        })}
+                    </>
+                )
+            })}
+
+
+
+
+        </article>
+
+    )
+
+
+}
