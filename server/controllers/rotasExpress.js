@@ -1,4 +1,6 @@
 // const Atendimento = require("../models/atendimentos")  // recebe a class Atendimento do Models
+const AlteraDadosBD = require("../infrabd/alteraDados")
+
 module.exports = (app) => {
     console.log("MÓDULO DE ROTAS CAREGADO")
 
@@ -107,12 +109,35 @@ module.exports = (app) => {
         res.json(armazena)
     })
 
+
+    //TEMP ------------------------------------
+
     app.get("/buscalivroantigotestatemp", (req, res) => {//fornece somente os livros (COMPONENTE selectTestamento)
         const dataNomeLivro = require("./antigoTestamento.json")
         const dataNomeFiltrado = dataNomeLivro
 
         res.json(dataNomeFiltrado)
     })
+
+
+
+
+
+    app.get("/cadastraharpa", (req, res) => {
+
+        console.log("Solicitado cadastro de cântico Harpa Cristã")
+        AlteraDadosBD.Lista(res)
+    })
+
+    app.post("/cadastraharpa", (req, res) => {
+
+        const atendimento = req.body
+        const resultado = AlteraDadosBD.Adiciona(atendimento, res)
+        console.log("SOLICITADO POST DE DADOS")
+        res.json("COringao" + resultado)
+    })
+
+
 
 
 

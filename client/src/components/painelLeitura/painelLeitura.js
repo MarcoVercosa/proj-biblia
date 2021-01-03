@@ -37,7 +37,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                 //assim que recebe os dados é feito um loop for no obj para listar os capitulos
                 var temp = []
                 for (var i = 1; i <= recebe.data[0]; i++) {
-                        temp.push(<option value={i}>{i}</option>)
+                        temp.push(<option value={i} key={i}>{i}</option>)
                 }
                 setIndiceCapitulos(temp)
 
@@ -71,7 +71,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                                 <h3 className="painelleitura-article-h3">{paramsLivro} - {paramscapitulo}</h3>
                                 {capitulos.data[1].map((recebe, index) => {
                                         return (
-                                                <p className="painelleitura-article-paragrafo">{index + 1} - {recebe}</p>)
+                                                <p className="painelleitura-article-paragrafo" key={index}>{index + 1} - {recebe}</p>)
                                 })}
 
                                 <ul className="painelleitura-article-ul" >
@@ -79,7 +79,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                                         <li className="painelleitura-article-li" onClick={(recebe, livro = paramsLivro, capitulo = parseInt(paramscapitulo) - 1) => {
                                                 NavegaPagina(recebe, livro, capitulo)
                                         }}>
-                                                <span><i class="fas fa-arrow-circle-left fa-sm"></i></span>  {paramsLivro} - {parseInt(paramscapitulo) - 1}
+                                                <span><i className="fas fa-arrow-circle-left fa-sm"></i></span>  {paramsLivro} - {parseInt(paramscapitulo) - 1}
                                         </li >
 
                                         {/* <li className="painelleitura-article-li" className="painelleitura-article-li">
@@ -103,7 +103,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                                         <li className="painelleitura-article-li" onClick={(recebe, livro = paramsLivro, capitulo = parseInt(paramscapitulo) + 1) => {
                                                 NavegaPagina(recebe, livro, capitulo)
                                         }}>
-                                                {paramsLivro} - {parseInt(paramscapitulo) + 1} <span><i class="fas fa-arrow-circle-right fa-sm"></i></span>
+                                                {paramsLivro} - {parseInt(paramscapitulo) + 1} <span><i className="fas fa-arrow-circle-right fa-sm"></i></span>
                                         </li >
 
                                 </ul>
@@ -117,21 +117,21 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
 
                                         <Link className='li-vamos' to="/">
                                                 <li className='menu-painelleitura-li' >
-                                                        <i class="fas fa-home fa-2x icone"></i>INÍCIO
+                                                        <i className="fas fa-home fa-2x icone"></i>INÍCIO
                                                 </li>
 
                                         </Link>
 
                                         <Link className='li-vamos' to="/biblianvi">
                                                 <li className='menu-painelleitura-li'>
-                                                        <i class="fas fa-bible fa-2x icone"></i> LEITURA DA BÍBLIA
+                                                        <i className="fas fa-bible fa-2x icone"></i> LEITURA DA BÍBLIA
                                                 </li>
                                         </Link>
                                         <li className='menu-painelleitura-li' >
-                                                <i class="fas fa-sun fa-2x icone"></i>VERSÍCULOS DO DIA
+                                                <i className="fas fa-sun fa-2x icone"></i>VERSÍCULOS DO DIA
                                                 </li>
                                         <li className='menu-painelleitura-li' >
-                                                <i class="fas fa-music fa-2x icone"></i>HINOS DA HARPA
+                                                <i className="fas fa-music fa-2x icone"></i>HINOS DA HARPA
                                                 </li>
 
                                 </ul>

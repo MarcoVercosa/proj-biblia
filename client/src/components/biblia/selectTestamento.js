@@ -101,9 +101,9 @@ export default function DialogSelect(props) {//props recebe ANTIGO TESTAMENTO" o
                             >
                                 <option aria-label="None" value="SELECIONE"> </option>
 
-                                {antigoTestamento && antigoTestamento.data.map(recebe => {
+                                {antigoTestamento && antigoTestamento.data.map((recebe, index) => {
                                     return (
-                                        < option  > {recebe}</option>)
+                                        < option key={index} > {recebe}</option>)
                                 })}
 
                                 {/* <option value={10}>Ten</option>
@@ -121,10 +121,10 @@ export default function DialogSelect(props) {//props recebe ANTIGO TESTAMENTO" o
                             >
 
                                 <option aria-label="None" value="SELECIONE"> </option>
-                                {selectCapitulo && selectCapitulo.data.map(recebe => {
+                                {selectCapitulo && selectCapitulo.data.map((recebe, index) => {
                                     return (
 
-                                        <option >{recebe}</option>
+                                        <option key={index} >{recebe}</option>
                                     )
 
 
