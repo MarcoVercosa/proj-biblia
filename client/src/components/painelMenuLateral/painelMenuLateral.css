@@ -1,0 +1,28 @@
+.painelleitura-menu{
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    background-color: #19a582;
+    border-radius: 20px;
+    margin-left: 15px;
+}
+
+.menu-painelleitura-ul{
+list-style: none;
+
+}
+
+.menu-painelleitura-li{
+
+margin: 0 auto;      
+padding: 15px;
+border-radius: 15px;
+color: white; 
+transition: all 500ms ease;
+font-family: 'Lora', serif;
+font-size: 22px;
+text-decoration: none;
+}
+.icone{
+margin-right: 15px;
+}

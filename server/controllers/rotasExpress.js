@@ -57,7 +57,7 @@ module.exports = (app) => {
 
     })
 
-    // #NOVO TESTA -**********************************
+    // #NOVO TESTAMENTO -**********************************
 
     app.get("/novotesta/:livro/:capitulo", (req, res) => { //LISTAR dados
         console.log("BUSCOU /novotesta/:livro/:capitulo ")
@@ -120,60 +120,40 @@ module.exports = (app) => {
     })
 
 
+    // #HINO HARPA - **********************************
 
 
+    //busca somente o numero de todos os hinos
+    app.get("/buscanumeroharpa", (req, res) => {
 
-    app.get("/cadastraharpa", (req, res) => {
-
-        console.log("Solicitado cadastro de cântico Harpa Cristã")
-        AlteraDadosBD.Lista(res)
+        console.log("Solicitado retorno dos numeros dos cântico Harpa Cristã")
+        AlteraDadosBD.ListaNumeroHino(res)
     })
 
-    app.post("/cadastraharpa", (req, res) => {
+    // app.post("/cadastraharpa", (req, res) => {
 
-        const atendimento = req.body
-        const resultado = AlteraDadosBD.Adiciona(atendimento, res)
-        console.log("SOLICITADO POST DE DADOS")
-        res.json("COringao" + resultado)
-    })
-
-
+    //     const atendimento = req.body
+    //     const resultado = AlteraDadosBD.Adiciona(atendimento, res)
+    //     console.log("SOLICITADO POST DE DADOS")
+    //     res.json("COringao" + resultado)
+    // })
 
 
+    app.get("/buscatitulopornumero/:id", (req, res) => {
 
-
-
-
-
-
-
-
-
-
-
-    app.get("/atendimentos/:id", (req, res) => { //PESQUISA dados. na url quando colocamos /atendimentos/numero qualquer, ele recebe o numero no parametro req  
-        console.log(req.params)
-        const id = parseInt(req.params.id) //converte para numero, pq o id recebido pelo navegador é em string, e o id no bd é numero
-        Atendimento.buscaPorId(id, res)
-        //res.send("OK")
-    })
-
-    app.patch("/atendimentos/:id", (req, res) => {
-
-        const id = parseInt(req.params.id)
-        const valores = req.body
-        Atendimento.altera(id, valores, res)
+        console.log("Solicitado retorno da LETRA via número Harpa Cristã ")
+        const numeroHarpa = parseInt(req.params.id)
+        AlteraDadosBD.BuscaHinoPorNumero(numeroHarpa, res)
 
     })
 
-    app.delete("/atendimentos/:id", (req, res) => {
 
-        const id = parseInt(req.params.id)
-        Atendimento.deleta(id, res)
+    app.get("/buscatituloporpalavra/:id", (req, res) => {
+        const buscaTitulo = req.params.id
+        console.log("Solicitado busca de título via palavra Harpa Cristã")
+        AlteraDadosBD.BuscaHinoPorPalavra(buscaTitulo, res)
+
     })
-
-
-
 
 
 }

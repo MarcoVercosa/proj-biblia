@@ -1,8 +1,9 @@
 import { React, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+
 import SearchAppBar from "../header/header"
 import LinearIndeterminate from "../../components/progresso/progresso"
 import Footer from "../../components/footer/footer"
+import PainelMenuLateral from "../../components/painelMenuLateral/painelMenuLateral"
 import GetAPI from "../../fetch/api"
 import "./painelLeitura.css"
 
@@ -111,32 +112,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
 
 
 
-                        <menu className="painelleitura-menu">
-
-                                <ul className="menu-painelleitura-ul">
-
-                                        <Link className='li-vamos' to="/">
-                                                <li className='menu-painelleitura-li' >
-                                                        <i className="fas fa-home fa-2x icone"></i>INÍCIO
-                                                </li>
-
-                                        </Link>
-
-                                        <Link className='li-vamos' to="/biblianvi">
-                                                <li className='menu-painelleitura-li'>
-                                                        <i className="fas fa-bible fa-2x icone"></i> LEITURA DA BÍBLIA
-                                                </li>
-                                        </Link>
-                                        <li className='menu-painelleitura-li' >
-                                                <i className="fas fa-sun fa-2x icone"></i>VERSÍCULOS DO DIA
-                                                </li>
-                                        <li className='menu-painelleitura-li' >
-                                                <i className="fas fa-music fa-2x icone"></i>HINOS DA HARPA
-                                                </li>
-
-                                </ul>
-
-                        </menu>
+                        <PainelMenuLateral />
 
                         <Footer />
 

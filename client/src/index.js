@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 import Biblia from "./components/biblia/biblia"
 import PainelLeitura from "./components/painelLeitura/painelLeitura"
-import PopularBDHarpa from "./components/popularBDHarpa/popularBDHarpa"
+import HinoHarpa from "./components/hinoHarpa/hinoHarpa"
 import './index.css';
 import App from './App';
 
@@ -14,7 +14,7 @@ ReactDOM.render(
       <Route path="/" exact={true} component={App} />
       <Route path="/biblianvi" exact={true} component={Biblia} />
       <Route path="/biblianvi/painelleitura/:idade/:livro/:capitulo" component={PainelLeitura} />
-      <Route path="/cadastra" component={PopularBDHarpa} />
+      <Route path="/harpacrista" component={HinoHarpa} />
       {/* recebe 3 parametros */}
     </Switch>
   </ BrowserRouter>

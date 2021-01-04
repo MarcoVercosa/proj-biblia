@@ -25,9 +25,11 @@ export default function Menu() {
                 <li className='li-vamos' >
                     VERSÍCULOS DO DIA
                 </li>
-                <li className='li-vamos' >
-                    HINOS DA HARPA
+                <Link className='li-vamos' to="/harpacrista">
+                    <li className='li-vamos' >
+                        HINOS DA HARPA
                 </li>
+                </Link>
 
             </ul>
             <img className="menu-imagem" src={Imagem} alt="Nosso caminho" />

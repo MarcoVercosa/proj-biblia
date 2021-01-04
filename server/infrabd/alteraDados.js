@@ -20,16 +20,44 @@ class AlteraDadosBD {
         })
     }
 
-    Lista(res) {
+    ListaNumeroHino(res) {// busca somente o numero de todos os hinos
 
-        const sql = "SELECT * FROM louvores" //query que traz todas as informs da tabela
+        const sql = "SELECT numero FROM hinoHarpa.louvores" //query que traz todas as informs da tabela
         conectaBD.query(sql, (erro, resultado) => {
             if (erro) {
                 console.log(erro)
                 res.json(erro)
             } else {
-                console.log(resultado)
+
                 return res.json(resultado)
+            }
+        })
+    }
+    // const sql = "SELECT * FROM louvores" //query que traz todas as informs da tabela
+
+    BuscaHinoPorNumero(numero, res) {//busca o título dado o numero
+
+        const sql = `SELECT letra, titulo FROM hinoHarpa.louvores WHERE numero=${numero}`
+        conectaBD.query(sql, (erro, resultado) => {
+
+            if (erro) {
+                console.log("ocorreu um erro ao buscar Letra por numero:" + erro)
+                res.json(erro)
+            } else {
+                res.json(resultado)
+            }
+        })
+    }
+
+    BuscaHinoPorPalavra(palavra, res) {//busque numero e titulo onde titulo tenha a palavra recebida
+
+        const sql = `SELECT numero, titulo FROM hinoHarpa.louvores WHERE titulo LIKE "%${palavra}%"`
+        conectaBD.query(sql, (erro, resultado) => {
+
+            if (erro) {
+                console.log("Erro ao buscar titulo por busca palavra: " + erro)
+            } else {
+                res.json(resultado)
             }
         })
     }

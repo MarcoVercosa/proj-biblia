@@ -19,7 +19,7 @@ export default function Article() {
 
             <div className="article-dois">
 
-                <span><i class="fas fa-mouse fa-4x" ></i></span>
+                <span><i className="fas fa-mouse fa-4x" ></i></span>
                 <h3>Onde você estiver</h3>
                 <p>O Site FONTE DE VIDA foi criado para que você possa achar de modo fácil e prático
                 a palavra de Deus.
@@ -27,7 +27,7 @@ export default function Article() {
             </div>
 
             <div className="article-tres">
-                <span><i class="fas fa-mobile-alt fa-4x"></i></span>
+                <span><i className="fas fa-mobile-alt fa-4x"></i></span>
                 <h3>Fácil leitura em seu celular</h3>
                 <p>O site FONTE DE VIDA foi criado não só para ser de fácil acesso em seu computador,
                 mas também em seu celular. Para que você leia a palavra de Deus  em qualquer lugar.
