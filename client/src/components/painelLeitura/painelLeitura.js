@@ -80,7 +80,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
         return (
                 <>
                         <SearchAppBar />
-                        <menu className="painelleiturabiblia-menu">
+                        <menu className="painelleiturabiblia-menu" id="inicio">
                                 <article className="painelleitura-article">
                                         <h3 className="painelleitura-article-h3">{paramsLivro} - {paramscapitulo}</h3>
                                         {capitulos.data[1].map((recebe, index) => {
@@ -93,12 +93,12 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
 
 
 
-                                                <li
+                                                <a href="#inicio">   <li
                                                         className="painelleitura-article-li" onClick={(recebe, livro = paramsLivro, capitulo = parseInt(paramscapitulo) - 1) => {
                                                                 NavegaPagina(recebe, livro, capitulo)
                                                         }}>
                                                         <span><i className="fas fa-arrow-circle-left fa-sm"></i></span>  {paramsLivro} -   {parseInt(paramscapitulo) - 1 == 0 ? parseInt(paramscapitulo) : parseInt(paramscapitulo) - 1}
-                                                </li >
+                                                </li > </a>
 
                                                 {/* <li className="painelleitura-article-li" className="painelleitura-article-li">
                                                 CAPÍTULO
@@ -118,11 +118,11 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
 
                                                 </li>
 
-                                                <li className="painelleitura-article-li" onClick={(recebe, livro = paramsLivro, capitulo = parseInt(paramscapitulo) + 1) => {
+                                                <a className="ancora" href="#inicio">   <li className="painelleitura-article-li" onClick={(recebe, livro = paramsLivro, capitulo = parseInt(paramscapitulo) + 1) => {
                                                         NavegaPagina(recebe, livro, capitulo)
                                                 }}>
                                                         {paramsLivro} -  {parseInt(paramscapitulo) + 1 > capitulos.data[0] ? parseInt(paramscapitulo) : parseInt(paramscapitulo) + 1}  <span><i className="fas fa-arrow-circle-right fa-sm"></i></span>
-                                                </li >
+                                                </li > </a>
 
                                         </ul>
 
@@ -132,13 +132,13 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                                 <PainelMenuLateral />
 
                                 <article className="painelleitura-article-article">
-                                        {curiosidades && curiosidades.data.map((recebe) => {
+                                        {curiosidades && curiosidades.data.map((recebe, index) => {
                                                 return (
 
-                                                        <div classname="painelleitura-article-article-div" >
-                                                                <span><i class="fas fa-search fa-3x"></i></span>
-                                                                <h3 classname="painelleitura-article-article-div-p-um">Curiosidades</h3>
-                                                                <p classname="painelleitura-article-article-div-p-dois">{recebe.conteudo}</p>
+                                                        <div key={index} className="painelleitura-article-article-div" >
+                                                                <span  ><i className="fas fa-search fa-3x"></i></span>
+                                                                <h3 className="painelleitura-article-article-div-p-um">Curiosidades</h3>
+                                                                <p className="painelleitura-article-article-div-p-dois">{recebe.conteudo}</p>
                                                         </div>
                                                 )
                                         })}

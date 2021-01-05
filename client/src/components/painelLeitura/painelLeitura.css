@@ -1,6 +1,8 @@
 .painelleiturabiblia-menu{
     display: inline-block;
-    position: relative
+    position: relative;
+    
+
 }
 .painelleitura-article{
 
@@ -41,7 +43,11 @@
     font-family: 'Lora', serif;
     font-size: 27px;
     cursor: pointer;
-    color: White;      
+    color: White;  
+        
+}
+a{
+    text-decoration: none;
 }
 
 .painelleitura-article-select{
@@ -83,6 +89,7 @@
     -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
     filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
     transform: scale(1.1);
+    opacity: 0.6;
 }
 
 .painelleitura-article-article-div-p-um{

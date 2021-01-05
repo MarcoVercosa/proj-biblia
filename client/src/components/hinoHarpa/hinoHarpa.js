@@ -168,10 +168,10 @@ export default function HinoHarpa() {
                     <h3>{tituloHino}</h3>
                     {letraHino &&
 
-                        letraHino.map((recebe) => {
+                        letraHino.map((recebe, index) => {
                             return (
                                 <>
-                                    <p>{recebe}</p>
+                                    <p key={index}>{recebe}</p>
                                 </>
                             )
                         })}
@@ -198,7 +198,7 @@ export default function HinoHarpa() {
                                             key={index}
                                         > <i class="icone fas fa-music fa-2x"></i>HINO: {recebe.numero}</p>
                                         <p
-                                            key={index}>{recebe.titulo}
+                                            key={index + 1}>{recebe.titulo}
                                         </p>
                                     </div>
 
