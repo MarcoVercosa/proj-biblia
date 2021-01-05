@@ -59,6 +59,32 @@ class AlteraDadosBD {
         })
     }
 
+    AdicionaCuriosidades(dadosPost, res) {//usado para cadastro de curiosidades
+
+        const sql = `INSERT INTO curiosidades SET ?`
+        conectaBD.query(sql, dadosPost, (erro, resultado) => {
+            if (erro) {
+                return (erro)
+            } else {
+                return (resultado)
+            }
+        })
+        console.log("ADD curiosidades no BD")
+
+    }
+
+    BuscaCuriosidade(palavra, res) {
+        const sql = `SELECT livro, conteudo FROM hinoHarpa.curiosidades WHERE livro LIKE "%${palavra}%"`
+        conectaBD.query(sql, (erro, resultado) => {
+            if (erro) {
+                console.log(erro)
+            } else {
+                console.log(resultado)
+                res.json(resultado)
+            }
+        })
+    }
+
 
 }
 

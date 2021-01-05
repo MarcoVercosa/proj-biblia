@@ -8,6 +8,9 @@ import './index.css';
 import App from './App';
 
 
+import PopularBDHarpa from "./components/popularBDHarpa/popularBDHarpa"
+
+
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
@@ -15,6 +18,7 @@ ReactDOM.render(
       <Route path="/biblianvi" exact={true} component={Biblia} />
       <Route path="/biblianvi/painelleitura/:idade/:livro/:capitulo" component={PainelLeitura} />
       <Route path="/harpacrista" component={HinoHarpa} />
+      <Route path="/populaharpa" component={PopularBDHarpa} />
       {/* recebe 3 parametros */}
     </Switch>
   </ BrowserRouter>

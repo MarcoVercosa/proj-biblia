@@ -184,5 +184,23 @@ module.exports = (app) => {
 
     })
 
+    app.post("/cadastracuriosidades", (req, res) => {
+
+        const atendimento = req.body
+        const resultado = AlteraDadosBD.AdicionaCuriosidades(atendimento, res)
+        console.log("Solicitado post de CURIOSIDADES")
+        res.json(resultado)
+
+    })
+
+    app.get("/buscacuriosidade/:id", (req, res) => {
+
+        const palavra = req.params.id
+        console.log("/buscacuriosidade " + req.params.id)
+
+        AlteraDadosBD.BuscaCuriosidade(palavra, res)
+
+    })
+
 
 }

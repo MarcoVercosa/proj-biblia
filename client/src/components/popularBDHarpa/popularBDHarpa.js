@@ -6,86 +6,64 @@ import "./populaBDHARPA.css"
 
 
 export default function PopularBDHarpa() {
-    const [numero, setNumero] = useState()
-    const [titulo, setTitulo] = useState()
-    const [letra, setLetra] = useState()
-    const [dados, setDados] = useState(false)
+    const [livro, setLivro] = useState()
+    const [conteudo, setConteudo] = useState()
+
     const [temp, setTemp] = useState(false)
 
 
     useEffect(() => {
 
-        var armazena
-        if (dados) {
 
-            // console.log(dados)
-            // armazena = dados.data[0].letra.split("%")
-            // dados.data.map((recebe) => {
-
-            //     armazena.push(
-
-            //         <p>{recebe.letra[2]}</p>
-            //     )
+    }, [])
 
 
-            // })
-        }
-        // console.log(armazena[2])
-        setTemp(armazena)
-
-    }, [dados])
-
-
-    async function GetAPIFAKE(livro, nome) {
-        const resultado = await axios.post("http://192.168.0.6:9000/cadastraharpa", {
-            numero: numero,
-            titulo: titulo,
-            letra: [letra]
+    async function GetAPIFAKE(livro, conteudo) {
+        const resultado = await axios.post("http://192.168.0.6:9000/cadastracuriosidades", {
+            livro: livro,
+            conteudo: conteudo,
         })
-
-        // const resultado = await axios.get("http://192.168.0.6:9000/cadastraharpa")
-        setDados(resultado)
-        console.log(resultado)
-        console.log(dados)
         return resultado
+
+
+        // const resultado = await axios.get("http://192.168.0.6:9000/cadastracuriosidades")
+
 
     }
 
     async function Chama(data) {
-        //data.preventDefault()
-        console.log("Solicitou APIFAKE")
-        const recebe = await GetAPIFAKE()
+        // data.preventDefault()
+        const dados = await GetAPIFAKE(livro, conteudo)
+        console.log(dados)
 
     }
+
+
 
     if (!temp) {
         return (
             <form onSubmit={(envia) => { Chama(envia) }}>
 
-                <label>Numero Louvor</label>
+                <label>Livro</label>
                 <input className="caixa"
-                    value={numero}
-                    onChange={(recebe) => { setNumero(recebe.target.value) }}
+                    value={livro}
+                    onChange={(recebe) => { setLivro(recebe.target.value) }}
                 ></input>
                 <br />
 
 
-                <label>Título Louvor</label>
+                <label>conteudo</label>
                 <input className="caixa"
-                    value={titulo}
+                    value={conteudo}
                     onChange={(recebe) => {
-                        setTitulo(recebe.target.value)
+                        setConteudo(recebe.target.value)
 
                     }}
                 ></input>
                 <br />
 
 
-                <label>Letra Louvor</label>
-                <input className="caixa"
-                    valur={letra}
-                    onChange={(recebe) => { setLetra(recebe.target.value) }}
-                ></input>
+
                 <button className="botaoo" >CADASTRA</button>
 
             </form>
@@ -96,30 +74,26 @@ export default function PopularBDHarpa() {
         <>
             <form onSubmit={(envia) => { Chama(envia) }}>
 
-                <label>Numero Louvor</label>
+                <label>Livro</label>
                 <input
-                    value={numero}
-                    onChange={(recebe) => { setNumero(recebe.target.value) }}
+                    value={livro}
+                    onChange={(recebe) => { setLivro(recebe.target.value) }}
                 ></input>
                 <br />
 
 
-                <label>Título Louvor</label>
+                <label>conteudo</label>
                 <input
-                    value={titulo}
+                    value={conteudo}
                     onChange={(recebe) => {
-                        setTitulo(recebe.target.value)
+                        setConteudo(recebe.target.value)
 
                     }}
                 ></input>
                 <br />
 
 
-                <label>Letra Louvor</label>
-                <input
-                    valur={letra}
-                    onChange={(recebe) => { setLetra(recebe.target.value) }}
-                ></input>
+
                 <button >CADASTRA</button>
 
             </form>

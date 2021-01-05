@@ -13,6 +13,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
         const [paramscapitulo, SetParamsCapitulo] = useState(props.match.params.capitulo) //recebe o param capitulo quando o componente é aberto
         const [capitulos, setCapitulos] = useState(false) //é alterado com o effect quando o site é carregado e pela func NavegaPagina que é chamadoa por avançar e voltar pagina
         const [indiceCapitulos, setIndiceCapitulos] = useState([]) //usado para listar os capitulos os botoes avanças e voltar
+        const [curiosidades, setCuriosidades] = useState(false)
 
 
 
@@ -42,6 +43,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                         temp.push(<option value={i} key={i}>{i}</option>)
                 }
                 setIndiceCapitulos(temp)
+                BuscaCuriosodades(paramsLivro)
 
         }, [])
 
@@ -53,12 +55,15 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                 if (capitulo > navega.data[0]) {
                         return
                 }
-
                 SetParamsLivro(livro)
                 SetParamsCapitulo(capitulo)
                 setCapitulos(navega)
+        }
 
-                console.log("NAVEGOU")
+        async function BuscaCuriosodades(recebeLivro) {
+                const resultado = await GetAPI(`buscacuriosidade/${recebeLivro}`)
+                setCuriosidades(resultado)
+                console.log(resultado)
         }
 
 
@@ -75,59 +80,76 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
         return (
                 <>
                         <SearchAppBar />
-                        <article className="painelleitura-article">
-                                <h3 className="painelleitura-article-h3">{paramsLivro} - {paramscapitulo}</h3>
-                                {capitulos.data[1].map((recebe, index) => {
-                                        return (
-                                                <p className="painelleitura-article-paragrafo" key={index}>{index + 1} - {recebe}</p>)
-                                })}
+                        <menu className="painelleiturabiblia-menu">
+                                <article className="painelleitura-article">
+                                        <h3 className="painelleitura-article-h3">{paramsLivro} - {paramscapitulo}</h3>
+                                        {capitulos.data[1].map((recebe, index) => {
+                                                return (
+                                                        <p className="painelleitura-article-paragrafo" key={index}>{index + 1} - {recebe}</p>)
+                                        })}
 
-                                <ul className="painelleitura-article-ul" >
+                                        <ul className="painelleitura-article-ul" >
 
 
 
 
-                                        <li
-                                                className="painelleitura-article-li" onClick={(recebe, livro = paramsLivro, capitulo = parseInt(paramscapitulo) - 1) => {
-                                                        NavegaPagina(recebe, livro, capitulo)
-                                                }}>
-                                                <span><i className="fas fa-arrow-circle-left fa-sm"></i></span>  {paramsLivro} -   {parseInt(paramscapitulo) - 1 == 0 ? parseInt(paramscapitulo) : parseInt(paramscapitulo) - 1}
-                                        </li >
+                                                <li
+                                                        className="painelleitura-article-li" onClick={(recebe, livro = paramsLivro, capitulo = parseInt(paramscapitulo) - 1) => {
+                                                                NavegaPagina(recebe, livro, capitulo)
+                                                        }}>
+                                                        <span><i className="fas fa-arrow-circle-left fa-sm"></i></span>  {paramsLivro} -   {parseInt(paramscapitulo) - 1 == 0 ? parseInt(paramscapitulo) : parseInt(paramscapitulo) - 1}
+                                                </li >
 
-                                        {/* <li className="painelleitura-article-li" className="painelleitura-article-li">
+                                                {/* <li className="painelleitura-article-li" className="painelleitura-article-li">
                                                 CAPÍTULO
                                         </li> */}
-                                        <li className="painelleitura-article-li" >
+                                                <li className="painelleitura-article-li" >
 
-                                                <label  >CAPÍTULO</label>
-
-
-                                                <select className="painelleitura-article-select"
-                                                        value={parseInt(paramscapitulo)}
-                                                        onChange={(recebe, livro = paramsLivro, capitulo = "") => {
-                                                                NavegaPagina(recebe, livro, capitulo = recebe.target.value)
-                                                        }}>
-                                                        {indiceCapitulos}
-                                                </select>
-
-                                        </li>
-
-                                        <li className="painelleitura-article-li" onClick={(recebe, livro = paramsLivro, capitulo = parseInt(paramscapitulo) + 1) => {
-                                                NavegaPagina(recebe, livro, capitulo)
-                                        }}>
-                                                {paramsLivro} -  {parseInt(paramscapitulo) + 1 > capitulos.data[0] ? parseInt(paramscapitulo) : parseInt(paramscapitulo) + 1}  <span><i className="fas fa-arrow-circle-right fa-sm"></i></span>
-                                        </li >
-
-                                </ul>
-                        </article>
+                                                        <label  >CAPÍTULO</label>
 
 
+                                                        <select className="painelleitura-article-select"
+                                                                value={parseInt(paramscapitulo)}
+                                                                onChange={(recebe, livro = paramsLivro, capitulo = "") => {
+                                                                        NavegaPagina(recebe, livro, capitulo = recebe.target.value)
+                                                                }}>
+                                                                {indiceCapitulos}
+                                                        </select>
 
-                        <PainelMenuLateral />
+                                                </li>
+
+                                                <li className="painelleitura-article-li" onClick={(recebe, livro = paramsLivro, capitulo = parseInt(paramscapitulo) + 1) => {
+                                                        NavegaPagina(recebe, livro, capitulo)
+                                                }}>
+                                                        {paramsLivro} -  {parseInt(paramscapitulo) + 1 > capitulos.data[0] ? parseInt(paramscapitulo) : parseInt(paramscapitulo) + 1}  <span><i className="fas fa-arrow-circle-right fa-sm"></i></span>
+                                                </li >
+
+                                        </ul>
+
+
+                                </article>
+
+                                <PainelMenuLateral />
+
+                                <article className="painelleitura-article-article">
+                                        {curiosidades && curiosidades.data.map((recebe) => {
+                                                return (
+
+                                                        <div classname="painelleitura-article-article-div" >
+                                                                <span><i class="fas fa-search fa-3x"></i></span>
+                                                                <h3 classname="painelleitura-article-article-div-p-um">Curiosidades</h3>
+                                                                <p classname="painelleitura-article-article-div-p-dois">{recebe.conteudo}</p>
+                                                        </div>
+                                                )
+                                        })}
+                                </article>
+
+
+
+
+                        </menu>
 
                         <Footer />
-
-
                 </>
         )
 
