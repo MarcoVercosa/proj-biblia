@@ -5,7 +5,8 @@
 .hinoharp-article{
     display: flex;
     flex-direction: row;
-    
+    font-family: 'Lora', serif;
+    font-size: 22px;
     
 }
 
@@ -63,6 +64,8 @@
     border-radius: 25px;
     padding: 15px;
     display: inline-block;
+    font-family: 'Lora', serif;
+    font-size: 22px;
 
 }
 

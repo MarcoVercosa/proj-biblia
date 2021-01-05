@@ -48,7 +48,7 @@ export default function HinoHarpa() {
         )
     }
 
-    async function BuscarHinoPorNumero(recebe) {//recebe só terá valor se for chamada pelo buscar por título Gabi, pq demora para atualizar o estado do setAlteraCampoNumero
+    async function BuscarHinoPorNumero(recebe) {//recebe só terá valor se for chamada pelo buscar por título Gambi, pq demora para atualizar o estado do setAlteraCampoNumero
 
         if (recebe) {
             setAlteraCampoNumero(recebe)
@@ -73,6 +73,8 @@ export default function HinoHarpa() {
         const recebe = await GetAPI(`buscatituloporpalavra/${campoTituloBusca}`)
         console.log(recebe)
         setLetraHino(false)//não permitindo renderizar as letras do hino que estiver sendo mostrado
+        setTituloHino(false)//não permitindo renderizar o titulo do hino que estiver sendo mostrado
+
         setDadosBuscaPesquisaPorTitulo(recebe) //armazena os dados da busca
 
     }
@@ -96,7 +98,7 @@ export default function HinoHarpa() {
                                 value={alteraCampoNumero}
                                 onChange={(recebe) => setAlteraCampoNumero(recebe.target.value)}
                             >
-
+                                <option></option>
                                 {numerosHinos.data.map((recebe, index) => {
                                     return (
                                         <option key={index} >{recebe.numero}</option>
@@ -105,13 +107,19 @@ export default function HinoHarpa() {
                                 })}
                             </select>
 
-                            <TextField style={{ marginLeft: "20px" }}
+                            <TextField
+                                multiline={true}
+                                rows={2}
+                                style={{ marginLeft: "20px" }}
                                 disabled={true}
 
                                 // value={tituloHino}
                                 size="small"
                                 id="outlined-basic"
                                 label={tituloHino} variant="outlined" />
+
+
+
 
                             <Button style={{ backgroundColor: "#14a37f", color: "White", marginLeft: "10px" }} variant="contained"
                                 onClick={() => { BuscarHinoPorNumero() }}
@@ -157,7 +165,7 @@ export default function HinoHarpa() {
                 <hr></hr>
 
                 <article className="hinoharpaleitura-article">
-
+                    <h3>{tituloHino}</h3>
                     {letraHino &&
 
                         letraHino.map((recebe) => {

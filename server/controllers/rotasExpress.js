@@ -20,17 +20,46 @@ module.exports = (app) => {
         console.log(req.params.livro)
         console.log(req.params.capitulo)
 
-        const dataAntigo = require("./antigoTestamento.json")
-        let armazena = []
+        if (parseInt(req.params.capitulo) == 1) { //ATENÇÃO: ESSE IF É PARA QUANDO O CAPITULO FOR IGUAL A 1 ALÉM DE BUSCAR O CAPÍTULO PEDIDO
+            //IRÁ BUSCAR TAMBÉM O ULTIMO CAPÍTULO DO LIVRO ANTERIOR PARA NÃO CRASHAR A APLICAÇÃO
+            console.log(" no if Index")
+            const dataAntigo = require("./antigoTestamento.json")
+            let armazena = []
+            const armazenaIndexLivroAnterior = dataAntigo.findIndex(({ name }) => //ENCONTRE O INDICE DA ARRAY CORRESPONDENET AO LIVRO SOLICITADO
+                name == req.params.livro
+            )
+            livro = dataAntigo[armazenaIndexLivroAnterior - 1].name
+            tamanhoCapitulo = dataAntigo[armazenaIndexLivroAnterior - 1].chapters.length //SERÁ MENOS UM PARA ACHAR O LIVRO ANTERIOR, POIS CONTA A PARTIR DO ZERO
+            livroAnterior = [tamanhoCapitulo, dataAntigo[armazenaIndexLivroAnterior - 1].chapters[tamanhoCapitulo - 1], livro] //MENOS UM TAMBÉM, PARA ACHAR O ulTIMO CAPITULO DO LIVRO ANTERIOR, POIS CONTA A PARTIR DO ZERO
 
-        dataAntigo.map((recebe) => {
+            dataAntigo.map((recebe) => {
+                if (recebe.name == req.params.livro) {
+                    // armazena = [...recebe.chapters[parseInt(req.params.capitulo) - 1], recebe.chapters.length, ...armazena]//menos um pq como array conta a partir do zero...
+                    const capitulos = recebe.chapters[parseInt(req.params.capitulo) - 1]
+                    armazena = [recebe.chapters.length, capitulos, recebe.name, { livroAnterior }]
+                    // armazena = [armazena, recebe.chapters.length]
+                }
+            })
+            console.log("primeiro/ultimo capítulo")
+            res.json(armazena)
 
-            if (recebe.name == req.params.livro) {
-                armazena = recebe.chapters[parseInt(req.params.capitulo) - 1]
-                armazena = [recebe.chapters.length, armazena]
-            }
-        })
-        res.json(armazena)
+
+        } else {
+            let armazena = []
+            const dataAntigo = require("./antigoTestamento.json")
+            dataAntigo.map((recebe) => {
+                if (recebe.name == req.params.livro) {
+                    armazena = recebe.chapters[parseInt(req.params.capitulo) - 1]//menos um pq como array conta a partir do zero...
+                    armazena = [recebe.chapters.length, armazena, recebe.name]
+                }
+            })
+
+            res.json(armazena)
+        }
+
+
+
+
     })
 
 

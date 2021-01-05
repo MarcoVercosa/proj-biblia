@@ -2,23 +2,20 @@ const conectaBD = require("./conexao")
 
 class AlteraDadosBD {
 
-
-    Adiciona(atendimento, res) { //recebe do controller/atendimentos o post de dados recebido e a resposta (sucesso ou não)
-
-        const sql = "INSERT INTO louvores SET ?" //insira dentro  da tabela atendimentos. o ? informa que oq vier será incluído
-        conectaBD.query(sql, atendimento, (erro, resultados) => { //insira a query da var sql oq vier no parametro atendimentoDatado
-            if (erro) {
-
-                //console.log(erro) //imprime o erro na console do NODE
-                res.json(erro) //envia para o navegador o erro
-
-            } else {
-                //console.log(resultados)
-                console.log("T" + resultados)
-                return (resultados)
-            }
-        })
-    }
+    //usado para cadastro dos hinos da harpa no bd
+    // Adiciona(atendimento, res) { //recebe do controller/atendimentos o post de dados recebido e a resposta (sucesso ou não)
+    //     const sql = "INSERT INTO louvores SET ?" //insira dentro  da tabela atendimentos. o ? informa que oq vier será incluído
+    //     conectaBD.query(sql, atendimento, (erro, resultados) => { //insira a query da var sql oq vier no parametro atendimentoDatado
+    //         if (erro) {
+    //             //console.log(erro) //imprime o erro na console do NODE
+    //             res.json(erro) //envia para o navegador o erro
+    //         } else {
+    //             //console.log(resultados)
+    //             console.log("T" + resultados)
+    //             return (resultados)
+    //         }
+    //     })
+    // }
 
     ListaNumeroHino(res) {// busca somente o numero de todos os hinos
 
