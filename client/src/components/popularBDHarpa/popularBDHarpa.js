@@ -1,4 +1,3 @@
-import { emphasize, useScrollTrigger } from '@material-ui/core';
 import { React, useState, useEffect } from 'react';
 import axios from "axios"
 import "./populaBDHARPA.css"

@@ -11,20 +11,13 @@
 }
 
 .imagem-carrosel{
-    display: flex;
-    justify-content: center;
-    text-align: center;    
-    max-height: 620px;
-    margin: 0 auto;
-    border-radius: 80px;
-    opacity: 1;
-    transition: .3s ease;
+    border-radius: 35px;
+    transition: all .5s;
+    border: 2px solid transparent;
+    opacity: 0.8;
 }
 
 
 .imagem-carrosel:hover {
-    box-shadow: 0 0 25px 1px rgba(4, 72, 4, 0.5);
-    opacity: 0.8;
-  }
-
-
+    opacity: 1.0;
+}

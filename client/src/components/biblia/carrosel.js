@@ -9,13 +9,13 @@ import Dois from "./dois.png"
 
 export default function Carrosel(props) {
 
-    const [imagem, setImagem] = useState(
+    const imagem =
         [
             Zero,
             Um,
             Dois,
         ]
-    )
+
 
 
 

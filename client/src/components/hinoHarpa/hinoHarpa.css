@@ -134,4 +134,13 @@ display: block
 margin-right: 5px;
 }
 
+.hinoharpa-busca-menu-erro{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.hinoharpa-busca-menu-erro p{
+    margin-left: 10px;
+}
 

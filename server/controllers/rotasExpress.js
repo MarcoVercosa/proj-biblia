@@ -15,6 +15,26 @@ module.exports = (app) => {
         res.json(armazena)
     })
 
+
+    app.get("/buscacapituloantigotesta:id", (req, res) => {//fornece somente os capítulos dado o livro que vem no parametro ID
+        console.log("/buscacapituloantigotesta:id")
+        console.log(req.params)
+        const dataNomeCapitulo = require("./antigoTestamento.json")
+        const dataNomeCapituloFiltrado = dataNomeCapitulo
+        armazena = []
+        dataNomeCapituloFiltrado.map((recebe, index) => {
+            if (recebe.name == req.params.id) {
+                for (i = 1; i <= recebe.chapters.length; i++) {
+                    armazena.push(i)
+                    //para cada rodada se achar o nome do livro igual o parametro da url
+                    //faça um loop nos capitulos e monte a quantidade de capitulos
+                }
+            }
+        })
+        res.json(armazena)
+    })
+
+
     app.get("/antigotesta/:livro/:capitulo", (req, res) => { //LISTAR dados
         console.log("BUSCOU /antigotesta/:livro/:capitulo ")
         console.log(req.params.livro)
@@ -64,27 +84,7 @@ module.exports = (app) => {
 
 
 
-    app.get("/buscacapituloantigotesta:id", (req, res) => {//fornece somente os capítulos dado o livro que vem no parametro ID
-        console.log("/buscacapituloantigotesta:id")
-        console.log(req.params)
-        const dataNomeCapitulo = require("./antigoTestamento.json")
-        const dataNomeCapituloFiltrado = dataNomeCapitulo
-        armazena = []
-        dataNomeCapituloFiltrado.map((recebe, index) => {
-            if (recebe.name == req.params.id) {
-                for (i = 1; i <= recebe.chapters.length; i++) {
-                    armazena.push(i)
-                    //para cada rodada se achar o nome do livro igual o parametro da url
-                    //faça um loop nos capitulos e monte a quantidade de capitulos
-                }
 
-                // armazena.push(recebe.chapters)
-
-            }
-        })
-        res.json(armazena)
-
-    })
 
     // #NOVO TESTAMENTO -**********************************
 

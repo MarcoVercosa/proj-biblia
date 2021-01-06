@@ -21,14 +21,14 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
 
 
         useEffect(async () => {//quando carrgada o componente, ja carrega com o livro e capitulo recebido pelo params
-                let armazenaIdadeLivro = ""
+
                 if (props.match.params.idade === "antigo") {
-                        armazenaIdadeLivro = "buscalivroantigotesta"
+                        // armazenaIdadeLivro = "buscalivroantigotesta"
                         setIdade("antigotesta")
                         var recebe = await GetAPI(`antigotesta/${paramsLivro}/${paramscapitulo}`) // recebe = obj versiculos do capitulo + quantidade de capitulos do livro
                         setCapitulos(recebe)
                 } else {
-                        armazenaIdadeLivro = "buscalivronovotesta"
+                        // armazenaIdadeLivro = "buscalivronovotesta"
                         setIdade("novotesta")
                         var recebe = await GetAPI(`novotesta/${paramsLivro}/${paramscapitulo}`)
                         setCapitulos(recebe)
@@ -48,7 +48,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
         }, [])
 
         async function NavegaPagina(recebe, livro, capitulo) {//funcao para navegar entre os capitulos e livros chamada avanças e voltar páginas
-                if (capitulo == 0) {
+                if (capitulo === 0) {
                         return
                 }
                 const navega = await GetAPI(`${idade}/${livro}/${capitulo}`)
@@ -97,7 +97,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                                                         className="painelleitura-article-li" onClick={(recebe, livro = paramsLivro, capitulo = parseInt(paramscapitulo) - 1) => {
                                                                 NavegaPagina(recebe, livro, capitulo)
                                                         }}>
-                                                        <span><i className="fas fa-arrow-circle-left fa-sm"></i></span>  {paramsLivro} -   {parseInt(paramscapitulo) - 1 == 0 ? parseInt(paramscapitulo) : parseInt(paramscapitulo) - 1}
+                                                        <span><i className="fas fa-arrow-circle-left fa-sm"></i></span>  {paramsLivro} -   {parseInt(paramscapitulo) - 1 === 0 ? parseInt(paramscapitulo) : parseInt(paramscapitulo) - 1}
                                                 </li > </a>
 
                                                 {/* <li className="painelleitura-article-li" className="painelleitura-article-li">

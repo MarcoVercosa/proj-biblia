@@ -48,7 +48,7 @@ class AlteraDadosBD {
 
     BuscaHinoPorPalavra(palavra, res) {//busque numero e titulo onde titulo tenha a palavra recebida
 
-        const sql = `SELECT numero, titulo FROM hinoHarpa.louvores WHERE titulo LIKE "%${palavra}%"`
+        const sql = `SELECT numero, titulo FROM hinoHarpa.louvores WHERE letra LIKE "%${palavra}%"`
         conectaBD.query(sql, (erro, resultado) => {
 
             if (erro) {

@@ -78,7 +78,7 @@ export default function DialogSelect(props) {//props recebe ANTIGO TESTAMENTO" o
 
     const handleClose = () => {
 
-
+        // props.DesativaSelect()
         setOpen(false);
     };
 
