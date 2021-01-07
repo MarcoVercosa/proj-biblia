@@ -22,9 +22,12 @@ export default function Menu() {
                         LEITURA DA BÍBLIA
                     </li>
                 </Link>
-                <li className='li-vamos' >
-                    VERSÍCULOS DO DIA
-                </li>
+                <Link className="li-vamos" to="/biblianvi/pesquisa">
+                    <li className='li-vamos' >
+                        VERSÍCULOS DO DIA
+                    </li>
+                </Link>
+
                 <Link className='li-vamos' to="/harpacrista">
                     <li className='li-vamos' >
                         HINOS DA HARPA

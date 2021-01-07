@@ -174,7 +174,7 @@ export default function HinoHarpa() {
                         {erroPesquisaPorPalavra &&
                             <>
                                 <spam><i class="far fa-frown fa-4x"></i></spam>
-                                <p>Não encontrei o Hino desejado</p>
+                                <p>Não encontrei o Hino desejado.</p>
                             </>
                         }
                     </menu>

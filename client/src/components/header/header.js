@@ -1,4 +1,5 @@
-import React from 'react';
+import { React, useState } from 'react';
+import { Link } from "react-router-dom";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -6,7 +7,9 @@ import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
+import Button from '@material-ui/core/Button';
 import "./header.css"
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -65,6 +68,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SearchAppBar() {
     const classes = useStyles();
+    const [dataPesquisa, setDataPesquisa] = useState()
+
+    function Buscar(tecla) {
+        if (tecla.key === "Enter") {
+            alert("Pressione o botão buscar para encontrar o que deseja")
+        }
+    }
 
     return (
         <div className={classes.root}>
@@ -88,6 +98,8 @@ export default function SearchAppBar() {
                             <SearchIcon />
                         </div>
                         <InputBase
+                            onChange={(recebe) => { setDataPesquisa(recebe.target.value) }}
+                            onKeyDown={(recebe) => { Buscar(recebe) }}
                             placeholder="Pesquisar"
                             classes={{
                                 root: classes.inputRoot,
@@ -95,7 +107,14 @@ export default function SearchAppBar() {
                             }}
                             inputProps={{ 'aria-label': 'search' }}
                         />
+
                     </div>
+                    <Link to={`/biblianvi/pesquisa/${dataPesquisa}`}>
+                        <Button
+                            style={{ marginLeft: "7px" }}
+                            variant="contained">Buscar
+                        </Button>
+                    </Link>
                 </Toolbar>
             </AppBar>
         </div >

@@ -4,14 +4,11 @@
     vertical-align: top;
     background-color: #19a582;
     border-radius: 20px;
-    margin-left: 15px;
-    
-    
+    margin-left: 15px;  
 }
 
 .menu-painelleitura-ul{
 list-style: none;
-
 }
 
 .menu-painelleitura-li{
@@ -27,4 +24,10 @@ text-decoration: none;
 }
 .icone{
 margin-right: 15px;
+transition: all 0.5s;
 }
+
+.icone:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    }
