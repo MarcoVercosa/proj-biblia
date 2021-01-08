@@ -65,10 +65,13 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                 SetParamsLivro(livro)
                 SetParamsCapitulo(capitulo)
                 setCapitulos(navega)
-                if (paramsVersiculo != "m") {
-                        var mudaCorVersiculoSolicitado = document.getElementById(paramsVersiculo)
+                var mudaCorVersiculoSolicitado = document.getElementById(paramsVersiculo)
+                console.log(typeof (mudaCorVersiculoSolicitado))
+                // console.log(mudaCorVersiculoSolicitado.hasOwnProperty("className"))
+                if (paramsVersiculo != "m" & mudaCorVersiculoSolicitado != null) {
+
                         mudaCorVersiculoSolicitado.style.color = "Black"
-                }       //Para evitar que ao avançar de página  o versiculo da url continue vermelhor
+                }       //Para evitar que ao avançar de página  o versiculo da url continue vermelho
 
         }
 
@@ -99,7 +102,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                                         <h3 className="painelleitura-article-h3">{paramsLivro} - {paramscapitulo}</h3>
                                         {capitulos.data[1].map((recebe, index) => {
                                                 return (
-                                                        <p id={index + 1} className="painelleitura-article-paragrafo" key={index}>{index + 1} - {recebe}</p>)
+                                                        <p id={index + 1} className="painelleitura-article-paragrafo" key={index}><spam >{index + 1}</spam> - {recebe}</p>)
                                         })}
 
                                         <ul className="painelleitura-article-ul" >

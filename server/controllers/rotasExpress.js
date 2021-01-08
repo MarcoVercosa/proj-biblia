@@ -216,8 +216,10 @@ module.exports = (app) => {
                 var conteudo = []
 
                 for (var i = 0; i < capitulo.length; i++) { //enquanto houver versiculos, faça
-
-                    if (capitulo[i].includes(terra)) {//se houver a palavra no versiculo, será verdadeiro
+                    var conteudoVersiculo = capitulo[i].toLowerCase()
+                    conteudoVersiculo = conteudoVersiculo.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                    // console.log(conteudoVersiculo)
+                    if (conteudoVersiculo.includes(terra)) {//se houver a palavra no versiculo, será verdadeiro
                         versiculo = i + 1 //sempre mais um , pois começa pelo zero
                         // data = capitulo[i]
                         conteudo = [...conteudo, { versiculo, conteudo: capitulo[i] }] // conteudo vai receber ele mesmo como array, e como obj: versiculo e o conteudo que sera o conteudo do versiculo

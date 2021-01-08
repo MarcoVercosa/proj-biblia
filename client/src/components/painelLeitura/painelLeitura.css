@@ -21,6 +21,12 @@
     font-size: 22px;
 }
 
+.painelleitura-article-paragrafo spam{
+background-color: #d5d4d4;
+padding: 6px;
+border-radius: 15px;
+}
+
 .painelleitura-article-h3{
 
     font-family: 'Lora', serif;
@@ -95,4 +101,6 @@ a{
 .painelleitura-article-article-div-p-um{
 font-size: 25px;
 }
+
+
 
