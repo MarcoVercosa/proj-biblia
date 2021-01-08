@@ -1,0 +1,24 @@
+.pesquisabibia-article{
+    display: inline-block;
+}
+
+.pesquisabibia-article-div-um{
+   margin:15px 0 15px 10px;
+   background-color: rgb(237, 233, 233);
+   width: 65%;
+   border-radius: 25px;
+   padding: 15px;
+   display: inline-block;
+}
+
+.pesquisabibia-article-div-dois{
+
+    margin-bottom: 8px;
+background-color: rgb(142, 192, 127);
+border-radius: 20px;
+padding: 5px;
+font-family: 'Lora', serif;
+font-size: 18px;
+text-decoration: none
+;
+}

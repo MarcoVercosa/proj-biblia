@@ -142,7 +142,8 @@ export default function DialogSelect(props) {//props recebe ANTIGO TESTAMENTO" o
                         Cancel
           </Button>
 
-                    <Link to={`/biblianvi/painelleitura/${idadeLivro}/${selectLivro}/${selectCapituloAlteraCampo}`} >
+                    <Link to={`/biblianvi/painelleitura/${idadeLivro}/${selectLivro}/${selectCapituloAlteraCampo}/m`} >
+                        {/* o /M é pq na rota do routerdom pede o versiculo, e como o select não envia, para poder abrir o componente envia uma letra qualquer */}
                         {/* direciona para a URL/componente /biblianvi/painelleitura com os params forçando abrir o componente painelLeitura com o livro e o cap */}
                         <Button onClick={handleClose} color="primary">
                             Ok

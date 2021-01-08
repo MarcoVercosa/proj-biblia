@@ -17,7 +17,7 @@ ReactDOM.render(
     <Switch>
       <Route path="/" exact={true} component={App} />
       <Route path="/biblianvi" exact={true} component={Biblia} />
-      <Route path="/biblianvi/painelleitura/:idade/:livro/:capitulo" component={PainelLeitura} />{/* recebe 3 parametros */}
+      <Route path="/biblianvi/painelleitura/:idade/:livro/:capitulo/:versiculo" component={PainelLeitura} />{/* recebe 3 parametros */}
       <Route path="/harpacrista" component={HinoHarpa} />
       {/* <Route path="/populaharpa" component={PopularBDHarpa} /> */}
       <Route path="/biblianvi/pesquisa/:palavrapesquisabiblia" component={PesquisaBiblia} />

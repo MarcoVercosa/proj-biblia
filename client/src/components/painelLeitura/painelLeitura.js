@@ -11,6 +11,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
         const [idade, setIdade] = useState() //recebe do async a idade do livro, novo ou antigo
         const [paramsLivro, SetParamsLivro] = useState(props.match.params.livro)//recebe o param livro quando o componente é aberto
         const [paramscapitulo, SetParamsCapitulo] = useState(props.match.params.capitulo) //recebe o param capitulo quando o componente é aberto
+        const [paramsVersiculo, setParamsVersiculo] = useState(props.match.params.versiculo)
         const [capitulos, setCapitulos] = useState(false) //é alterado com o effect quando o site é carregado e pela func NavegaPagina que é chamadoa por avançar e voltar pagina
         const [indiceCapitulos, setIndiceCapitulos] = useState([]) //usado para listar os capitulos os botoes avanças e voltar
         const [curiosidades, setCuriosidades] = useState(false)
@@ -21,7 +22,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
 
 
         useEffect(async () => {//quando carrgada o componente, ja carrega com o livro e capitulo recebido pelo params
-
+                console.log(paramsVersiculo)
                 if (props.match.params.idade === "antigo") {
                         // armazenaIdadeLivro = "buscalivroantigotesta"
                         setIdade("antigotesta")
@@ -45,6 +46,12 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                 setIndiceCapitulos(temp)
                 BuscaCuriosodades(paramsLivro)
 
+                if (paramsVersiculo != "m") {
+                        var mudaCorVersiculoSolicitado = document.getElementById(paramsVersiculo)
+                        mudaCorVersiculoSolicitado.style.color = "Red"
+                }
+                //identifica o versiculo solicitado (se vier) e como cada paragrafo tem o id do versiculo, altera a cor
+
         }, [])
 
         async function NavegaPagina(recebe, livro, capitulo) {//funcao para navegar entre os capitulos e livros chamada avanças e voltar páginas
@@ -58,6 +65,11 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                 SetParamsLivro(livro)
                 SetParamsCapitulo(capitulo)
                 setCapitulos(navega)
+                if (paramsVersiculo != "m") {
+                        var mudaCorVersiculoSolicitado = document.getElementById(paramsVersiculo)
+                        mudaCorVersiculoSolicitado.style.color = "Black"
+                }       //Para evitar que ao avançar de página  o versiculo da url continue vermelhor
+
         }
 
         async function BuscaCuriosodades(recebeLivro) {
@@ -77,6 +89,8 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                 )
         }
 
+
+
         return (
                 <>
                         <SearchAppBar />
@@ -85,7 +99,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                                         <h3 className="painelleitura-article-h3">{paramsLivro} - {paramscapitulo}</h3>
                                         {capitulos.data[1].map((recebe, index) => {
                                                 return (
-                                                        <p className="painelleitura-article-paragrafo" key={index}>{index + 1} - {recebe}</p>)
+                                                        <p id={index + 1} className="painelleitura-article-paragrafo" key={index}>{index + 1} - {recebe}</p>)
                                         })}
 
                                         <ul className="painelleitura-article-ul" >

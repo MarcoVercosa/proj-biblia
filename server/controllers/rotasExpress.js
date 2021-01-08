@@ -3,10 +3,14 @@ const AlteraDadosBD = require("../infrabd/alteraDados")
 
 module.exports = (app) => {
     console.log("MÓDULO DE ROTAS CAREGADO")
+    const dataNovo = require("./novoTestamento.json")
+    const dataAntigo = require("./antigoTestamento.json")
+
+
 
     app.get("/buscalivroantigotesta", (req, res) => {//fornece somente os livros (COMPONENTE selectTestamento)
-        const dataNomeLivro = require("./antigoTestamento.json")
-        const dataNomeFiltrado = dataNomeLivro
+        const dataAntigo = require("./antigoTestamento.json")
+        const dataNomeFiltrado = dataAntigo
         armazena = []
         dataNomeFiltrado.map((recebe) => {
             armazena.push(recebe.name)
@@ -19,7 +23,7 @@ module.exports = (app) => {
     app.get("/buscacapituloantigotesta:id", (req, res) => {//fornece somente os capítulos dado o livro que vem no parametro ID
         console.log("/buscacapituloantigotesta:id")
         console.log(req.params)
-        const dataNomeCapitulo = require("./antigoTestamento.json")
+        const dataNomeCapitulo = dataAntigo
         const dataNomeCapituloFiltrado = dataNomeCapitulo
         armazena = []
         dataNomeCapituloFiltrado.map((recebe, index) => {
@@ -39,34 +43,8 @@ module.exports = (app) => {
         console.log("BUSCOU /antigotesta/:livro/:capitulo ")
         console.log(req.params.livro)
         console.log(req.params.capitulo)
-
-        // if (parseInt(req.params.capitulo) == 1) { //ATENÇÃO: ESSE IF É PARA QUANDO O CAPITULO FOR IGUAL A 1 ALÉM DE BUSCAR O CAPÍTULO PEDIDO
-        //     //IRÁ BUSCAR TAMBÉM O ULTIMO CAPÍTULO DO LIVRO ANTERIOR PARA NÃO CRASHAR A APLICAÇÃO
-        //     console.log(" no if Index")
-        //     const dataAntigo = require("./antigoTestamento.json")
-        //     let armazena = []
-        // const armazenaIndexLivroAnterior = dataAntigo.findIndex(({ name }) => //ENCONTRE O INDICE DA ARRAY CORRESPONDENET AO LIVRO SOLICITADO
-        //     name == req.params.livro
-        // )
-        // livro = dataAntigo[armazenaIndexLivroAnterior - 1].name
-        // tamanhoCapitulo = dataAntigo[armazenaIndexLivroAnterior - 1].chapters.length //SERÁ MENOS UM PARA ACHAR O LIVRO ANTERIOR, POIS CONTA A PARTIR DO ZERO
-        // livroAnterior = [tamanhoCapitulo, dataAntigo[armazenaIndexLivroAnterior - 1].chapters[tamanhoCapitulo - 1], livro] //MENOS UM TAMBÉM, PARA ACHAR O ulTIMO CAPITULO DO LIVRO ANTERIOR, POIS CONTA A PARTIR DO ZERO
-
-        // dataAntigo.map((recebe) => {
-        //     if (recebe.name == req.params.livro) {
-        //         // armazena = [...recebe.chapters[parseInt(req.params.capitulo) - 1], recebe.chapters.length, ...armazena]//menos um pq como array conta a partir do zero...
-        //         const capitulos = recebe.chapters[parseInt(req.params.capitulo) - 1]
-        //         armazena = [recebe.chapters.length, capitulos, recebe.name, { livroAnterior }]
-        //         // armazena = [armazena, recebe.chapters.length]
-        //     }
-        // })
-        // console.log("primeiro/ultimo capítulo")
-        // res.json(armazena)
-
-
-
         let armazena = []
-        const dataAntigo = require("./antigoTestamento.json")
+        // const dataAntigo = require("./antigoTestamento.json")
         dataAntigo.map((recebe) => {
             if (recebe.name == req.params.livro) {
                 armazena = recebe.chapters[parseInt(req.params.capitulo) - 1]//menos um pq como array conta a partir do zero...
@@ -85,8 +63,8 @@ module.exports = (app) => {
     //============
 
     app.get("/buscalivronovotesta", (req, res) => { //fornece somente os livros (COMPONENTE selectTestamento)
-        const dataNomeLivro = require("./novoTestamento.json")
-        const dataNomeFiltrado = dataNomeLivro
+
+        const dataNomeFiltrado = dataNovo
         armazena = []
         dataNomeFiltrado.map((recebe) => {
             armazena.push(recebe.name)
@@ -98,8 +76,8 @@ module.exports = (app) => {
     app.get("/buscacapitulonovotesta:id", (req, res) => {//fornece somente os capítulos dado o livro que vem no parametro ID
         console.log("/buscacapitulonovotesta:id")
         console.log(req.params)
-        const dataNomeCapitulo = require("./novoTestamento.json")
-        const dataNomeCapituloFiltrado = dataNomeCapitulo
+
+        const dataNomeCapituloFiltrado = dataNovo
         armazena = []
         dataNomeCapituloFiltrado.map((recebe, index) => {
             if (recebe.name == req.params.id) {
@@ -119,7 +97,7 @@ module.exports = (app) => {
         console.log(req.params.livro)
         console.log(req.params.capitulo)
 
-        const dataNovo = require("./novoTestamento.json")
+
         let armazena = []
 
         dataNovo.map((recebe) => {
@@ -144,14 +122,6 @@ module.exports = (app) => {
         console.log("Solicitado retorno dos numeros dos cântico Harpa Cristã")
         AlteraDadosBD.ListaNumeroHino(res)
     })
-
-    // app.post("/cadastraharpa", (req, res) => {
-
-    //     const atendimento = req.body
-    //     const resultado = AlteraDadosBD.Adiciona(atendimento, res)
-    //     console.log("SOLICITADO POST DE DADOS")
-    //     res.json("COringao" + resultado)
-    // })
 
 
     app.get("/buscatitulopornumero/:id", (req, res) => { //retorna letra do hino conforme o numero solicitado
@@ -181,6 +151,7 @@ module.exports = (app) => {
 
         AlteraDadosBD.BuscaCuriosidade(palavra, res)
 
+
     })
 
 
@@ -198,8 +169,7 @@ module.exports = (app) => {
 
     app.get("/biblianvi/pesquisa/:palavrapesquisabiblia", (req, res) => {
 
-        const dataNovo = require("./novoTestamento.json")
-        const dataAntigo = require("./antigoTestamento.json")
+
         const todosLivros = [dataAntigo, dataNovo]
 
         var TotalMate = Busca(todosLivros)
@@ -208,18 +178,31 @@ module.exports = (app) => {
 
         function Busca(recebe) {
             var total = ""
-            for (var i = 0; i < recebe.length; i++) {//para cada testamento, faça
-                recebe[i].map((envia, index) => {//no testamento x vai fazer loop em todos os livros
-                    const terra = req.params.palavrapesquisabiblia //pegue  a palavra da pesquisa recebida
-                    var totalTemp = [ //cria o obj
-                        { livro: envia.name }, //receberá o nome do livro da rodada
-                        { capituloVersiculoConteudo: BuscaFilter(envia.chapters, terra) } //cap, versic, e conteudo  via função enviando capitulo do livro da rodada map e a palavra pesquisada
 
-                    ]
-                    total = [...total, totalTemp]
+            for (var i = 0; i < recebe.length; i++) {//para cada testamento, faça
+                // if (i = 0) { idadeTestamento = "antigo" } else { idadeTestamento = "novo" }
+                recebe[i].map((envia, index) => {//no testamento x vai fazer loop em todos os livros
+                    var idadeTestamento = ""
+                    if (i === 0) { idadeTestamento = "antigo" } else { idadeTestamento = "novo" }
+
+
+                    const terra = req.params.palavrapesquisabiblia //pegue  a palavra da pesquisa recebida
+                    var capituloVersiculoConteudo = BuscaFilter(envia.chapters, terra)
+                    // console.log(BuscaDados)
+
+                    if (capituloVersiculoConteudo.length > 0) {//se a array dele iver conteúdo
+
+                        var totalTemp = [ //cria o obj
+                            { idadeTestamento, livro: envia.name, capituloVersiculoConteudo: capituloVersiculoConteudo }, //receberá o nome do livro da rodada
+                            // { capituloVersiculoConteudo: BuscaFilter(envia.chapters, terra) } //cap, versic, e conteudo  via função enviando capitulo do livro da rodada map e a palavra pesquisada
+                        ]
+                        total = [...total, ...totalTemp]
+                    } else {
+                        total = total
+                    }
                 })
             }
-            // console.log(total)
+
             return total
         }
 
@@ -247,18 +230,11 @@ module.exports = (app) => {
                 }
 
             })
-            // console.log(armazena)
-            return armazena
 
+            return armazena
         }
 
-
-
-
         res.json(TotalMate)
-
-
-
 
 
     })
@@ -269,8 +245,7 @@ module.exports = (app) => {
 
     app.get("/biblianvi/pesquisa", (req, res) => { //afim de trazer all books
 
-        const dataNovo = require("./novoTestamento.json")
-        const dataAntigo = require("./antigoTestamento.json")
+
         const todosLivros = [dataAntigo, dataNovo]
 
         res.json(todosLivros)
