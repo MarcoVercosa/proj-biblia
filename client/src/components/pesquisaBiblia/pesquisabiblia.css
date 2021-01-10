@@ -34,3 +34,44 @@ text-decoration: none
     display: inline-block;
     
 }
+
+.pesquisabibia-article-div-paginas-li-ul{
+    width: 64.5%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 15px;
+    background-color:#3f9168;
+    border-radius: 15px;
+   margin-left: 15px;
+}
+
+.pesquisabibia-article-div-paginas-li-ul li{
+    font-family: 'Lora', serif;
+    font-size: 27px;
+    cursor: pointer;
+    color: White;  
+    padding: 5px; 
+    border-radius: 15px;
+    transition: all 0.5s;
+}
+.pesquisabibia-article-div-paginas-li-ul li:hover{
+    background-color: rgb(147, 204, 177);
+    border-radius: 15px;
+    
+    transform: scale(1.1); 
+
+}
+
+.pesquisabibia-article-div-paginas-li-left{
+    margin-left: 30px;
+}
+.pesquisabibia-article-div-paginas-li-right{
+margin-right: 30px;
+}
+.pesquisabibia-article-div-paginas-li-left span i{
+margin-right: 7px;
+}
+.pesquisabibia-article-div-paginas-li-right span i{
+    margin-left: 7px;
+    }

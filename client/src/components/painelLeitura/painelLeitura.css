@@ -43,6 +43,7 @@ border-radius: 15px;
     background-color:#3f9168;
     border-radius: 15px;
     margin: 0 auto;
+
  
 }
 .painelleitura-article-li {
@@ -50,7 +51,18 @@ border-radius: 15px;
     font-size: 27px;
     cursor: pointer;
     color: White;  
+    border-radius: 15px;
+    transition: all 0.5s;
+    
         
+}
+
+.painelleitura-article-li:hover{
+    background-color: rgb(147, 204, 177);
+    border-radius: 15px;
+    /* padding: 5px; */
+    transform: scale(1.1);
+
 }
 a{
     text-decoration: none;

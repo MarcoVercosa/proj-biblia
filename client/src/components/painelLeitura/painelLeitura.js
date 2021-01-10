@@ -34,11 +34,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                         var recebe = await GetAPI(`novotesta/${paramsLivro}/${paramscapitulo}`)
                         setCapitulos(recebe)
                 }
-                // const recebe = await GetAPI(`${armazenaIdadeLivro}/${paramsLivro}/${paramscapitulo}`)
-                // console.log(recebe)
-                // setCapitulos(recebe) // recebe = obj versiculos do capitulo + quantidade de capitulos do livro
 
-                //assim que recebe os dados é feito um loop for no obj para listar os capitulos
                 var temp = []
                 for (var i = 1; i <= recebe.data[0]; i++) {
                         temp.push(<option value={i} key={i}>{i}</option>)
@@ -139,6 +135,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                                                         NavegaPagina(recebe, livro, capitulo)
                                                 }}>
                                                         {paramsLivro} -  {parseInt(paramscapitulo) + 1 > capitulos.data[0] ? parseInt(paramscapitulo) : parseInt(paramscapitulo) + 1}  <span><i className="fas fa-arrow-circle-right fa-sm"></i></span>
+                                                        {/* Se capitulo +1 for maior que quantodade de capitulos existente então vai continuar com o valor atual, se não incrementa mais 1*/}
                                                 </li > </a>
 
                                         </ul>

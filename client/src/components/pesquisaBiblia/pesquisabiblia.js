@@ -11,9 +11,13 @@ import Footer from "../../components/footer/footer"
 export default function PesquisaBiblia(props) {
 
     const [barraProgresso, setBarraProgresso] = useState(true)
-    const [palavraPesquisada, setPalavraPesquisada] = useState(props.match.params.palavrapesquisabiblia)
-    const [dadosPesquisa, setDadosPesquisa] = useState(false)
     const [erroBusca, setErroBusca] = useState(false)
+    const [palavraPesquisada, setPalavraPesquisada] = useState(props.match.params.palavrapesquisabiblia)//palavra pesquisada URL
+    const [dadosPesquisa, setDadosPesquisa] = useState(false) //dados recebidos do get
+    const [dadosPesquisaPaginacao, setDadosPesquisaPaginacao] = useState()//divide para paginação
+    const [paginaAvanca, setPaginaAvanca] = useState(4)
+    const [paginaVolta, setPaginaVolta] = useState(0)
+
 
 
     useEffect(async () => {
@@ -24,32 +28,51 @@ export default function PesquisaBiblia(props) {
             setErroBusca(true)
             setBarraProgresso(false)
 
+
         } else {
+            setDadosPesquisaPaginacao([{ tamanho: resultado.data.length, paginacao: resultado.data.slice(paginaVolta, paginaAvanca) }])
             setDadosPesquisa(resultado)
             setBarraProgresso(false)
             setErroBusca(false)
 
         }
-
     }, [])
 
     MaisPesquisa()
 
     async function MaisPesquisa() {
-        if (palavraPesquisada != props.match.params.palavrapesquisabiblia) {
+        if (palavraPesquisada != props.match.params.palavrapesquisabiblia) {//quando uma nova pesquisa é feita a url altera mas o useefect não carrega, para saber se houve nova pesquisa comparamos os dois
             console.log("NOVA PESQUISA COM A PALAVRA: " + props.match.params.palavrapesquisabiblia)
             setPalavraPesquisada(props.match.params.palavrapesquisabiblia)
             const palavraPesquisadaSemAcento = props.match.params.palavrapesquisabiblia.normalize("NFD").replace(/[\u0300-\u036f]/g, "") //retira acentos
             const resultado = await GetApi(`biblianvi/pesquisa/${palavraPesquisadaSemAcento.toLowerCase()}`)
-            if (resultado.data.length < 1) {
-                setErroBusca(true)
-                setBarraProgresso(false)
+            if (resultado.data.length < 1) { //se não vier nenhum dado
+                setErroBusca(true) //ativa o return do de erro
+                setBarraProgresso(false) //desativa o return da barra de progresso
             } else {
-                setDadosPesquisa(resultado)
-                setBarraProgresso(false)
-                setErroBusca(false)
-
+                setDadosPesquisaPaginacao([{ tamanho: resultado.data.length, paginacao: resultado.data.slice(paginaVolta, paginaAvanca) }])
+                setDadosPesquisa(resultado)  //ativa o return dos dados recebidos
+                setBarraProgresso(false)  //desativa o return da barra de progresso
+                setErroBusca(false)  //desativa o return do erro 
             }
+        }
+    }
+
+    function Paginacao(evento, direcao) {
+        if (direcao === "avanca" & paginaAvanca < dadosPesquisaPaginacao[0].tamanho) {
+            setDadosPesquisaPaginacao([{ tamanho: dadosPesquisa.data.length, paginacao: dadosPesquisa.data.slice(paginaVolta + 4, paginaAvanca + 4) }])
+            setPaginaAvanca(paginaAvanca + 4)
+            setPaginaVolta(paginaVolta + 4)
+            console.log(paginaAvanca)
+            console.log(paginaVolta)
+        }
+
+        if (direcao === "voltar" & paginaVolta > 0) {
+            setDadosPesquisaPaginacao([{ tamanho: dadosPesquisa.data.length, paginacao: dadosPesquisa.data.slice(paginaVolta - 4, paginaAvanca - 4) }])
+            setPaginaAvanca(paginaAvanca - 4)
+            setPaginaVolta(paginaVolta - 4)
+        } else {
+            return
         }
     }
 
@@ -84,7 +107,7 @@ export default function PesquisaBiblia(props) {
             <article className="pesquisabibia-article">
 
                 <div className="pesquisabibia-article-div-um">
-                    {dadosPesquisa.data.map((recebe) => {
+                    {dadosPesquisaPaginacao[0].paginacao.map((recebe) => {
                         return (
                             <>
                                 {recebe.capituloVersiculoConteudo.map((dados) => {
@@ -111,6 +134,23 @@ export default function PesquisaBiblia(props) {
                         )
                     })}
                 </div>
+
+                <div className="pesquisabibia-article-div-paginas">
+
+                    <ul className="pesquisabibia-article-div-paginas-li-ul">
+                        <li className="pesquisabibia-article-div-paginas-li-left"
+                            onClick={(recebe, voltar = "voltar") => { Paginacao(recebe, voltar) }}>
+                            <span><i className="fas fa-arrow-circle-left sm"></i></span>
+                            Voltar
+                        </li>
+                        <li className="pesquisabibia-article-div-paginas-li-right"
+                            onClick={(recebe, avanca = "avanca") => { Paginacao(recebe, avanca) }}>
+                            Avançar<span><i className="fas fa-arrow-circle-right sm"></i></span>
+                        </li>
+                    </ul>
+
+                </div>
+
                 <PainelMenuLateral />
             </article>
             <Footer />
