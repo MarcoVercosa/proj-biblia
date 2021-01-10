@@ -1,7 +1,7 @@
 import React from 'react';
 import "./menu.css"
 import Imagem from "./Biblia.jpg"
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from "react-router-hash-link"// o hash faz funcionar os links âncoras
 
 export default function Menu() {
 
@@ -17,7 +17,7 @@ export default function Menu() {
 
                 </Link>
 
-                <Link className='li-vamos' to="/biblianvi">
+                <Link className='li-vamos' to="/biblianvi#selecionar">
                     <li className='li-vamos'>
                         LEITURA DA BÍBLIA
                     </li>

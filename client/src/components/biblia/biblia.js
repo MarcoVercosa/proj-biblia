@@ -39,7 +39,7 @@ export default function Biblia() {
             <SearchAppBar />
             <Menu />
             <main className="biblia-main" >
-                <div className="biblia-div-um">
+                <div className="biblia-div-um" id="selecionar">
                     <div className="biblia-div-velho" onClick={(recebe, livro = "ANTIGO TESTAMENTO") => { AtivaSelect(recebe, livro) }}>
                         <span><i class="fas fa-scroll fa-4x biblia-icone"></i></span><p >ANTIGO TESTAMENTO</p>
 

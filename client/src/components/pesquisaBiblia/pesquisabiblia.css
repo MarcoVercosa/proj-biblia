@@ -1,27 +1,49 @@
+.pesquisabibia-article-div-palavra{
+    display: inline-block;
+    width: 50%;
+    margin-left: 25px;
+    margin-top: 15px;
+    /* background-color: #1cb38d ; */
+    border-radius: 25px;
+    font-size: 25px;
+    font-family: 'Lora', serif;
+}
+
 .pesquisabibia-article{
     display: inline-block;
-    width: 100%;
+    width: 65%;
+    margin: 0 auto
 }
+
+
 
 .pesquisabibia-article-div-um{
    margin:15px 0 15px 10px;
    background-color: rgb(237, 233, 233);
-   width: 65%;
+   width: 100%;
    border-radius: 25px;
-   padding: 15px;
-   display: inline-block;
+   /* padding: 15px;  */
+   display: grid;
+   grid-template-columns: 32% 32% 32%;
+   grid-gap: 10px;
+   
 }
 
 .pesquisabibia-article-div-dois{
 
-    margin-bottom: 8px;
-background-color: rgb(142, 192, 127);
+  
+background-color: #14a37f;
 border-radius: 20px;
-padding: 5px;
+padding: 10px;
 font-family: 'Lora', serif;
 font-size: 18px;
-text-decoration: none
-;
+text-decoration: none;
+transition: all 0.5s;
+margin: 15px 0 15px 15px;
+}
+
+.pesquisabibia-article-div-dois:hover{
+    opacity: 0.6;
 }
 
 .pesquisabibia-article-div-erro{

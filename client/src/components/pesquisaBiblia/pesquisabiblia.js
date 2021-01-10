@@ -59,12 +59,11 @@ export default function PesquisaBiblia(props) {
     }
 
     function Paginacao(evento, direcao) {
-        if (direcao === "avanca" & paginaAvanca < dadosPesquisaPaginacao[0].tamanho) {
+        if (direcao === "avanca" & paginaAvanca < dadosPesquisaPaginacao[0].tamanho) {//se vier da solicição avançar e o pedido para avançar seja menor que o tamanho total
             setDadosPesquisaPaginacao([{ tamanho: dadosPesquisa.data.length, paginacao: dadosPesquisa.data.slice(paginaVolta + 4, paginaAvanca + 4) }])
             setPaginaAvanca(paginaAvanca + 4)
             setPaginaVolta(paginaVolta + 4)
-            console.log(paginaAvanca)
-            console.log(paginaVolta)
+
         }
 
         if (direcao === "voltar" & paginaVolta > 0) {
@@ -103,8 +102,10 @@ export default function PesquisaBiblia(props) {
     return (
         <>
             <SearchAppBar />
-
-            <article className="pesquisabibia-article">
+            <div className="pesquisabibia-article-div-palavra">
+                <h3><i class="fas fa-search fa-2x"></i> ** {props.match.params.palavrapesquisabiblia} **</h3>
+            </div>
+            <article id="inicio" className="pesquisabibia-article">
 
                 <div className="pesquisabibia-article-div-um">
                     {dadosPesquisaPaginacao[0].paginacao.map((recebe) => {
@@ -134,25 +135,28 @@ export default function PesquisaBiblia(props) {
                         )
                     })}
                 </div>
-
-                <div className="pesquisabibia-article-div-paginas">
-
-                    <ul className="pesquisabibia-article-div-paginas-li-ul">
-                        <li className="pesquisabibia-article-div-paginas-li-left"
-                            onClick={(recebe, voltar = "voltar") => { Paginacao(recebe, voltar) }}>
-                            <span><i className="fas fa-arrow-circle-left sm"></i></span>
-                            Voltar
-                        </li>
-                        <li className="pesquisabibia-article-div-paginas-li-right"
-                            onClick={(recebe, avanca = "avanca") => { Paginacao(recebe, avanca) }}>
-                            Avançar<span><i className="fas fa-arrow-circle-right sm"></i></span>
-                        </li>
-                    </ul>
-
-                </div>
-
-                <PainelMenuLateral />
             </article>
+
+            <PainelMenuLateral />
+
+            <div className="pesquisabibia-article-div-paginas">
+
+                <ul className="pesquisabibia-article-div-paginas-li-ul">
+                    <a href="#inicio" ><li className="pesquisabibia-article-div-paginas-li-left"
+                        onClick={(recebe, voltar = "voltar") => { Paginacao(recebe, voltar) }}>
+                        <span><i className="fas fa-arrow-circle-left sm"></i></span>
+                            Voltar
+                        </li></a>
+                    <a href="#inicio" > <li className="pesquisabibia-article-div-paginas-li-right"
+                        onClick={(recebe, avanca = "avanca") => { Paginacao(recebe, avanca) }}>
+                        Avançar<span><i className="fas fa-arrow-circle-right sm"></i></span>
+                    </li></a>
+                </ul>
+
+            </div>
+
+
+
             <Footer />
 
 
