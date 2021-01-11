@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from "react-router-hash-link"// o hash faz funcionar os links âncoras
 import "./painelMenuLateral.css"
 
 export default function PainelMenuLateral() {
@@ -16,7 +16,7 @@ export default function PainelMenuLateral() {
 
                 </Link>
 
-                <Link className='li-vamos' to="/biblianvi">
+                <Link className='li-vamos' to="/biblianvi#selecionar">
                     <li className='menu-painelleitura-li'>
                         <i className="fas fa-bible fa-2x icone"></i> LEITURA DA BÍBLIA
                                                 </li>

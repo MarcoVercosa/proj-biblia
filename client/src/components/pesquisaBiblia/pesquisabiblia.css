@@ -9,6 +9,10 @@
     font-family: 'Lora', serif;
 }
 
+.pesquisabibia-article-div-palavra .fas{
+    color:#14a37f;
+    }
+
 .pesquisabibia-article{
     display: inline-block;
     width: 65%;
@@ -30,13 +34,12 @@
 }
 
 .pesquisabibia-article-div-dois{
-
   
 background-color: #14a37f;
 border-radius: 20px;
 padding: 10px;
 font-family: 'Lora', serif;
-font-size: 18px;
+font-size: 20px;
 text-decoration: none;
 transition: all 0.5s;
 margin: 15px 0 15px 15px;
@@ -45,6 +48,8 @@ margin: 15px 0 15px 15px;
 .pesquisabibia-article-div-dois:hover{
     opacity: 0.6;
 }
+
+
 
 .pesquisabibia-article-div-erro{
 

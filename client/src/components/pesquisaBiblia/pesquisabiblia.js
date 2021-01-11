@@ -25,12 +25,12 @@ export default function PesquisaBiblia(props) {
         const palavraPesquisadaSemAcento = palavraPesquisada.normalize("NFD").replace(/[\u0300-\u036f]/g, "") //retira acentos
         const resultado = await GetApi(`biblianvi/pesquisa/${palavraPesquisadaSemAcento.toLowerCase()}`)
         if (resultado.data.length < 1) {
-            setErroBusca(true)
+            setErroBusca(true) //Ativa o erro
             setBarraProgresso(false)
 
 
         } else {
-            setDadosPesquisaPaginacao([{ tamanho: resultado.data.length, paginacao: resultado.data.slice(paginaVolta, paginaAvanca) }])
+            setDadosPesquisaPaginacao([{ tamanho: resultado.data.length, paginacao: resultado.data.slice(paginaVolta, paginaAvanca), saberQuePagina: 1 }])
             setDadosPesquisa(resultado)
             setBarraProgresso(false)
             setErroBusca(false)
@@ -50,7 +50,7 @@ export default function PesquisaBiblia(props) {
                 setErroBusca(true) //ativa o return do de erro
                 setBarraProgresso(false) //desativa o return da barra de progresso
             } else {
-                setDadosPesquisaPaginacao([{ tamanho: resultado.data.length, paginacao: resultado.data.slice(paginaVolta, paginaAvanca) }])
+                setDadosPesquisaPaginacao([{ tamanho: resultado.data.length, paginacao: resultado.data.slice(paginaVolta, paginaAvanca), saberQuePagina: 1 }])
                 setDadosPesquisa(resultado)  //ativa o return dos dados recebidos
                 setBarraProgresso(false)  //desativa o return da barra de progresso
                 setErroBusca(false)  //desativa o return do erro 
@@ -60,14 +60,14 @@ export default function PesquisaBiblia(props) {
 
     function Paginacao(evento, direcao) {
         if (direcao === "avanca" & paginaAvanca < dadosPesquisaPaginacao[0].tamanho) {//se vier da solicição avançar e o pedido para avançar seja menor que o tamanho total
-            setDadosPesquisaPaginacao([{ tamanho: dadosPesquisa.data.length, paginacao: dadosPesquisa.data.slice(paginaVolta + 4, paginaAvanca + 4) }])
+            setDadosPesquisaPaginacao([{ tamanho: dadosPesquisa.data.length, paginacao: dadosPesquisa.data.slice(paginaVolta + 4, paginaAvanca + 4), saberQuePagina: dadosPesquisaPaginacao[0].saberQuePagina + 1 }])
             setPaginaAvanca(paginaAvanca + 4)
             setPaginaVolta(paginaVolta + 4)
 
         }
 
         if (direcao === "voltar" & paginaVolta > 0) {
-            setDadosPesquisaPaginacao([{ tamanho: dadosPesquisa.data.length, paginacao: dadosPesquisa.data.slice(paginaVolta - 4, paginaAvanca - 4) }])
+            setDadosPesquisaPaginacao([{ tamanho: dadosPesquisa.data.length, paginacao: dadosPesquisa.data.slice(paginaVolta - 4, paginaAvanca - 4), saberQuePagina: dadosPesquisaPaginacao[0].saberQuePagina - 1 }])
             setPaginaAvanca(paginaAvanca - 4)
             setPaginaVolta(paginaVolta - 4)
         } else {
@@ -103,7 +103,7 @@ export default function PesquisaBiblia(props) {
         <>
             <SearchAppBar />
             <div className="pesquisabibia-article-div-palavra">
-                <h3><i class="fas fa-search fa-2x"></i> ** {props.match.params.palavrapesquisabiblia} **</h3>
+                <h3><i class="fas fa-search fa-3x"></i> ** {props.match.params.palavrapesquisabiblia} **</h3>
             </div>
             <article id="inicio" className="pesquisabibia-article">
 
@@ -146,11 +146,16 @@ export default function PesquisaBiblia(props) {
                         onClick={(recebe, voltar = "voltar") => { Paginacao(recebe, voltar) }}>
                         <span><i className="fas fa-arrow-circle-left sm"></i></span>
                             Voltar
-                        </li></a>
+                        </li>
+                    </a>
+
+                    <li> Página {dadosPesquisaPaginacao[0].saberQuePagina} de {dadosPesquisaPaginacao[0].tamanho % 4 === 0 ? dadosPesquisaPaginacao[0].tamanho / 4 : Math.floor(dadosPesquisaPaginacao[0].tamanho / 4 + 1)}</li>
+                    {/* A paginção é feita de 4 em 4 a arraiyz dentro do obj recebeido pelo backend. Se o tamanho total dividido por 4  não sobrar nada, então divida por 4 senão divida por 4 pegue o primeiro numero e some mais 1*/}
                     <a href="#inicio" > <li className="pesquisabibia-article-div-paginas-li-right"
                         onClick={(recebe, avanca = "avanca") => { Paginacao(recebe, avanca) }}>
                         Avançar<span><i className="fas fa-arrow-circle-right sm"></i></span>
-                    </li></a>
+                    </li>
+                    </a>
                 </ul>
 
             </div>

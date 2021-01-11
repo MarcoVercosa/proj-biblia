@@ -69,7 +69,7 @@ module.exports = (app) => {
         dataNomeFiltrado.map((recebe) => {
             armazena.push(recebe.name)
         })
-        console.log("BUSCOU /buscalivroantigotesta")
+        console.log("BUSCOU /buscalivronovotesta")
         res.json(armazena)
     })
 

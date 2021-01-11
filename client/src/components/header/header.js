@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, memo } from 'react';
 import { Link } from "react-router-dom";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function SearchAppBar() {
+function SearchAppBar() {
     const classes = useStyles();
     const [dataPesquisa, setDataPesquisa] = useState()
 
@@ -120,3 +120,5 @@ export default function SearchAppBar() {
         </div >
     );
 }
+
+export default memo(SearchAppBar)

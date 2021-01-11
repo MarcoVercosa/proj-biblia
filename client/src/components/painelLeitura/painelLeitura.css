@@ -11,7 +11,9 @@
     width: 65%;
     border-radius: 25px;
     padding: 15px;
-    display: inline-block;
+    /* display: inline-block; */
+    display: grid;
+    grid-template-columns: 100%;
 
 }
 
