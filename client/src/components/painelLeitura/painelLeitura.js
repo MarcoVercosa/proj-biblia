@@ -95,16 +95,23 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                         <SearchAppBar />
                         <menu className="painelleiturabiblia-menu" id="inicio">
                                 <article className="painelleitura-article">
-                                        <h3 className="painelleitura-article-h3">{paramsLivro} - {paramscapitulo}</h3>
-                                        {capitulos.data[1].map((recebe, index) => {
-                                                return (
-                                                        <p id={index + 1} className="painelleitura-article-paragrafo" key={index}><spam >{index + 1}</spam> - {recebe}</p>)
-                                        })}
 
+                                        <div className="painelleitura-article-div">
+                                                <h3 className="painelleitura-article-h3">{paramsLivro} - {paramscapitulo}</h3>
+                                                {capitulos.data[1].map((recebe, index) => {
+                                                        return (
+                                                                <p id={index + 1} className="painelleitura-article-paragrafo" key={index}><spam >{index + 1}</spam> - {recebe}</p>)
+                                                })}
+
+
+
+
+
+                                        </div>
+                                </article>
+                                <PainelMenuLateral />
+                                <article className="painelleitura-article-paginacao">
                                         <ul className="painelleitura-article-ul" >
-
-
-
 
                                                 <a href="#inicio">   <li
                                                         className="painelleitura-article-li" onClick={(recebe, livro = paramsLivro, capitulo = parseInt(paramscapitulo) - 1) => {
@@ -113,9 +120,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                                                         <span><i className="fas fa-arrow-circle-left fa-sm"></i></span>  {paramsLivro} -   {parseInt(paramscapitulo) - 1 === 0 ? parseInt(paramscapitulo) : parseInt(paramscapitulo) - 1}
                                                 </li > </a>
 
-                                                {/* <li className="painelleitura-article-li" className="painelleitura-article-li">
-                                                CAPÍTULO
-                                        </li> */}
+
                                                 <li className="painelleitura-article-li" >
 
                                                         <label  >CAPÍTULO</label>
@@ -139,11 +144,9 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                                                 </li > </a>
 
                                         </ul>
-
-
                                 </article>
 
-                                <PainelMenuLateral />
+
 
                                 <article className="painelleitura-article-article">
                                         {curiosidades && curiosidades.data.map((recebe, index) => {
