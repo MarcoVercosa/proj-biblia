@@ -18,7 +18,7 @@ export default function Sobre() {
                     <h2>Sobre</h2>
                     <p>Olá, meu nome é Marco. Uma pessoa cheia de defeitos e que comete falhas, mas que sempre tenta fazer o melhor e melhorar para agradar a <strong>Deus</strong>.</p>
                     <p><strong>A vida de um cristão é feita de busca incansável pela boa, perfeita e agradável presença de Deus e de boas obras, obras que ajudam seu próximo e que agradam o Pai, filho e o Espírito Santo segundo a vontade de Deus.</strong></p>
-                    <p>Mas eu sempre achei que as obras que faço ou que ja fiz ainda são pouquíssimas perto do que Deus já fez por mim.</p>
+                    <p>Mas eu sempre achei que as obras que faço ou que já fiz ainda são pouquíssimas perto do que Deus já fez por mim.</p>
                     <p>É claro, mesmo que se eu dedicar minha vida inteira a fazer obras, <strong>ainda sim não será o suficiente perto do que Deus e seu filho Jesus já fizeram por mim.</strong></p>
                     <p> E como gosto muito de tecnologia, resolvi criar algo relacionado que agradasse a Deus.</p>
                     <p>E foi com muito orgulho e suor que criei o site <strong>FONTE DE VIDA</strong>, para que você possa de forma dinâmica, fácil e intuitiva
@@ -39,7 +39,7 @@ export default function Sobre() {
 
                     <h3>QUE DEUS ABENÇOE CADA UM DE VOCÊS COM MUITA SAÚDE, PAZ E PRINCIPALMENTE COM A PRESENÇA DELE, NA QUAL É PERFEITA E AGRADÁVEL.</h3>
 
-                    <p>NÃO SE ESQUEÇA. VOCÊ É MUITO AMADO E ESPECIAL PARA DEUS. SEMPRE !<spam><i class="far fa-gem fa-2x"></i></spam></p>
+                    <p>NÃO SE ESQUEÇA: VOCÊ É MUITO AMADO E ESPECIAL PRA DEUS. SEMPRE !<spam><i class="far fa-gem fa-2x"></i></spam></p>
 
                     <p>Um forte abraço a todos.</p>
 

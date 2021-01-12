@@ -21,6 +21,8 @@ transition: all 500ms ease;
 font-family: 'Lora', serif;
 font-size: 22px;
 text-decoration: none;
+cursor: pointer;
+
 }
 .icone{
 margin-right: 15px;

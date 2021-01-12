@@ -15,24 +15,53 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
         const [capitulos, setCapitulos] = useState(false) //é alterado com o effect quando o site é carregado e pela func NavegaPagina que é chamadoa por avançar e voltar pagina
         const [indiceCapitulos, setIndiceCapitulos] = useState([]) //usado para listar os capitulos os botoes avanças e voltar
         const [curiosidades, setCuriosidades] = useState(false)
+        const [erroBusca, setErroBusca] = useState(false)
+        const [carregando, setCarregando] = useState(true)
 
 
+        const ErroAoBuscar = () => {
+                return (
+                        <>
+                                <SearchAppBar />
 
-
+                                <article className="erro-article">
+                                        <div className="erro-article-div">
+                                                <spam><i class="fas fa-exclamation-triangle fa-5x"></i></spam>
+                                                <h1>Desculpe, mas a pesquisa não retornou informação.</h1>
+                                        </div>
+                                </article>
+                                <PainelMenuLateral />
+                                <Footer />
+                        </>
+                )
+        }
 
 
         useEffect(async () => {//quando carrgada o componente, ja carrega com o livro e capitulo recebido pelo params
-                console.log(paramsVersiculo)
+
                 if (props.match.params.idade === "antigo") {
                         // armazenaIdadeLivro = "buscalivroantigotesta"
                         setIdade("antigotesta")
                         var recebe = await GetAPI(`antigotesta/${paramsLivro}/${paramscapitulo}`) // recebe = obj versiculos do capitulo + quantidade de capitulos do livro
+                        if (recebe.data[1] < 1 || recebe.data[0] < 1 || recebe.data < 1) {//se não retornar versiculo, capituos ou nada
+                                setErroBusca(true) //ative o componente true
+                                setCarregando(false) //desative o carregando
+                                return
+                        }
                         setCapitulos(recebe)
+                        setCarregando(false)
+
                 } else {
                         // armazenaIdadeLivro = "buscalivronovotesta"
                         setIdade("novotesta")
                         var recebe = await GetAPI(`novotesta/${paramsLivro}/${paramscapitulo}`)
+                        if (recebe.data[1] < 1 || recebe.data[0] < 1 || recebe.data < 1) {
+                                setErroBusca(true)
+                                setCarregando(false)
+                                return
+                        }
                         setCapitulos(recebe)
+                        setCarregando(false)
                 }
 
                 var temp = []
@@ -78,13 +107,19 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
         }
 
 
-        if (!capitulos) {//ICONE DE CARREGAR ENQUANTO NÃO TRAS AS INFOD
+        if (carregando) {//ICONE DE CARREGAR ENQUANTO NÃO TRAS AS INFOD
                 return (
                         <>
                                 <SearchAppBar />
                                 <LinearIndeterminate />
                                 <Footer />
                         </>
+                )
+        }
+
+        if (erroBusca) {
+                return (
+                        <ErroAoBuscar />
                 )
         }
 
