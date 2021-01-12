@@ -1,0 +1,12 @@
+.sobre-article{
+    display: inline-block;
+    margin:15px 0 15px 10px;
+    background-color: rgb(237, 233, 233);
+    width: 65%;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.sobre-article-div spam{
+    margin-left: 10px;
+}

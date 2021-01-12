@@ -43,23 +43,27 @@ export default function DialogSelect(props) {//props recebe ANTIGO TESTAMENTO" o
             const resultado = await GetAPI("buscalivroantigotesta")
             setIdadeLivro("antigo")
             setAntigoTestamento(resultado)
+
         } else {
 
             const resultado = await GetAPI("buscalivronovotesta")
             setIdadeLivro("novo")
             setAntigoTestamento(resultado)
+
         }
 
 
     }, [])
 
 
-    const handleChange = (event) => {
-        setSelectLivro(event.target.value)
-        BuscaCapitulo(event.target.value)
+    const handleChange = (event) => {//QUANDO UM CAPITULO É SELECIONADO
+        if (event.target.value === "SELECIONE") { setSelectLivro(false) } else {//se o valor do campo for SELECIONE, significa que não foi selecionado nenhum livro,
+            setSelectLivro(event.target.value) //FIXA NO ESTADO O VALOR DO LIVO
+            BuscaCapitulo(event.target.value) //CHAMA A FUNÇÃO PARA BUUSCAR OS CAPITULOS DO LIVRO
+        }
     };
 
-    async function BuscaCapitulo(recebe) { //busca o capitulo enviado o livro (recebe)
+    async function BuscaCapitulo(recebe) { //busca o capitulo enviando o livro (recebe)
         if (props.idadeLivro === "ANTIGO TESTAMENTO") {
             const capitulos = await GetAPI(`buscacapituloantigotesta${recebe}`)
             setSelectCapitulo(capitulos)
@@ -78,8 +82,8 @@ export default function DialogSelect(props) {//props recebe ANTIGO TESTAMENTO" o
 
     const handleClose = () => {
 
-        // props.DesativaSelect()
         setOpen(false);
+
     };
 
 
@@ -116,7 +120,11 @@ export default function DialogSelect(props) {//props recebe ANTIGO TESTAMENTO" o
                             <Select
                                 native
                                 value={selectCapituloAlteraCampo}
-                                onChange={(recebe) => { setSelectCapituloAlteraCampo(recebe.target.value) }}
+                                onChange={(recebe) => { //se o valor do campo for SELECIONE, significa que não foi selecionado nenhum versiculo, portanto conf o valor para fase e assim o botão ok não habilita
+                                    if (recebe.target.value === "SELECIONE") { setSelectCapituloAlteraCampo(false) } else {
+                                        setSelectCapituloAlteraCampo(recebe.target.value)
+                                    }
+                                }}
                                 input={<Input id="demo-dialog-native" />}
                             >
 
@@ -129,9 +137,7 @@ export default function DialogSelect(props) {//props recebe ANTIGO TESTAMENTO" o
 
 
                                 })}
-                                {/* <MenuItem value={10}>Ten</MenuItem> */}
-                                {/* <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem> */}
+
                             </Select>
                         </FormControl>
                     </form>
@@ -145,7 +151,9 @@ export default function DialogSelect(props) {//props recebe ANTIGO TESTAMENTO" o
                     <Link to={`/biblianvi/painelleitura/${idadeLivro}/${selectLivro}/${selectCapituloAlteraCampo}/m`} >
                         {/* o /M é pq na rota do routerdom pede o versiculo, e como o select não envia, para poder abrir o componente envia uma letra qualquer */}
                         {/* direciona para a URL/componente /biblianvi/painelleitura com os params forçando abrir o componente painelLeitura com o livro e o cap */}
-                        <Button onClick={handleClose} color="primary">
+                        <Button
+                            disabled={!selectLivro || !selectCapituloAlteraCampo}
+                            onClick={handleClose} color="primary">
                             Ok
           </Button>
                     </Link>

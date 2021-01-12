@@ -5,6 +5,7 @@ import Biblia from "./components/biblia/biblia"
 import PainelLeitura from "./components/painelLeitura/painelLeitura"
 import HinoHarpa from "./components/hinoHarpa/hinoHarpa"
 import PesquisaBiblia from "./components/pesquisaBiblia/pesquisabiblia"
+import Sobre from "./components/sobre/sobre"
 import './index.css';
 import App from './App';
 
@@ -21,6 +22,7 @@ ReactDOM.render(
       <Route path="/harpacrista" component={HinoHarpa} />
       {/* <Route path="/populaharpa" component={PopularBDHarpa} /> */}
       <Route path="/biblianvi/pesquisa/:palavrapesquisabiblia" component={PesquisaBiblia} />
+      <Route path="/sobre" component={Sobre} ></Route>
 
     </Switch>
   </ BrowserRouter>
