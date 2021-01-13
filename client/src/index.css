@@ -9,9 +9,157 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #bbe6e1;
+  display: block
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+@media screen and (max-width: 600px) {
+	body {    
+    /* background-color: red; */
+    max-width: 600px
+       
+  }
+
+  /* desativa menu acima imagem pagina inicial componente <menu/> */
+  .menu-ul{ 
+    display: none;
+  }
+/* Imagem página inicial */
+  .menu-menu .menu-imagem{
+    width: 100%;
+  }
+
+
+/* configura artigos abaixo imagem página inicial */
+  .artigo-article{    
+    flex-direction: column !important;    
+    padding: 0 !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+  .artigo-article-div-um,.artigo-article-div-dois, .artigo-article-div-tres{
+    /* width: auto !important;   */
+    padding: 0px !important;
+    margin: 0 auto !important;
+    width: 100% !important
+  }
+
+  /* Página para selecionar antigo ou novo testamento */
+  .biblia-div-um{
+    width: 100%;
+  }
+
+  .biblia-div-um div{
+    margin: 0 auto;
+    padding: 0;
+  }
+  .carrosel-div{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  /* imagem gerada quando seleciona o testamento */
+  .carrosel-div img{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* PAINEL LEITURA */
+  .painelleitura-menu{
+    display: none
+  }
+
+  .painelleiturabiblia-menu{
+    width: 100%;
+    padding: 0;
+  }
+  .painelleitura-article{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .painelleitura-article-paginacao{
+    width: 100%;
+  }
+
+
+/* Curiosidades */
+  .painelleitura-article-article{
+    grid-template-columns:  1fr
+  }
+  
+  .painelleitura-article-ul {
+    margin-top: 5px;
+    display:flex;
+    flex-direction: column;
+    width: auto;
+    justify-content:center;
+    text-align: center;
+  }
+  .painelleitura-article-li{
+    margin-bottom: 25px;
+  }
+
+  /* Página PESQUISAS */
+
+  .pesquisabibia-article-div-palavra{
+    width: 100%;
+
+  }
+  .pesquisabibia-article{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .pesquisabibia-article-div-um{
+    grid-template-columns: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .pesquisabibia-article-div-dois{
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .pesquisabibia-article-div-paginas{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .pesquisabibia-article-div-paginas-li-ul{
+    flex-direction: column;
+    width: auto;
+    justify-content:center;
+    text-align: center;
+  }
+  .pesquisabibia-article-div-paginas-li-ul li{
+    display: flex;
+    justify-content:center;
+    text-align: center;
+  }
+
+  .pesquisabibia-article-div-paginas-li-left{
+    margin: 0 
+  }
+  .pesquisabibia-article-div-paginas-li-right{
+    margin: 0 
+  }
+  .pesquisabibia-article-div-paginas-li-left span i{
+    margin-right: 20px;
+  }
+  .pesquisabibia-article-div-paginas-li-right span i{
+    margin-left: 20px;
+  } 
+
+/* HINOS HARPA */
+    
+
 }

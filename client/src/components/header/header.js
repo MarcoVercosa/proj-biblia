@@ -1,5 +1,6 @@
 import { React, useState, memo } from 'react';
 import { Link } from "react-router-dom";
+import MenuIcon from '@material-ui/icons/Menu';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -8,15 +9,27 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import "./header.css"
+
+
 
 
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
+        [theme.breakpoints.down('xs')]: {
+            width: '100%'
+        },
+
     },
     menuButton: {
         marginRight: theme.spacing(2),
+        display: "none",
+        [theme.breakpoints.down('xs')]: {
+            display: 'block',
+        },
     },
     title: {
         flexGrow: 1,
@@ -67,12 +80,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SearchAppBar() {
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
     const classes = useStyles();
     const [dataPesquisa, setDataPesquisa] = useState()
 
     function Buscar(tecla) {
         if (tecla.key === "Enter") {
-            alert("Pressione o botão buscar para encontrar o que deseja")
+            // alert("Pressione o botão buscar para encontrar o que deseja")
+            window.location.href = `/biblianvi/pesquisa/${dataPesquisa}`
         }
     }
 
@@ -80,18 +104,49 @@ function SearchAppBar() {
         <div className={classes.root}>
             <AppBar position="relative" style={{ backgroundColor: "#14a37f" }}>
                 <Toolbar>
-                    <IconButton
+                    {/* <IconButton
                         edge="start"
                         className={classes.menuButton}
                         color="inherit"
                         aria-label="open drawer"
                     >
-                        {/* <MenuIcon /> */}
-                    </IconButton>
+                        <MenuIcon />
+
+                    </IconButton> */}
+
+
+                    <Button aria-controls="simple-menu" 
+                     aria-haspopup="true"
+                     className={classes.menuButton}
+                     style={{ backgroundColor: "green" }} onClick={handleClick}>
+                        Menu
+                
+                    <Menu
+                        id="simple-menu"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                    >
+                        <Link className='li-vamos' to="/">
+                            <MenuItem onClick={handleClose}>INÍCIO</MenuItem></Link>
+                        <Link className='li-vamos' to="/biblianvi#selecionar">
+                            <MenuItem onClick={handleClose}>LEITURA DA BÍBLIA</MenuItem></Link>
+                        <Link className='li-vamos' to="/harpacrista">
+                            <MenuItem onClick={handleClose}>HINOS DA HARPA</MenuItem></Link>
+                        <Link className="li-vamos" to="/sobre">
+                            <MenuItem onClick={handleClose}>SOBRE</MenuItem></Link>
+                    </Menu>
+                    </Button>
+
+
+
+
+
                     <Typography style={{ display: "flex", fontFamily: 'Lora' }}
                         className={classes.title} variant="h4" noWrap>
                         <span style={{ marginLeft: "15px" }}
-                            className="icone-bible"><i className="fas fa-bible fa-sm"></i></span> <span style={{ marginLeft: "25px" }}> FONTE DE VIDA on line</span>
+                            className="icone-bible"><i className="fas fa-bible fa-sm"></i></span> <span className="SearchAppBar-spam" style={{ marginLeft: "25px" }}> FONTE DE VIDA on line</span>
                     </Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
@@ -109,12 +164,12 @@ function SearchAppBar() {
                         />
 
                     </div>
-                    <Link to={`/biblianvi/pesquisa/${dataPesquisa}`}>
+                    {/* <Link to={`/biblianvi/pesquisa/${dataPesquisa}`}>
                         <Button
                             style={{ marginLeft: "7px" }}
                             variant="contained">Buscar
                         </Button>
-                    </Link>
+                    </Link> */}
                 </Toolbar>
             </AppBar>
         </div >

@@ -6,7 +6,7 @@ import { HashLink as Link } from "react-router-hash-link"// o hash faz funcionar
 export default function Menu() {
 
     return (
-        <menu>
+        <menu className="menu-menu">
             <hr></hr>
             <ul className="menu-ul">
 

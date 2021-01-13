@@ -5,10 +5,10 @@ export default function Article() {
 
     return (
 
-        <article className="article-article">
+        <article className="artigo-article">
             <hr></hr>
 
-            <div className="article-um">
+            <div className="artigo-article-div-um">
 
                 <span><i className="fas fa-bible fa-4x"> </i></span>
                 <h3>Versão disponível - NVI</h3>
@@ -17,7 +17,7 @@ export default function Article() {
                 aramaico e grego, o que torna o conteúdo da tradução NVI mais confiável ainda.</p>
             </div>
 
-            <div className="article-dois">
+            <div className="artigo-article-div-dois">
 
                 <span><i className="fas fa-mouse fa-4x" ></i></span>
                 <h3>Onde você estiver</h3>
@@ -26,7 +26,7 @@ export default function Article() {
                 </p>
             </div>
 
-            <div className="article-tres">
+            <div className="artigo-article-div-tres">
                 <span><i className="fas fa-mobile-alt fa-4x"></i></span>
                 <h3>Fácil leitura em seu celular</h3>
                 <p>O site FONTE DE VIDA foi criado não só para ser de fácil acesso em seu computador,
