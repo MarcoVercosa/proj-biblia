@@ -30,13 +30,31 @@ code {
   .menu-ul{ 
     display: none;
   }
-/* Imagem página inicial */
+  /* Imagem página inicial */
   .menu-menu .menu-imagem{
     width: 100%;
   }
 
+  /* FOOTER */
+  .footer-footer{
+  height: auto;
+  margin-top: 10px
+  }
 
-/* configura artigos abaixo imagem página inicial */
+  .footer-ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .footer-ul li{
+    padding: 0;
+    margin:0 auto;
+  }
+
+
+  /* configura artigos abaixo imagem página inicial */
   .artigo-article{    
     flex-direction: column !important;    
     padding: 0 !important;
@@ -84,13 +102,16 @@ code {
     padding: 0;
     margin: 0;
   }
+  .painelleitura-article-div{
+    padding: 3px;
+  }
 
   .painelleitura-article-paginacao{
     width: 100%;
   }
 
 
-/* Curiosidades */
+  /* Curiosidades */
   .painelleitura-article-article{
     grid-template-columns:  1fr
   }
@@ -159,7 +180,44 @@ code {
     margin-left: 20px;
   } 
 
-/* HINOS HARPA */
-    
 
+
+  /* HINOS HARPA */
+
+  .hinoharp-article{
+    flex-direction: column;
+  }
+  .hinoharpa-article-div-numero{
+      width: 100%;      
+  }
+
+  .hinoharpa-article-div-titulo{
+      width: 100% ;      
+  }
+  .hinoharpaleitura-article{
+      width: 100%;
+      padding: 0  ;
+      margin: 0 auto;
+  }
+  .hinoharpa-busca-menu{
+    grid-template-columns: 50% 50%;
+    margin: 0 auto;
+    padding: 0;    
+  }
+  .hinoharpa-busca-menu div{
+    margin: 0 auto;
+    padding: 0;  
+    width: auto;    
+  }
+  
+  /* SOBRE */
+
+  .sobre-article{
+    width: 100%;
+    padding: 0;
+    margin: 10px 0 0 0 
+  }
+  .sobre-article-div{
+    padding: 3px;
+  }
 }

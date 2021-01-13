@@ -1,14 +1,14 @@
 .painelleiturabiblia-menu{
     display: inline-block;
     position: relative;
-    
+    margin-left: 0px;
 
 }
 .painelleitura-article{
     display: inline-block;
-    margin:15px 0 15px 10px;
+    margin:15px 0 15px 0px;
     background-color: rgb(237, 233, 233);
-    width: 65%;
+    width: 60%;
     border-radius: 25px;
     padding: 15px;
     /* display: inline-block; */
@@ -47,7 +47,7 @@ border-radius: 15px;
     text-align: left;
     vertical-align: left; */
     display: flex;
-    width: 66.5%;
+    width: 56.5%;
     margin-left: 13px;
     
 }

@@ -138,10 +138,6 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
                                                                 <p id={index + 1} className="painelleitura-article-paragrafo" key={index}><spam >{index + 1}</spam> - {recebe}</p>)
                                                 })}
 
-
-
-
-
                                         </div>
                                 </article>
                                 <PainelMenuLateral />

@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 export default function HinoHarpa() {
     const classes = useStyles();
     const [numerosHinos, setNumerosHinos] = useState()  //armazena numeros dos hinos vindos do bd
-    const [alteraCampoNumero, setAlteraCampoNumero] = useState(false) //responspavel por fixar o campo nuro selecionado
+    const [alteraCampoNumero, setAlteraCampoNumero] = useState(false) //responspavel por fixar o campo numero selecionado
     const [letraHino, setLetraHino] = useState(false) //armazena a letra do Hino. é falso para renderizar somente quando houver dados
     const [tituloHino, setTituloHino] = useState(false) //armazena o título do Hino
     const [campoTituloBusca, setCampoTituloBusca] = useState()// armazena dados do campo busca titulo
@@ -47,12 +47,17 @@ export default function HinoHarpa() {
 
     async function BuscarHinoPorNumero(recebe) {//recebe só terá valor se for chamada pelo buscar por título Gambi, pq demora para atualizar o estado do setAlteraCampoNumero
 
+        if (!alteraCampoNumero) {
+            alert("Selecione um número para buscar o Hino")
+            return
+        }
         if (recebe) {
             setAlteraCampoNumero(recebe)
             const buscaHino = await GetAPI(`buscatitulopornumero/${recebe}`)
             console.log(letraHino)
             var armazena = []
             armazena = buscaHino.data[0].letra.split("%")
+            setErroPesquisaPorPalavra(false)
             setLetraHino(armazena)//armazena array com as linhas já divididas
             setTituloHino(buscaHino.data[0].titulo) //armazena o titulo do hino
         } else {
@@ -61,12 +66,17 @@ export default function HinoHarpa() {
             console.log(letraHino)
             var armazena = []
             armazena = buscaHino.data[0].letra.split("%")
+            setErroPesquisaPorPalavra(false)
             setLetraHino(armazena)//armazena array com as linhas já divididas
             setTituloHino(buscaHino.data[0].titulo) //armazena o titulo do hino
         }
     }
 
     async function BuscahinoPorLetraTitulo() {//busca título hino por letra
+        if (campoTituloBusca === undefined || campoTituloBusca.length < 2) {
+            alert("Digite ao menos 2 letras para iniciar a pesquisa")
+            return
+        }
         const recebe = await GetAPI(`buscatituloporpalavra/${campoTituloBusca}`)
         if (recebe.data.length < 1) {// se não retornar nada
             setErroPesquisaPorPalavra(true)
@@ -91,6 +101,22 @@ export default function HinoHarpa() {
         )
     }
 
+    // if (erroPesquisaPorPalavra) {
+    //     return (
+    //         <>
+    //             <SearchAppBar />
+    //             <menu className="hinoharpa-busca-menu-erro">
+    //                 <spam><i class="far fa-frown fa-4x"></i></spam>
+    //                 <p>Não encontrei o Hino desejado.</p>
+    //             </menu>
+    //             <PainelMenuLateral />
+    //             <Footer />
+    //         </>
+    //     )
+    // }
+
+
+
     return (
 
         <>
@@ -101,7 +127,7 @@ export default function HinoHarpa() {
                     {/* style={{ display: "block" }} */}
 
                     <div className="hinoharpa-article-div-numero">
-                        <label className="hinoharpa-article-div-label-numero" >POR NÚMERO</label>
+                        <label className="hinoharpa-article-div-label-numero" >NÚMERO</label>
 
                         <form className="hinoharpa-article-div-form">
                             <select className="hinoharpa-article-div-select"
@@ -134,7 +160,7 @@ export default function HinoHarpa() {
                     </div>
                     <div className="hinoharpa-article-div-titulo">
                         <div>
-                            <label className="hinoharpa-article-div-label-titulo" >POR PALAVRA</label>
+                            <label className="hinoharpa-article-div-label-titulo" >PALAVRA</label>
                         </div>
 
                         <form className={classes.root} noValidate autoComplete="off">
@@ -158,6 +184,22 @@ export default function HinoHarpa() {
                 </article>
                 <hr></hr>
 
+
+
+                {erroPesquisaPorPalavra
+                    &&
+                    <menu className="hinoharpa-busca-menu-erro">
+                        <spam><i class="far fa-frown fa-4x"></i></spam>
+                        <p>Não encontrei o Hino desejado.</p>
+                    </menu>
+                }
+
+
+
+
+
+
+
                 <article className="hinoharpaleitura-article">
                     <h3>{tituloHino}</h3>
                     {letraHino &&
@@ -169,16 +211,6 @@ export default function HinoHarpa() {
                                 </>
                             )
                         })}
-
-                    <menu className="hinoharpa-busca-menu-erro">
-                        {erroPesquisaPorPalavra &&
-                            <>
-                                <spam><i class="far fa-frown fa-4x"></i></spam>
-                                <p>Não encontrei o Hino desejado.</p>
-                            </>
-                        }
-                    </menu>
-
 
 
                     <menu className="hinoharpa-busca-menu">

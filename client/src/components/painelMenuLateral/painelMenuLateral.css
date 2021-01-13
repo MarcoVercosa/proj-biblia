@@ -5,10 +5,12 @@
     background-color: #19a582;
     border-radius: 20px;
     margin-left: 15px;  
+    padding: 0;
 }
 
 .menu-painelleitura-ul{
 list-style: none;
+padding: 0;
 }
 
 .menu-painelleitura-li{

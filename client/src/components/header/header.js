@@ -94,7 +94,12 @@ function SearchAppBar() {
     const [dataPesquisa, setDataPesquisa] = useState()
 
     function Buscar(tecla) {
+      
         if (tecla.key === "Enter") {
+            if(dataPesquisa === undefined || dataPesquisa.length < 2 ){  
+                alert("Digite ao menos 2 letras para iniciar a pesquisa")          
+                return
+            }
             // alert("Pressione o botão buscar para encontrar o que deseja")
             window.location.href = `/biblianvi/pesquisa/${dataPesquisa}`
         }
