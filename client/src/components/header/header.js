@@ -10,6 +10,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+
+
 import "./header.css"
 
 
@@ -130,29 +132,26 @@ function SearchAppBar() {
                     </IconButton> */}
 
 
-                    <Button aria-controls="simple-menu"
-                        aria-haspopup="true"
-                        className={classes.menuButton}
-                        onClick={handleClick}>
+                    <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} className={classes.menuButton}>
                         <i style={{ color: "white" }} class="fas fa-bars fa-2x"></i>
 
-                        <Menu
-                            id="simple-menu"
-                            anchorEl={anchorEl}
-                            keepMounted
-                            open={Boolean(anchorEl)}
-                            onClose={handleClose}
-                        >
-                            <Link className='li-vamos' to="/">
-                                <MenuItem onClick={handleClose}>INÍCIO</MenuItem></Link>
-                            <Link className='li-vamos' to="/biblianvi#selecionar">
-                                <MenuItem onClick={handleClose}>LEITURA DA BÍBLIA</MenuItem></Link>
-                            <Link className='li-vamos' to="/harpacrista">
-                                <MenuItem onClick={handleClose}>HINOS DA HARPA</MenuItem></Link>
-                            <Link className="li-vamos" to="/sobre">
-                                <MenuItem onClick={handleClose}>SOBRE</MenuItem></Link>
-                        </Menu>
                     </Button>
+                    <Menu
+                        id="simple-menu"
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                    >
+                        <Link className='li-vamos' to="/">
+                            <MenuItem onClick={handleClose}>INÍCIO</MenuItem></Link>
+                        <Link className='li-vamos' to="/biblianvi#selecionar">
+                            <MenuItem onClick={handleClose}>LEITURA DA BÍBLIA</MenuItem></Link>
+                        <Link className='li-vamos' to="/harpacrista">
+                            <MenuItem onClick={handleClose}>HINOS DA HARPA</MenuItem></Link>
+                        <Link className="li-vamos" to="/sobre">
+                            <MenuItem onClick={handleClose}>SOBRE</MenuItem></Link>
+                    </Menu>
 
 
 
