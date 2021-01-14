@@ -26,6 +26,12 @@ code {
        
   }
 
+  /* Barra de Pesquisa Material UI */
+
+  .SearchAppBar-spam{
+    display: none
+  }
+
   /* desativa menu acima imagem pagina inicial componente <menu/> */
   .menu-ul{ 
     display: none;

@@ -1,6 +1,5 @@
 import { React, useState, memo } from 'react';
 import { Link } from "react-router-dom";
-import MenuIcon from '@material-ui/icons/Menu';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -51,6 +50,14 @@ const useStyles = makeStyles((theme) => ({
             marginLeft: theme.spacing(1),
             width: 'auto',
         },
+
+
+        [theme.breakpoints.down('xs')]: {
+            marginLeft: theme.spacing(1),
+            width: '60%',
+        },
+
+
     },
     searchIcon: {
         padding: theme.spacing(0, 2),
@@ -77,6 +84,9 @@ const useStyles = makeStyles((theme) => ({
             },
         },
     },
+
+
+
 }));
 
 function SearchAppBar() {
@@ -94,10 +104,10 @@ function SearchAppBar() {
     const [dataPesquisa, setDataPesquisa] = useState()
 
     function Buscar(tecla) {
-      
+
         if (tecla.key === "Enter") {
-            if(dataPesquisa === undefined || dataPesquisa.length < 2 ){  
-                alert("Digite ao menos 2 letras para iniciar a pesquisa")          
+            if (dataPesquisa === undefined || dataPesquisa.length < 2) {
+                alert("Digite ao menos 2 letras para iniciar a pesquisa")
                 return
             }
             // alert("Pressione o botão buscar para encontrar o que deseja")
@@ -120,28 +130,28 @@ function SearchAppBar() {
                     </IconButton> */}
 
 
-                    <Button aria-controls="simple-menu" 
-                     aria-haspopup="true"
-                     className={classes.menuButton}
-                     style={{ backgroundColor: "green" }} onClick={handleClick}>
-                        Menu
-                
-                    <Menu
-                        id="simple-menu"
-                        anchorEl={anchorEl}
-                        keepMounted
-                        open={Boolean(anchorEl)}
-                        onClose={handleClose}
-                    >
-                        <Link className='li-vamos' to="/">
-                            <MenuItem onClick={handleClose}>INÍCIO</MenuItem></Link>
-                        <Link className='li-vamos' to="/biblianvi#selecionar">
-                            <MenuItem onClick={handleClose}>LEITURA DA BÍBLIA</MenuItem></Link>
-                        <Link className='li-vamos' to="/harpacrista">
-                            <MenuItem onClick={handleClose}>HINOS DA HARPA</MenuItem></Link>
-                        <Link className="li-vamos" to="/sobre">
-                            <MenuItem onClick={handleClose}>SOBRE</MenuItem></Link>
-                    </Menu>
+                    <Button aria-controls="simple-menu"
+                        aria-haspopup="true"
+                        className={classes.menuButton}
+                        onClick={handleClick}>
+                        <i style={{ color: "white" }} class="fas fa-bars fa-2x"></i>
+
+                        <Menu
+                            id="simple-menu"
+                            anchorEl={anchorEl}
+                            keepMounted
+                            open={Boolean(anchorEl)}
+                            onClose={handleClose}
+                        >
+                            <Link className='li-vamos' to="/">
+                                <MenuItem onClick={handleClose}>INÍCIO</MenuItem></Link>
+                            <Link className='li-vamos' to="/biblianvi#selecionar">
+                                <MenuItem onClick={handleClose}>LEITURA DA BÍBLIA</MenuItem></Link>
+                            <Link className='li-vamos' to="/harpacrista">
+                                <MenuItem onClick={handleClose}>HINOS DA HARPA</MenuItem></Link>
+                            <Link className="li-vamos" to="/sobre">
+                                <MenuItem onClick={handleClose}>SOBRE</MenuItem></Link>
+                        </Menu>
                     </Button>
 
 
@@ -151,7 +161,7 @@ function SearchAppBar() {
                     <Typography style={{ display: "flex", fontFamily: 'Lora' }}
                         className={classes.title} variant="h4" noWrap>
                         <span style={{ marginLeft: "15px" }}
-                            className="icone-bible"><i className="fas fa-bible fa-sm"></i></span> <span className="SearchAppBar-spam" style={{ marginLeft: "25px" }}> FONTE DE VIDA on line</span>
+                            className="icone-bible"><i className="fas fa-bible fa-1x"></i></span> <span className="SearchAppBar-spam" style={{ marginLeft: "25px" }}> FONTE DE VIDA on line</span>
                     </Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
