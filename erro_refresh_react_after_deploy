@@ -1,0 +1,57 @@
+In order to avoid 404 error on Apache server you would have to enable mod_rewrite and add .htaccess file in root directory
+
+Step 1 — Enabling mod_rewrite
+
+First, we need to activate mod_rewrite. It's available but not enabled with a clean Apache 2 installation.
+
+sudo a2enmod rewrite
+This will activate the module or alert you that the module is already enabled. To put these changes into effect, restart Apache.
+
+sudo systemctl restart apache2
+or
+
+sudo service apache2 restart
+Step 2 — Setting Up .htaccess
+
+By default, Apache prohibits using an .htaccess file to apply rewrite rules, so first you need to allow changes to the file. Open the default Apache configuration file using nano or your favorite text editor.
+
+sudo nano /etc/apache2/sites-available/000-default.conf
+Inside that file, you will find a < VirtualHost *:80> block starting on the first line. Inside of that block, add the following new block so your configuration file looks like the following. Make sure that all blocks are properly indented.
+
+<VirtualHost *:80>
+    <Directory /var/www/html>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    . . .
+</VirtualHost>
+And if you have https configured, you will find a < VirtualHost *:443> block starting on the first line. Inside of that block, add the following new block so your configuration file looks like the following. Make sure that all blocks are properly indented. In this case, you also need to add this below 2 virtual hosts of HTTP and HTTPS
+
+<VirtualHost *:443>
+    <Directory /var/www/html>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    . . .
+</VirtualHost>
+Save and close the file. To put these changes into effect, restart Apache.
+
+sudo systemctl restart apache2
+or
+
+sudo service apache2 restart
+Step 3 — creating .htaccess
+
+Now, create the following .htaccess file in the web root.
+
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]
+If you have already enabled mod_rewrite and applied rewrite rules the skip step 1 and step 2 and use step 3 directly
+
+I have referred documentation of React and server setup by digital Ocean
