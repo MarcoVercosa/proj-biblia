@@ -47,10 +47,10 @@ export default function HinoHarpa() {
 
     async function BuscarHinoPorNumero(recebe) {//recebe só terá valor se for chamada pelo buscar por título Gambi, pq demora para atualizar o estado do setAlteraCampoNumero
 
-        if (!alteraCampoNumero) {
-            alert("Selecione um número para buscar o Hino")
-            return
-        }
+        // if (!alteraCampoNumero) {
+        //     alert("Selecione um número para buscar o Hino")
+        //     return
+        // }
         if (recebe) {
             setAlteraCampoNumero(recebe)
             const buscaHino = await GetAPI(`buscatitulopornumero/${recebe}`)
@@ -145,13 +145,13 @@ export default function HinoHarpa() {
                             <TextField
                                 multiline={true}
                                 rows={2}
-                                style={{ marginLeft: "20px" }}
+                                style={{ marginLeft: "10px", width: "50%", justifyContent: "center", textAlign: "center", marginBottom: "10px" }}
                                 disabled={true}
                                 size="small"
                                 id="outlined-basic"
-                                label={tituloHino} variant="outlined" />
+                                label={tituloHino} />
 
-                            <Button style={{ backgroundColor: "#14a37f", color: "White", marginLeft: "10px" }} variant="contained"
+                            <Button style={{ backgroundColor: "#14a37f", color: "White", marginLeft: "15px" }} variant="contained" disabled={!alteraCampoNumero}
                                 onClick={() => { BuscarHinoPorNumero() }}
                             >BUSCAR</Button>
 
