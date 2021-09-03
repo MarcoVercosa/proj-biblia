@@ -26,8 +26,7 @@ export default function Biblia() {
             setMostraSelectNovo(true)
             setIdadeLivro(livro)
         }
-        // setIdadeLivro(livro)
-        // setDialogSelect(true)
+
     }
 
     function DesativaSelect() {

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import "./carrosel.css"
 import Zero from "./zero.jpg"
 import Um from "./um.jpg"
@@ -21,7 +20,7 @@ export default function Carrosel(props) {
 
     if (props.idadeLivro === "ANTIGO TESTAMENTO") {
         return (
-            <div className="carrosel-div">
+            <div className="carrosel-div imagem-zero">
                 <img className="imagem-carrosel" src={imagem[0]} />
             </div>
         )
@@ -29,7 +28,7 @@ export default function Carrosel(props) {
 
     if (props.idadeLivro === "NOVO TESTAMENTO") {
         return (
-            <div className="carrosel-div">
+            <div className="carrosel-div imagem-um">
                 <img className="imagem-carrosel" src={imagem[1]} />
             </div>
         )
@@ -37,8 +36,8 @@ export default function Carrosel(props) {
 
     else {
         return (
-            <div className="carrosel-div">
-                <img className="imagem-carrosel" src={imagem[2]} />
+            <div className="carrosel-div imagem-dois">
+                <img className="imagem-carrosel imagem-carrosel-daniel " src={imagem[2]} />
             </div>
         )
     }
