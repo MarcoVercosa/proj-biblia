@@ -54,7 +54,7 @@ export default function HinoHarpa() {
         if (recebe) {
             setAlteraCampoNumero(recebe)
             const buscaHino = await GetAPI(`buscatitulopornumero/${recebe}`)
-            console.log(letraHino)
+            //console.log(letraHino)
             var armazena = []
             armazena = buscaHino.data[0].letra.split("%")
             setErroPesquisaPorPalavra(false)
@@ -63,7 +63,7 @@ export default function HinoHarpa() {
         } else {
 
             const buscaHino = await GetAPI(`buscatitulopornumero/${alteraCampoNumero}`)
-            console.log(letraHino)
+            //console.log(letraHino)
             var armazena = []
             armazena = buscaHino.data[0].letra.split("%")
             setErroPesquisaPorPalavra(false)
@@ -85,7 +85,7 @@ export default function HinoHarpa() {
             setTituloHino(false)
 
         } else {
-            console.log(recebe)
+            //console.log(recebe)
             setLetraHino(false)//não permitindo renderizar as letras do hino que estiver sendo mostrado
             setTituloHino(false)//não permitindo renderizar o titulo do hino que estiver sendo mostrado
 

@@ -21,7 +21,7 @@ export default function PesquisaBiblia(props) {
 
 
     useEffect(async () => {
-        console.log("Params " + props.match.params.palavrapesquisabiblia)
+        //console.log("Params " + props.match.params.palavrapesquisabiblia)
         const palavraPesquisadaSemAcento = palavraPesquisada.normalize("NFD").replace(/[\u0300-\u036f]/g, "") //retira acentos
         const resultado = await GetApi(`biblianvi/pesquisa/${palavraPesquisadaSemAcento.toLowerCase()}`)
         if (resultado.data.length < 1) {
@@ -42,7 +42,7 @@ export default function PesquisaBiblia(props) {
 
     async function MaisPesquisa() {
         if (palavraPesquisada != props.match.params.palavrapesquisabiblia) {//quando uma nova pesquisa é feita a url altera mas o useefect não carrega, para saber se houve nova pesquisa comparamos os dois
-            console.log("NOVA PESQUISA COM A PALAVRA: " + props.match.params.palavrapesquisabiblia)
+            //console.log("NOVA PESQUISA COM A PALAVRA: " + props.match.params.palavrapesquisabiblia)
             setPalavraPesquisada(props.match.params.palavrapesquisabiblia)
             const palavraPesquisadaSemAcento = props.match.params.palavrapesquisabiblia.normalize("NFD").replace(/[\u0300-\u036f]/g, "") //retira acentos
             const resultado = await GetApi(`biblianvi/pesquisa/${palavraPesquisadaSemAcento.toLowerCase()}`)
@@ -145,8 +145,8 @@ export default function PesquisaBiblia(props) {
                     <a href="#inicio" ><li className="pesquisabibia-article-div-paginas-li-left"
                         onClick={(recebe, voltar = "voltar") => { Paginacao(recebe, voltar) }}>
                         <span><i className="fas fa-arrow-circle-left sm"></i></span>
-                            Voltar
-                        </li>
+                        Voltar
+                    </li>
                     </a>
 
                     <li> Página {dadosPesquisaPaginacao[0].saberQuePagina} de {dadosPesquisaPaginacao[0].tamanho % 4 === 0 ? dadosPesquisaPaginacao[0].tamanho / 4 : Math.floor(dadosPesquisaPaginacao[0].tamanho / 4 + 1)}</li>
