@@ -9,8 +9,8 @@ conectaBD.connect((erro) => {
 
     if (erro) {
         console.log("Houve um erro para carregar o banco de dados => " + erro)
+        
     } else {
-
         console.log("Conectado no banco de dados HinoHarpa com sucesso")
         Tabelas.init(conectaBD)
 
