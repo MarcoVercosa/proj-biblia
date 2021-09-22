@@ -56,4 +56,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [QSA,L]
 If you have already enabled mod_rewrite and applied rewrite rules the skip step 1 and step 2 and use step 3 directly
 
-I have referred documentation of React and server setup by digital Ocean
+I have referred documentation of React and server setup by digital Ocean.
