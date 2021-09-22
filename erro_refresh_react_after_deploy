@@ -1,6 +1,6 @@
 https://stackoverflow.com/questions/51357947/react-app-on-server-while-refreshing-the-page-shows-404-page
 
-In order to avoid 404 error on Apache server you would have to enable mod_rewrite and add .htaccess file in root directory
+In order to avoid 404 error on Apache server you would have to enable mod_rewrite and add .htaccess file in root directory.
 
 Step 1 — Enabling mod_rewrite
 
