@@ -2,7 +2,6 @@
 const AlteraDadosBD = require("../infrabd/alteraDados")
 
 const fs = require("fs")
-const { isNullOrUndefined } = require("util")
 
 module.exports = (app) => {
     console.log("MÓDULO DE ROTAS CAREGADO")

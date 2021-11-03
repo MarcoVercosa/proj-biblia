@@ -1,0 +1,4 @@
+2/10/2021 -- 21:44 => NEGADO acesso da origem
+             - http://localhost:3000 com o método - GET  na rota - /buscalivroantigotesta
+2/10/2021-- 21:46 => LIBERADO acesso da origem
+             - http://localhost:3000 com o método - GET na rota - /buscalivroantigotesta
