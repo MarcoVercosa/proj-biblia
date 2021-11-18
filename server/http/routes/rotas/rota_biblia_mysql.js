@@ -12,12 +12,28 @@ Rota_Biblia_Mysql.get("/buscaversao", async (req, res) => {
     res.send(resultado)
 })
 
+Rota_Biblia_Mysql.get("/buscatestamento", async (req, res) => {
+
+    let resultado = await Busca_Dados.BuscaTestamento()
+    console.log("buscatestamento")
+    res.send(resultado)
+})
+
 Rota_Biblia_Mysql.get("/buscalivros", async (req, res) => {
 
     let resultado = await Busca_Dados.BuscaLivros()
     console.log("resultado")
     res.send(resultado)
 })
+
+Rota_Biblia_Mysql.get("/buscaconteudo/:versao/:livro/:capitulo", async (req, res) => {
+
+    let resultado = await Busca_Dados.BuscaConteudo(req.params.versao, req.params.livro, req.params.capitulo)
+    console.log("Busca conteudo")
+    res.send(resultado)
+})
+
+
 
 
 module.exports = Rota_Biblia_Mysql
