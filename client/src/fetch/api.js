@@ -1,6 +1,7 @@
 import axios from "axios"
 
-let local = "192.168.0.14"
+// let local = "192.168.0.14"
+let local = "172.29.0.3"
 let publico = "fontedevida.mavs.vps-kinghost.net"
 
 
