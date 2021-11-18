@@ -1,5 +1,5 @@
 // const Atendimento = require("../models/atendimentos")  // recebe a class Atendimento do Models
-const AlteraDadosBD = require("../../../infrabd/alteraDados")
+const AlteraDadosBD = require("../../../infrabd/Hino_e_Harpa")
 const RotasJson = require("express").Router()
 
 const fs = require("fs")

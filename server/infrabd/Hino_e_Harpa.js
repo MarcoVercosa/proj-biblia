@@ -1,6 +1,6 @@
 const conectaBD = require("./conexao")
 
-class AlteraDadosBD {
+class BuscaDadosBD {
 
 
 
@@ -75,4 +75,4 @@ class AlteraDadosBD {
 
 }
 
-module.exports = new AlteraDadosBD
+module.exports = new BuscaDadosBD

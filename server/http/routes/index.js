@@ -1,7 +1,11 @@
 const express = require("express")
-const RotasJson = require("./rotas/biblia_Json")
 let router = express()
 const cors = require('cors');
+
+const rota_biblia_Json = require("./rotas/rota_biblia_Json")
+const rota_biblia_mysql = require("./rotas/rota_biblia_mysql")
+
+
 
 router.use((req, res, next) => {
     //Qual site tem permissão de realizar a conexão, no exemplo abaixo está o "*" indicando que qualquer site pode fazer a conexão
@@ -12,8 +16,10 @@ router.use((req, res, next) => {
     next();
 });
 
-router.use("/", RotasJson)
+router.use("/", rota_biblia_Json)
 //Rotas da biblia NVI somente do formato JSON
+
+router.use("/mais", rota_biblia_mysql)
 
 
 module.exports = router
