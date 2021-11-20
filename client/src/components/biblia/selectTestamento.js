@@ -155,7 +155,7 @@ export default function DialogSelect(props) {//props recebe ANTIGO TESTAMENTO" o
                             disabled={!selectLivro || !selectCapituloAlteraCampo}
                             onClick={handleClose} color="primary">
                             Ok
-          </Button>
+                        </Button>
                     </Link>
                 </DialogActions>
             </Dialog>

@@ -47,6 +47,21 @@ class Busca_Biblia_BD {
             })
         })
     }
+
+    BuscaCapitulo(versao_id, livro_id,){
+
+        return new Promise((resolve, reject)=>{
+            const sql = ` SELECT capitulo FROM  biblia.versiculos WHERE versao_id=${versao_id} AND livro_id=${livro_id}`
+            conectaBD.query(sql, (erro, resultado) => {
+                if (erro) {
+                    reject(erro)
+                } else {
+                    resolve(resultado)
+                }
+            })
+        })
+    }
+
     BuscaConteudo(versao_id, livro_id, capitulo) {
 
         return new Promise((resolve, reject) => {
