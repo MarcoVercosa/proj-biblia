@@ -12,7 +12,7 @@ export default function NovoPainelLeitura(props){
     return (
         <>
         <SearchAppBar/>
-        <h1>Bem vindo ao novo painel de leitura</h1>
+        <h1>Bem vindo ao novo painel de leituras</h1>
         <h1></h1>
         <Footer/>
         </>
