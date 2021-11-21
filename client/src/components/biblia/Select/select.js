@@ -7,7 +7,6 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import InputLabel from "@material-ui/core/InputLabel";
 import Input from "@material-ui/core/Input";
-import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
@@ -65,26 +64,26 @@ export default function DialogSelect() {
     setVersao(data)
     
 
-  },[])
+  }, [])
 
   async function BuscaOpcoesSelecionadas(opcao, dadoSelecionado,){
     if(opcao==="versao"){
          
       let Get_ID = []
       //obtem o ID da versão selecionada
-       versao.map((dados) => { 
+      versao.map((dados) => { 
         if(dadoSelecionado == dados.versao_nome){Get_ID.push(dados.versao_id)}
-      })      
+      });      
       // atualiza o obj para armazenar a opção selecionada
       setCamposSelecionados(prevStat => {
         return {... prevStat, versao: dadoSelecionado, versao_id: Get_ID}
-      })    
+      });    
 
       // busca os dados da proxima opção que é testamento
       const { data } = await GetAPI("mais/buscatestamento")
       setTestamento(data)
 
-      return
+      return;
     }
     
     if(opcao==="testamento"){      
@@ -92,8 +91,8 @@ export default function DialogSelect() {
       let Get_ID = []
       //obtem o ID do testamento selecionada
       testamento.map((dados) => { 
-       if(dadoSelecionado == dados.testamento_nome){Get_ID.push(dados.testamento_id)}
-      })
+        if(dadoSelecionado == dados.testamento_nome){Get_ID.push(dados.testamento_id)}
+      });
       //armazena a opcao selecionada
       setCamposSelecionados(prevStat => {
         return {... prevStat, testamento: dadoSelecionado, testamento_id:Get_ID}
@@ -101,21 +100,21 @@ export default function DialogSelect() {
 
       //busca os dados da proxima opção que é livros
       const { data } = await GetAPI("mais/buscalivros")
-      setLivro(data)
+      setLivro(data);
 
-      return
+      return;
       
     }
     if(opcao==="livro"){
       //obtem os id do livro
-       let Get_ID = []
+      let Get_ID = []
       livro.map((dados) => { 
-       if(dadoSelecionado == dados.livro_nome){Get_ID.push({livroid: dados.livro_id, livro_abreviado:dados.livro_abreviado, livro_posicao:dados.livro_posicao, livro_testamento_id: dados.livro_testamento_id })}
-      })
+        if(dadoSelecionado == dados.livro_nome){Get_ID.push({livroid: dados.livro_id, livro_abreviado:dados.livro_abreviado, livro_posicao:dados.livro_posicao, livro_testamento_id: dados.livro_testamento_id })}
+      });
       //armazena  as opções no useState
       setCamposSelecionados(prevStat => {
         return {... prevStat, livro: dadoSelecionado, livro_id:Get_ID}
-      })
+      });
 
       //busca os dados dos capítulos
       const { data } = await GetAPI(`mais/buscacapitulo/${camposSelecionados.versao_id[0]}/${Get_ID[0].livro_posicao}`)
@@ -160,7 +159,7 @@ export default function DialogSelect() {
                 input={<Input id="demo-dialog-native" />}
                 value={camposSelecionados.versao}
               >
-               <option> {camposSelecionados.versao}</option>
+                <option> {camposSelecionados.versao}</option>
                 {
                   versao &&
                   versao.map((data)=>{
