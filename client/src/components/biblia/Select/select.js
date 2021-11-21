@@ -83,7 +83,8 @@ export default function DialogSelect() {
       // busca os dados da proxima opção que é testamento
       const { data } = await GetAPI("mais/buscatestamento")
       setTestamento(data)
- 
+
+      return
     }
     
     if(opcao==="testamento"){      
@@ -93,7 +94,7 @@ export default function DialogSelect() {
       testamento.map((dados) => { 
        if(dadoSelecionado == dados.testamento_nome){Get_ID.push(dados.testamento_id)}
       })
-
+      //armazena a opcao selecionada
       setCamposSelecionados(prevStat => {
         return {... prevStat, testamento: dadoSelecionado, testamento_id:Get_ID}
       })
@@ -101,7 +102,8 @@ export default function DialogSelect() {
       //busca os dados da proxima opção que é livros
       const { data } = await GetAPI("mais/buscalivros")
       setLivro(data)
-      
+
+      return
       
     }
     if(opcao==="livro"){
@@ -125,7 +127,8 @@ export default function DialogSelect() {
       setCapitulo(prevState => {
         return {... prevState, numero_total: data[data.length -1].capitulo, renderiza_componente_option: render}
       }) 
-      //armazena  as opções no useState
+
+      return
     }        
   }
 

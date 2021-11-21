@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 import Biblia from "./components/biblia/biblia"
 import PainelLeitura from "./components/painelLeitura/painelLeitura"
+import NovoPainelLeitura from './components/painelLeitura/novopainelLeitura';
 import HinoHarpa from "./components/hinoHarpa/hinoHarpa"
 import PesquisaBiblia from "./components/pesquisaBiblia/pesquisabiblia"
 import Sobre from "./components/sobre/sobre"
@@ -20,6 +21,8 @@ ReactDOM.render(
       <Route path="/" exact={true} component={App} />
       <Route path="/biblianvi" exact={true} component={Biblia} />
       <Route path="/biblianvi/painelleitura/:idade/:livro/:capitulo/:versiculo" component={PainelLeitura} />{/* recebe 3 parametros */}
+      <Route path="/biblianvi/novopainelleitura/:versao_id/:livro_id/:capitulo" component={NovoPainelLeitura} />
+
       <Route path="/harpacrista" component={HinoHarpa} />
       {/* <Route path="/populaharpa" component={PopularBDHarpa} /> */}
       <Route path="/biblianvi/pesquisa/:palavrapesquisabiblia" component={PesquisaBiblia} />
