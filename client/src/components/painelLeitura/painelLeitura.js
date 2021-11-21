@@ -154,7 +154,7 @@ export default function PainelLeitura(props) { //recebe via url 3 Parametros: pr
 
                                                 <li className="painelleitura-article-li" >
 
-                                                        <label  >cAPÍTULO</label>
+                                                        <label  >CAPÍTULO</label>
 
 
                                                         <select className="painelleitura-article-select"
