@@ -1,0 +1,18 @@
+
+.painel-leitura-main-div{
+    display: flex;
+    justify-content:flex-start;    
+}
+
+.painel-leitura-main-div-div{
+    width: 65%;
+    /* background-color:rgb(218, 217, 217); */
+    background-image : url(background.jpg);
+    border-radius: 40px;
+    padding: 25px;    
+}
+.painel-leitura-main-div-p{
+    font-family: Garamond;
+    font-size: 24px;
+    font-style: italic;
+}

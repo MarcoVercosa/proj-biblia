@@ -21,7 +21,7 @@ ReactDOM.render(
       <Route path="/" exact={true} component={App} />
       <Route path="/biblianvi" exact={true} component={Biblia} />
       <Route path="/biblianvi/painelleitura/:idade/:livro/:capitulo/:versiculo" component={PainelLeitura} />{/* recebe 3 parametros */}
-      <Route path="/biblianvi/novopainelleitura/:versao_id/:livro_id/:capitulo" component={NovoPainelLeitura} />
+      <Route path="/biblianvi/novopainelleitura/:versao_id/:testamento_id/:livro_id/:capitulo" component={NovoPainelLeitura} />
 
       <Route path="/harpacrista" component={HinoHarpa} />
       {/* <Route path="/populaharpa" component={PopularBDHarpa} /> */}
