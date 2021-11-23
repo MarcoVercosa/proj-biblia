@@ -1,11 +1,15 @@
+.painel-leitura-main{
+    display: flex;
+    justify-content:flex-start;  
+    width: 65%;
+}
 
 .painel-leitura-main-div{
-    display: flex;
-    justify-content:flex-start;    
+  
 }
 
 .painel-leitura-main-div-div{
-    width: 65%;
+    
     /* background-color:rgb(218, 217, 217); */
     background-image : url(background.jpg);
     border-radius: 40px;
@@ -13,6 +17,54 @@
 }
 .painel-leitura-main-div-p{
     font-family: Garamond;
-    font-size: 24px;
+    font-size: 21px;
     font-style: italic;
+}
+
+.painel-leitura-main-div-setas{
+    display: flex;
+    width: 90%;
+    margin-top: 2%;
+    margin-left: 4%;
+    justify-content: space-around;
+}
+
+.painel-leitura-main-div-setas-esquerda{
+    display: flex;
+    cursor: pointer;
+}
+
+.painel-leitura-main-div-setas-esquerda-conteudo{
+    display: flex;
+    align-items: center;
+    /* margin-left: -10%; */
+    font-family: Garamond;
+    font-size: 30px;
+    font-style: italic;
+    font-weight:bold;
+
+}
+
+.painel-leitura-main-div-setas-direita-conteudo{
+    display: flex;
+    align-items: center;
+    /* margin-right: -10%; */
+    font-family: Garamond;
+    font-size: 30px;
+    font-style: italic;
+    font-weight:bold;
+    cursor: pointer;
+}
+
+
+.painel-leitura-main-div-select select{
+    font-family: 'Lora', serif;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 12px;
+    margin-left: 4px;
+    background-color: #d4e88e;
+    color: rgb(26, 25, 25);
+    text-align: center;
+    justify-content: center;
 }

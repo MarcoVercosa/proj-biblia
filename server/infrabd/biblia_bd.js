@@ -63,7 +63,7 @@ class Busca_Biblia_BD {
     }
 
     async BuscaConteudo(versao_id, testamento_id, livro_id, capitulo) {
-
+        console.log(versao_id, testamento_id, livro_id, capitulo)
         const promessa1 =  new Promise((resolve, reject) => {
             const sql = `SELECT conteudo FROM  biblia.versiculos WHERE versao_id=${versao_id} AND livro_id=${livro_id} AND capitulo=${capitulo} `
             conectaBD.query(sql, (erro, resultado) => {
@@ -83,7 +83,6 @@ class Busca_Biblia_BD {
                 if (erro) {
                     reject(erro)
                 }   else {
-                console.log(resultado)
                     resolve(resultado)
                 }
             })
