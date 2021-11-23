@@ -26,18 +26,18 @@
     width: 90%;
     margin-top: 2%;
     margin-left: 4%;
+    margin-bottom: 5%;
     justify-content: space-around;
 }
 
 .painel-leitura-main-div-setas-esquerda{
     display: flex;
-    cursor: pointer;
+
 }
 
-.painel-leitura-main-div-setas-esquerda-conteudo{
+/* .painel-leitura-main-div-setas-esquerda-conteudo{
     display: flex;
     align-items: center;
-    /* margin-left: -10%; */
     font-family: Garamond;
     font-size: 30px;
     font-style: italic;
@@ -48,23 +48,23 @@
 .painel-leitura-main-div-setas-direita-conteudo{
     display: flex;
     align-items: center;
-    /* margin-right: -10%; */
     font-family: Garamond;
     font-size: 30px;
     font-style: italic;
     font-weight:bold;
     cursor: pointer;
 }
-
+*/
 
 .painel-leitura-main-div-select select{
-    font-family: 'Lora', serif;
+    font-family: 'Garamond', serif;
+    font-style: italic;
     font-size: 30px;
     cursor: pointer;
     border-radius: 12px;
     margin-left: 4px;
-    background-color: #d4e88e;
+    background-color: #e8e8e8;
     color: rgb(26, 25, 25);
     text-align: center;
     justify-content: center;
-}
+} 

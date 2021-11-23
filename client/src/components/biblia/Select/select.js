@@ -54,18 +54,14 @@ export default function DialogSelect() {
     };
 
     const handleClose = () => {
-
         setOpen(false);
         console.log(camposSelecionados)
     };
 
 
     useEffect(async() =>{
-
         const { data } = await GetAPI("mais/buscaversao");
-        setVersao(data)
-    
-
+        setVersao(data)  
     }, [])
 
     async function BuscaOpcoesSelecionadas(opcao, dadoSelecionado,){
@@ -96,14 +92,13 @@ export default function DialogSelect() {
             testamento.map((dados) => { 
                 if(dadoSelecionado == dados.testamento_nome){Get_ID.push(dados.testamento_id)}
             });
-            console.log(camposSelecionados)
             //armazena a opcao selecionada
             setCamposSelecionados(prevStat => {
                 return {... prevStat, testamento: dadoSelecionado, testamento_id:Get_ID[0]}
             })
 
             //busca os dados da proxima opção que é livros
-            const { data } = await GetAPI("mais/buscalivros")
+            const { data } = await GetAPI(`mais/buscalivros/${Get_ID[0]}`)
             setLivro(data);
 
             return;
@@ -112,12 +107,12 @@ export default function DialogSelect() {
         if(opcao==="livro"){
             //obtem os id do livro
             let Get_ID = {}
+            console.log(livro)
             livro.map((dados) => { 
                 // if(dadoSelecionado == dados.livro_nome){Get_ID.push({livro_id: dados.livro_id, livro_abreviado:dados.livro_abreviado, livro_posicao:dados.livro_posicao, livro_testamento_id: dados.livro_testamento_id })}
                 if(dadoSelecionado == dados.livro_nome){ Get_ID = {livro_id: dados.livro_id, livro_abreviado: dados.livro_abreviado, livro_posicao: dados.livro_posicao, livro_testamentp_id: dados.livro_testamento_id }}
 
             });
-
 
             //armazena  as opções no useState
             setCamposSelecionados(prevStat => {
@@ -125,7 +120,7 @@ export default function DialogSelect() {
             });
 
             //busca os dados dos capítulos
-            const { data } = await GetAPI(`mais/buscacapitulo/${camposSelecionados.versao_id}/${Get_ID.livro_posicao}`)
+            const { data } = await GetAPI(`mais/buscacapitulo/${camposSelecionados.versao_id}/${Get_ID.livro_id}`)
  
             let render = []
             for(let i = 0; i < data[data.length -1 ].capitulo; i++){

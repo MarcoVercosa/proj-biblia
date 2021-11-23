@@ -45,14 +45,10 @@ export default function DialogSelect(props) {//props recebe ANTIGO TESTAMENTO" o
             setAntigoTestamento(resultado)
 
         } else {
-
             const resultado = await GetAPI("buscalivronovotesta")
             setIdadeLivro("novo")
             setAntigoTestamento(resultado)
-
         }
-
-
     }, [])
 
 
@@ -75,15 +71,11 @@ export default function DialogSelect(props) {//props recebe ANTIGO TESTAMENTO" o
     }
 
     const handleClickOpen = () => {
-
-
         setOpen(true);
     };
 
     const handleClose = () => {
-
         setOpen(false);
-
     };
 
 

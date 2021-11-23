@@ -6,6 +6,7 @@ import PainelMenuLateral from "../../components/painelMenuLateral/painelMenuLate
 import GetAPI from "../../fetch/api"
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import Button from '@material-ui/core/Button';
 import "./novopainelLeitura.css"
 
 
@@ -28,13 +29,19 @@ export default function NovoPainelLeitura({match}){
     },[])
 
     async function AvancaCapitulo(){
-        if(Number(match.params.capitulo) > conteudo?.quantidadecapitulo[0].capitulo){
-            alert("Fim dos capitulos deste livro")
-            return
-        }
+        // if(Number(match.params.capitulo) > conteudo?.quantidadecapitulo[0].capitulo){
+        //     alert("Fim dos capitulos deste livro")
+        //     return
+        // }
         const {data} = await GetAPI(`mais/buscaconteudo/${match.params.versao_id}/${match.params.testamento_id}/${match.params.livro_id}/${Number(match.params.capitulo) + 1}`)
         console.log(data)
         match.params.capitulo = Number(match.params.capitulo) + 1
+        setConteudo(data)
+    }
+    async function RetornaCapitulo(){
+        const {data} = await GetAPI(`mais/buscaconteudo/${match.params.versao_id}/${match.params.testamento_id}/${match.params.livro_id}/${Number(match.params.capitulo) - 1}`)
+        console.log(data)
+        match.params.capitulo = Number(match.params.capitulo) - 1
         setConteudo(data)
     }
 
@@ -44,7 +51,7 @@ export default function NovoPainelLeitura({match}){
             <main className="painel-leitura-main">
                 <div className="painel-leitura-main-div">
                     <div className="painel-leitura-main-div-div">
-                        <h2> {conteudo?.nomeLivro[0]?.livro_nome}: {match.params.capitulo} - '{conteudo?.nomeLivro[0]?.livro_abreviado}'</h2>
+                        <h2 style={{fontFamily:"Garamond", fontStyle:"italic" }}> {conteudo?.nomeLivro[0]?.livro_nome}: {match.params.capitulo} - '{conteudo?.nomeLivro[0]?.livro_abreviado}'</h2>
                         {
                             conteudo && conteudo.conteudo.map((dado, index)=>{
                                 return (                                
@@ -55,10 +62,16 @@ export default function NovoPainelLeitura({match}){
                     </div>
                     <div className="painel-leitura-main-div-setas">
                         <div className="painel-leitura-main-div-setas-esquerda">
-                            <ArrowBackIcon style={{ fontSize: 70, color:"green" }} />
-                            <div className="painel-leitura-main-div-setas-esquerda-conteudo">
-                                {conteudo?.nomeLivro[0].livro_nome} - {Number(match.params.capitulo) - 1}
-                            </div>
+                            <Button 
+                                style={{fontSize:"17px", fontFamily:"Garamond", fontStyle:"italic", borderRadius:"20px"}}
+                                disabled={Number(match.params.capitulo) == 1 ? true :  false}
+                                onClick={()=>{RetornaCapitulo()}}
+                                variant="contained">
+                                <ArrowBackIcon style={{ fontSize: 50, color:"black" }}/>
+                                                                      {/* se match.params.capitulo == ao primeiro capitulo, permaneça o número 1, senão subtraia um */}
+                                {conteudo?.nomeLivro[0]?.livro_nome} - {Number(match.params.capitulo) == 1 ? Number(match.params.capitulo) :  Number(match.params.capitulo) - 1}
+                                
+                            </Button>
                         </div>
                         
                         <div className="painel-leitura-main-div-select">
@@ -66,17 +79,20 @@ export default function NovoPainelLeitura({match}){
                                 {optionComponent}
                             </select>
                         </div>
-                        <div className="painel-leitura-main-div-setas-direita-conteudo"
-                                style={{display: Number(match.params.capitulo) == conteudo?.quantidadecapitulo[0].capitulo ? "none" :  "flex"}}
-                            onClick={() => {AvancaCapitulo()}}
-                        >
-                            {conteudo?.nomeLivro[0].livro_nome} - {Number(match.params.capitulo) + 1}
-                            <div className="painel-leitura-main-div-setas-direita">
-                                <ArrowForwardIcon style={{ fontSize: 70, color:"green"}}  />
-                            </div>
-                        </div>
-                        
- 
+                        <div className="painel-leitura-main-div-setas-direita-conteudo">
+                            <Button
+                                style={{fontSize:"17px", fontFamily:"Garamond", fontStyle:"italic", borderRadius:"20px"}}
+                                // desativa o botão se o numero do capitulo para avançar  for maior q o ultimo capitulo do livro
+                                disabled={Number(match.params.capitulo) == conteudo?.quantidadecapitulo[0].capitulo ? true :  false}
+                                onClick={() => {AvancaCapitulo()}}
+                                variant="contained">
+                                                                      {/* se match.params.capitulo == ao ultimo capitulo, permaneça o ultimo capitulo, senão add mais um */}
+                                {conteudo?.nomeLivro[0]?.livro_nome} - {Number(match.params.capitulo) == conteudo?.quantidadecapitulo[0].capitulo ? Number(match.params.capitulo) :  Number(match.params.capitulo) + 1}
+                                <ArrowForwardIcon style={{ fontSize: 50, color:"black" }}/>
+                            </Button>
+
+                        </div>                       
+
                     </div>
 
                 </div>
