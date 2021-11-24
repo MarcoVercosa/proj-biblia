@@ -13,7 +13,7 @@ function App() {
     <div className="App">
 
       <SearchAppBar />
-      <Menu />
+      <Menu isTheHome={true}/>
       <Article />
       <Footer />
 

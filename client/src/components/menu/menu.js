@@ -3,8 +3,8 @@ import "./menu.css"
 import Imagem from "./Biblia.jpg"
 import { HashLink as Link } from "react-router-hash-link"// o hash faz funcionar os links âncoras
 
-export default function Menu() {
-
+export default function Menu(props) {
+    
     return (
         <menu className="menu-menu">
             <hr></hr>
@@ -35,7 +35,11 @@ export default function Menu() {
                 </Link>
 
             </ul>
-            <img className="menu-imagem" src={Imagem} alt="Nosso caminho" />
+            {
+                props.isTheHome &&
+                <img className="menu-imagem" src={Imagem} alt="Nosso caminho" />
+            }
+            
         </menu>
 
     )

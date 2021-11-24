@@ -14,7 +14,7 @@ export default function Biblia() {
   return (
     <>
       <SearchAppBar />
-      <Menu />
+      <Menu isTheHome={true} />
 
       <main
         style={{
@@ -25,7 +25,7 @@ export default function Biblia() {
         }}
       >
         <div>
-          <DialogSelect />
+          <DialogSelect tituloBotao="SELECIONE AS OPÇÕES PARA A LEITURA" />
         </div>
       </main>
 

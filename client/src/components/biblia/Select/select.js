@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function DialogSelect() {
+export default function DialogSelect({tituloBotao}) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const [age, setAge] = React.useState("");
@@ -49,20 +49,28 @@ export default function DialogSelect() {
         conteudo_id: undefined
     })
 
-    const handleClickOpen = () => {
-        setOpen(true);
+    const handleClickOpen = async () => {
+        const { data } = await GetAPI("mais/buscaversao");
+        setVersao(data)  
+        setOpen(true);     
     };
 
     const handleClose = () => {
         setOpen(false);
+        setCamposSelecionados({
+            versao:"selecione",
+            versao_id:undefined,
+            testamento:"selecione",
+            testamento_id: undefined,
+            livro: "selecione",
+            livro_id: undefined,
+            capitulo:"selecione",
+            conteudo: "selecione",
+            conteudo_id: undefined
+        })
         console.log(camposSelecionados)
+        // window.location.href= `/biblianvi/novopainelleitura/${camposSelecionados.versao_id}/${camposSelecionados.testamento_id}/${camposSelecionados?.livro_id?.livro_id}/${camposSelecionados.capitulo}`
     };
-
-
-    useEffect(async() =>{
-        const { data } = await GetAPI("mais/buscaversao");
-        setVersao(data)  
-    }, [])
 
     async function BuscaOpcoesSelecionadas(opcao, dadoSelecionado,){
         if(opcao==="versao"){
@@ -94,12 +102,13 @@ export default function DialogSelect() {
             });
             //armazena a opcao selecionada
             setCamposSelecionados(prevStat => {
-                return {... prevStat, testamento: dadoSelecionado, testamento_id:Get_ID[0]}
+                return {... prevStat, testamento: dadoSelecionado, testamento_id:Get_ID[0], livro:"selecione", capitulo:"selecione"}
             })
 
             //busca os dados da proxima opção que é livros
             const { data } = await GetAPI(`mais/buscalivros/${Get_ID[0]}`)
             setLivro(data);
+  
 
             return;
       
@@ -116,7 +125,7 @@ export default function DialogSelect() {
 
             //armazena  as opções no useState
             setCamposSelecionados(prevStat => {
-                return {... prevStat, livro: dadoSelecionado, livro_id:Get_ID}
+                return {... prevStat, livro: dadoSelecionado, livro_id:Get_ID, capitulo:"selecione"}
             });
 
             //busca os dados dos capítulos
@@ -135,6 +144,17 @@ export default function DialogSelect() {
         }        
     }
 
+    function LiberaOK(){
+        if(camposSelecionados.versao != "selecione"
+            && camposSelecionados.testamento != "selecione"
+            && camposSelecionados.livro != "selecione"
+            && camposSelecionados.capitulo != "selecione" ){
+            return "block"    
+        }else{
+            return "none"
+        }
+    }
+
     return (
         <div>
             <Button
@@ -143,7 +163,7 @@ export default function DialogSelect() {
                 style={{ fontSize: "20px", fontFamily: "Times New Roman" }}
                 onClick={handleClickOpen}
             >
-        SELECIONE AS OPÇÕES PARA A LEITURA
+                {tituloBotao}
             </Button>
 
             <Dialog
@@ -163,18 +183,17 @@ export default function DialogSelect() {
                                 input={<Input id="demo-dialog-native" />}
                                 value={camposSelecionados.versao}
                             >
-                                <option> {camposSelecionados.versao}</option>
+                                <option> selecione</option>
                                 {
                                     versao &&
-                    versao.map((data)=>{
-                      return (
-                          <option key={data.versao_id}   value={data.versao_nome}>
-                              {data.versao_nome}
-                          </option>
-                      )
-                    })
-                                }                
-     
+                                    versao.map((data)=>{
+                                        return (
+                                            <option key={data.versao_id} value={data.versao_nome}>
+                                                {data.versao_nome}
+                                            </option>
+                                        )
+                                    })
+                                }                     
                             </Select>
                         </FormControl>
                         <FormControl className={classes.formControl}>
@@ -185,19 +204,17 @@ export default function DialogSelect() {
                                 onChange={(dados)=> {BuscaOpcoesSelecionadas("testamento", dados.target.value, dados)}}  
                                 input={<Input id="demo-dialog-native" />}
                             >
-                                <option> {camposSelecionados.testamento}</option>
+                                <option> selecione</option>
                                 {
                                     testamento &&
                                     testamento.map((data)=>{
                                         return(
                                             <option key={data.testamento_id}  value={data.testamento_nome}>
-                                            {data.testamento_nome}
+                                                {data.testamento_nome}
                                             </option>
                                         )
                                     })
                                 }
-                            <option aria-label="None" value="" />
-
                             </Select>
                         </FormControl>
                         <FormControl className={classes.formControl}>
@@ -208,7 +225,7 @@ export default function DialogSelect() {
                                 onChange={(dados)=> {BuscaOpcoesSelecionadas("livro", dados.target.value)}}  
                                 input={<Input id="demo-dialog-native" />}
                             >
-                                <option> {camposSelecionados.livro}</option>
+                                <option> selecione</option>
                                 {
                                     livro &&
                                     livro.map((data)=>{
@@ -219,8 +236,6 @@ export default function DialogSelect() {
                                         )
                                     })
                                 }
-                                <option aria-label="None" value="" />
-
                             </Select>
                         </FormControl>
                         <FormControl className={classes.formControl}>
@@ -233,13 +248,11 @@ export default function DialogSelect() {
                                 })}  
                                 input={<Input id="demo-dialog-native" />}
                             >
-                                <option> {camposSelecionados.capitulo}</option>
+                                <option> selecione</option>
                                 {
                                     capitulo.renderiza_componente_option &&
                                     capitulo.renderiza_componente_option
                                 }
-                                <option aria-label="None" value="" />
-
                             </Select>
                         </FormControl>
                     </form>
@@ -249,11 +262,13 @@ export default function DialogSelect() {
                         Cancel
                     </Button>
 
-                    <Link to={`/biblianvi/novopainelleitura/${camposSelecionados.versao_id}/${camposSelecionados.testamento_id}/${camposSelecionados?.livro_id?.livro_id}/${camposSelecionados.capitulo}`}>
+
+                    <Link style={{display:LiberaOK()}} to={`/biblianvi/novopainelleitura/${camposSelecionados.versao_id}/${camposSelecionados.testamento_id}/${camposSelecionados?.livro_id?.livro_id}/${camposSelecionados.capitulo}`}>
                         <Button onClick={handleClose} color="primary">
                             Ok
                         </Button>
                     </Link>
+
                 </DialogActions>
             </Dialog>
       
