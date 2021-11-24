@@ -99,6 +99,10 @@ class Busca_Biblia_BD {
             })
         })
 
+        function Erro(erro){
+            return new Promise
+        }
+
         const promessa4 = new Promise((resolve, reject)=>{
 
             const sql_busvaNomeVersao = `SELECT versao_nome FROM biblia.versoes WHERE versao_id=${versao_id}`
@@ -111,9 +115,16 @@ class Busca_Biblia_BD {
             })
         })
 
-        const data = await Promise.all([promessa1, promessa2, promessa3, promessa4])
-        let retorno = {conteudo: await promessa1, nomeLivro: await promessa2, quantidadecapitulo: await promessa3, nomeVersao: await promessa4}
-        return retorno
+        try{
+            await Promise.all([promessa1, promessa2, promessa3, promessa4])
+            let retorno = {conteudo: await promessa1, nomeLivro: await promessa2, quantidadecapitulo: await promessa3, nomeVersao: await promessa4}
+            return retorno
+        }catch(erro){
+            console.log(erro)
+            return erro
+        }
+
+
     }      
     
 }
