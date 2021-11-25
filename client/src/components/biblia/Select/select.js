@@ -10,6 +10,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Input from "@material-ui/core/Input";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import GrainIcon from '@material-ui/icons/Grain';
 
 import GetAPI from "../../../fetch/api";
 import { useEffect } from "react";
@@ -159,10 +160,11 @@ export default function DialogSelect({tituloBotao}) {
         <div>
             <Button
                 variant="contained"
-                color="primary"
-                style={{ fontSize: "20px", fontFamily: "Times New Roman" }}
-                onClick={handleClickOpen}
+                // color="primary"
+                style={{ fontSize: "20px", fontFamily: "Times New Roman",backgroundColor:"#14a37f", color:"white" }}
+                onClick={handleClickOpen}                
             >
+                <GrainIcon fontSize="large" style={{marginRight:"20px"}}/>
                 {tituloBotao}
             </Button>
 

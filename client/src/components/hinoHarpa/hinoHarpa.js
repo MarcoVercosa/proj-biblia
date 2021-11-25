@@ -47,10 +47,6 @@ export default function HinoHarpa() {
 
     async function BuscarHinoPorNumero(recebe) {//recebe só terá valor se for chamada pelo buscar por título Gambi, pq demora para atualizar o estado do setAlteraCampoNumero
 
-        // if (!alteraCampoNumero) {
-        //     alert("Selecione um número para buscar o Hino")
-        //     return
-        // }
         if (recebe) {
             setAlteraCampoNumero(recebe)
             const buscaHino = await GetAPI(`buscatitulopornumero/${recebe}`)
@@ -100,22 +96,6 @@ export default function HinoHarpa() {
             <LinearIndeterminate />
         )
     }
-
-    // if (erroPesquisaPorPalavra) {
-    //     return (
-    //         <>
-    //             <SearchAppBar />
-    //             <menu className="hinoharpa-busca-menu-erro">
-    //                 <spam><i class="far fa-frown fa-4x"></i></spam>
-    //                 <p>Não encontrei o Hino desejado.</p>
-    //             </menu>
-    //             <PainelMenuLateral />
-    //             <Footer />
-    //         </>
-    //     )
-    // }
-
-
 
     return (
 
@@ -194,55 +174,52 @@ export default function HinoHarpa() {
                     </menu>
                 }
 
+                <div style={{display: "flex"}}>
+                    <article className="hinoharpaleitura-article">
+                        <h3>{tituloHino}</h3>
+                        {letraHino &&
 
-
-
-
-
-
-                <article className="hinoharpaleitura-article">
-                    <h3>{tituloHino}</h3>
-                    {letraHino &&
-
-                        letraHino.map((recebe, index) => {
-                            return (
-                                <>
-                                    <p key={index}>{recebe}</p>
-                                </>
-                            )
-                        })}
-
-
-                    <menu className="hinoharpa-busca-menu">
-                        {dadosBuscaPesquisaPorTitulo &&
-
-                            dadosBuscaPesquisaPorTitulo.data.map((recebe, index) => {
-
+                            letraHino.map((recebe, index) => {
                                 return (
-                                    <div
-                                        key={recebe.numero}
-                                        onClick={() => {
-                                            setDadosBuscaPesquisaPorTitulo(false)
-                                            BuscarHinoPorNumero(recebe.numero)
-                                        }}
-                                    >
-
-                                        <p
-                                            key={index}
-                                        > <i class="icone fas fa-music fa-2x"></i>HINO: {recebe.numero}</p>
-                                        <p
-                                            key={index + 1}>{recebe.titulo}
-                                        </p>
-                                    </div>
+                                    <>
+                                        <p key={index}>{recebe}</p>
+                                    </>
                                 )
-                            })
-                        }
-                    </menu>
-                </article>
+                        }   )}
 
-                <PainelMenuLateral />
 
+                        <menu className="hinoharpa-busca-menu">
+                            {dadosBuscaPesquisaPorTitulo &&
+
+                                dadosBuscaPesquisaPorTitulo.data.map((recebe, index) => {
+
+                                    return (
+                                        <div
+                                            key={recebe.numero}
+                                            onClick={() => {
+                                                setDadosBuscaPesquisaPorTitulo(false)
+                                                BuscarHinoPorNumero(recebe.numero)
+                                            }}
+                                        >
+                                            <p key={index}>
+                                                <i class="icone fas fa-music fa-2x"></i>HINO: {recebe.numero}
+                                            </p>
+                                            <p
+                                                key={index + 1}>{recebe.titulo}
+                                            </p>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </menu>
+                    </article>      
+                    <aside className="menu-lateral">
+                        <PainelMenuLateral />
+                    </aside>            
+                </div>
+                
             </nav>
+   
 
             <Footer />
         </>

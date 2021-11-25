@@ -2,16 +2,21 @@
     display: flex;
     justify-content:flex-start;  
     width: 100%;
+    
 }
 
 .painel-leitura-main-div{
     width: 65%;
+    
+
 }
 
 .painel-leitura-main-div-div{    
     background-image : url(background.jpg);
     border-radius: 40px;
-    padding: 25px;    
+    padding: 25px; 
+    border-right: 2px solid  rgb(95, 95, 95);
+    border-radius: 10px; 
 }
 .painel-leitura-main-div-div-descricao{
     display: flex;
@@ -42,6 +47,7 @@
     margin-left: 4%;
     margin-bottom: 5%;
     justify-content: space-around;
+    
 }
 
 .painel-leitura-main-div-setas-esquerda{
@@ -65,11 +71,13 @@
 aside{
     width: 34%;
     text-align: center;
-    position:fixed;
-    left: 65%
+    border: 2px solid  rgb(95, 95, 95);
+    border-radius: 10px;
+    margin-left: 1px;
+
 }
 .aside-select{
- margin-top: 25%;
+ margin-top: 10%;
 }
 
 .painelleitura-article-article{
@@ -77,8 +85,10 @@ aside{
     grid-template-columns:  0.2fr 0.2fr 0.2fr;
     grid-gap: 20px;
     margin-left: 12px;  
+    border: 2px solid  rgb(95, 95, 95);
+    border-radius: 10px;
+
 }
-/* style={{ backgroundColor: "#3f9168", borderRadius: "20px", marginTop: "10px", padding: "15px" }} */
 .painelleitura-article-article div {    
     border-radius: 20px;;
     border-radius: 40px;

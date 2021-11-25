@@ -24,6 +24,12 @@
     width: 500px;
     padding: 15px;
 }
+.artigo-article-div-um ul, li{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
 
 
 

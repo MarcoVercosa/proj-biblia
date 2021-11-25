@@ -11,11 +11,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
-
 import "./header.css"
-
-
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -53,12 +49,10 @@ const useStyles = makeStyles((theme) => ({
             width: 'auto',
         },
 
-
         [theme.breakpoints.down('xs')]: {
             marginLeft: theme.spacing(1),
             width: '60%',
         },
-
 
     },
     searchIcon: {
@@ -86,8 +80,6 @@ const useStyles = makeStyles((theme) => ({
             },
         },
     },
-
-
 
 }));
 
@@ -118,19 +110,9 @@ function SearchAppBar() {
     }
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} styles={{opacity:"0,2" }}>
             <AppBar position="relative" style={{ backgroundColor: "#14a37f" }}>
                 <Toolbar>
-                    {/* <IconButton
-                        edge="start"
-                        className={classes.menuButton}
-                        color="inherit"
-                        aria-label="open drawer"
-                    >
-                        <MenuIcon />
-
-                    </IconButton> */}
-
 
                     <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} className={classes.menuButton}>
                         <i style={{ color: "white" }} class="fas fa-bars fa-2x"></i>
@@ -153,10 +135,6 @@ function SearchAppBar() {
                             <MenuItem onClick={handleClose}>SOBRE</MenuItem></Link>
                     </Menu>
 
-
-
-
-
                     <Typography style={{ display: "flex", fontFamily: 'Lora' }}
                         className={classes.title} variant="h4" noWrap>
                         <span style={{ marginLeft: "15px" }}
@@ -178,12 +156,7 @@ function SearchAppBar() {
                         />
 
                     </div>
-                    {/* <Link to={`/biblianvi/pesquisa/${dataPesquisa}`}>
-                        <Button
-                            style={{ marginLeft: "7px" }}
-                            variant="contained">Buscar
-                        </Button>
-                    </Link> */}
+       
                 </Toolbar>
             </AppBar>
         </div >

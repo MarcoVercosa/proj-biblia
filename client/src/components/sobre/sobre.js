@@ -24,7 +24,7 @@ export default function Sobre() {
                     <p>E foi com muito orgulho e suor que criei o site <strong>FONTE DE VIDA</strong>, para que você possa de forma dinâmica, fácil e intuitiva
                         ler a palavra de Deus, pois Sua palavra é vida e vida em abunbdância e deve ser acessível de forma prática e fácil. </p>
                     <p> O site <strong>FONTE DE VIDA</strong> foi criado para poder levar a palavra, conhecimento e a vontade de Deus para qualquer lugar do mundo. </p>
-                    <p>Aqui você tem acesso a <strong>Bibia NVI Versão Internacional</strong>, que não foi traduzida de uma outra tradução bíblica, mas foi traduzida diretamente dos manuscritos dos idiomas originais hebraico, aramaico e grego, o que torna o conteúdo da tradução NVI ainda mais confiável.</p>
+                    <p>Aqui você tem acesso às <strong>13 versões da biblia sagrada totalmente online.</strong></p>
                     <p>O site FONTE DE VIDA permite você a encontrar de forma fácil o livro, capítulo e versículo e também via pesquisa por palavra,</p>
                     <p>onde a pesquisa lhe mostrará livro, capítulo e versículo relacionado a palavra desejada e te direcionará até o caminho correto onde se encontra na bíblia.</p>
 
@@ -45,8 +45,11 @@ export default function Sobre() {
 
 
                 </div>
+                <div className="sobre-article-div-menu">
+                    <PainelMenuLateral />
+                </div>
             </article>
-            <PainelMenuLateral />
+            
             <Footer />
 
         </>

@@ -11,16 +11,58 @@ export default function Article() {
             <div className="artigo-article-div-um">
 
                 <span><i className="fas fa-bible fa-4x"> </i></span>
-                <h3>Versão disponível - NVI</h3>
-                <p>A Bíblia Nova Versão Internacional não foi traduzida de uma outra tradução bíblica,
+                <h3>Totamente OnLine ! São 13 versões da palavra de Deus disponiveis para você: </h3>
+                <div className="artigo-article-div-versoes">
+                    <p>
+                        1993 – Almeida Revisada e Atualizada
+                    </p>
+                    <p>
+                        1969 – Almeida Revisada e Corrigida
+                    </p>
+                    <p>
+                        2009 – Almeida Revisada e Corrigida
+                    </p>
+                    <p>
+                        2017 – Nova Almeida Atualizada
+                    </p>
+                    <p>
+                        2000 – Nova Tradução na Linguagem de Hoje
+                    </p>
+                    <p>
+                        Nova Versão Internacional
+                    </p>
+                    <p>
+                        Nova Versão Transformadora
+                    </p>
+                    <p>
+                        1848 – Almeida Antiga
+                    </p>
+                    <p>
+                        Almeida Recebida
+                    </p>
+                    <p>
+                        King James Atualizada
+                    </p>
+                    <p>
+                        Basic English Bible
+                    </p>
+                    <p>
+                        New International Version
+                    </p>
+                    <p>
+                        American Standard Version
+                    </p>
+
+                </div>
+                {/* <p>A Bíblia Nova Versão Internacional não foi traduzida de uma outra tradução bíblica,
                 mas foi traduzida diretamente dos manuscritos dos idiomas originais hebraico,
-                aramaico e grego, o que torna o conteúdo da tradução NVI mais confiável ainda.</p>
+                aramaico e grego, o que torna o conteúdo da tradução NVI mais confiável ainda.</p> */}
             </div>
 
             <div className="artigo-article-div-dois">
 
                 <span><i className="fas fa-mouse fa-4x" ></i></span>
-                <h3>Onde você estiver</h3>
+                <h3>Onde você estiver e sem fins lucrativos !</h3>
                 <p>O Site FONTE DE VIDA foi criado para que você possa achar de modo fácil e prático
                 a palavra de Deus.
                 </p>

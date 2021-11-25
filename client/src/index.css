@@ -8,7 +8,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #bbe6e1;
+  /* background-color: #bbe6e1; */
+  background-image : url(./components/painelLeitura/background.jpg);
   display: block
   
 }

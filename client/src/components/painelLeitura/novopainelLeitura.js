@@ -3,13 +3,18 @@ import { React, useState, useEffect } from "react";
 import SearchAppBar from "../header/header"
 import DialogSelect from "../biblia/Select/select"
 import LinearProgress from '@material-ui/core/LinearProgress';
-import Menu from "../menu/menu"
+import PainelMenuLateral from "../painelMenuLateral/painelMenuLateral";
 import Footer from "../../components/footer/footer"
 import GetAPI from "../../fetch/api"
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import Button from '@material-ui/core/Button';
 import "./novopainelLeitura.css"
+
+
+import {AvancaCapitulo} from "./funcoes/AvancaRetornaButtons" 
+import {RetornaCapitulo} from "./funcoes/AvancaRetornaButtons"
+import { SelectOption } from "./funcoes/SelectOption"; 
 
 
 export default function NovoPainelLeitura({match}){
@@ -34,47 +39,12 @@ export default function NovoPainelLeitura({match}){
         setOptionComponent(options)
         setConteudo(data)
         BuscaCuriosodades(data.nomeLivro[0].livro_nome)
-
         window.scroll({
             top: 0,
             left: 0,
             behavior: 'smooth'
         });
     },[match.params.capitulo])
-    //quando usa o menu a direita para selecionar outro livro, versao usanod o componente select...
-    //ele irá atualizar também o capitulo na url que é o match.params.capitulo. Se ele mudar, o useEfetc irá carregar o conteudo
-
-    async function AvancaCapitulo(){
-        const {data} = await GetAPI(`mais/buscaconteudo/${match.params.versao_id}/${match.params.testamento_id}/${match.params.livro_id}/${Number(match.params.capitulo) + 1}`)
-        match.params.capitulo = Number(match.params.capitulo) + 1
-        setConteudo(data)
-        window.scroll({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    }
-    async function RetornaCapitulo(){
-        const {data} = await GetAPI(`mais/buscaconteudo/${match.params.versao_id}/${match.params.testamento_id}/${match.params.livro_id}/${Number(match.params.capitulo) - 1}`)
-        match.params.capitulo = Number(match.params.capitulo) - 1
-        setConteudo(data)
-        window.scroll({
-            top: 60,
-            left: 0,
-            behavior: 'smooth'
-        });
-    }
-
-    async function SelectOption(capituloSelecionado){
-        const {data} = await GetAPI(`mais/buscaconteudo/${match.params.versao_id}/${match.params.testamento_id}/${match.params.livro_id}/${capituloSelecionado}`)
-        match.params.capitulo = capituloSelecionado
-        setConteudo(data)
-        window.scroll({
-            top: 60,
-            left: 0,
-            behavior: 'smooth'
-        });
-    }
 
     async function BuscaCuriosodades(recebeLivro) {
         const resultado = await GetAPI(`buscacuriosidade/${recebeLivro}`)
@@ -100,10 +70,9 @@ export default function NovoPainelLeitura({match}){
             <SearchAppBar/>
             <main className="painel-leitura-main">
                 <div className="painel-leitura-main-div">
-                    <Menu/>
                     <div className="painel-leitura-main-div-div">
                         <div className="painel-leitura-main-div-div-descricao">
-                            <h2> {conteudo?.nomeLivro[0]?.livro_nome}: {match.params.capitulo} - '{conteudo?.nomeLivro[0]?.livro_abreviado}'</h2>
+                            <h2> {conteudo?.nomeLivro[0]?.livro_nome}: {conteudo?.capituloAtual} - '{conteudo?.nomeLivro[0]?.livro_abreviado}'</h2>
                             <p >{conteudo?.nomeVersao[0]?.versao_nome}</p>
                         </div>
                         
@@ -119,19 +88,18 @@ export default function NovoPainelLeitura({match}){
                         <div className="painel-leitura-main-div-setas-esquerda">
                             <Button 
                                 style={{fontSize:"17px", fontFamily:"Garamond", fontStyle:"italic", borderRadius:"20px"}}
-                                disabled={Number(match.params.capitulo) == 1 ? true :  false}
-                                onClick={()=>{RetornaCapitulo()}}
+                                disabled={Number(conteudo?.capituloAtual) == 1 ? true :  false}
+                                onClick={async () => {setConteudo(await RetornaCapitulo(match.params.versao_id, match.params.testamento_id, match.params.livro_id, Number(conteudo?.capituloAtual)))}}
                                 variant="contained">
                                 <ArrowBackIcon style={{ fontSize: 50, color:"black" }}/>
                                                                       {/* se match.params.capitulo == ao primeiro capitulo, permaneça o número 1, senão subtraia um */}
-                                {conteudo?.nomeLivro[0]?.livro_nome} - {Number(match.params.capitulo) == 1 ? Number(match.params.capitulo) :  Number(match.params.capitulo) - 1}
-                                
+                                {conteudo?.nomeLivro[0]?.livro_nome} - {Number(conteudo?.capituloAtual) == 1 ? Number(conteudo?.capituloAtual) :  Number(conteudo?.capituloAtual) - 1}                                
                             </Button>
                         </div>
                         
                         <div className="painel-leitura-main-div-select">
-                            <select value={match.params.capitulo}
-                                onChange={(data) => {SelectOption(data.target.value)}}
+                            <select value={conteudo?.capituloAtual}
+                                onChange={async (data) => {setConteudo(await SelectOption(match.params.versao_id, match.params.testamento_id, match.params.livro_id, data.target.value))}}
                             >
                                 {optionComponent}
                             </select>
@@ -140,12 +108,13 @@ export default function NovoPainelLeitura({match}){
                             <Button
                                 style={{fontSize:"17px", fontFamily:"Garamond", fontStyle:"italic", borderRadius:"20px"}}
                                 // desativa o botão se o numero do capitulo para avançar  for maior q o ultimo capitulo do livro
-                                disabled={Number(match.params.capitulo) == conteudo?.quantidadecapitulo[0].capitulo ? true :  false}
-                                onClick={() => {AvancaCapitulo()}}
+                                disabled={Number(conteudo?.capituloAtual) == conteudo?.quantidadecapitulo[0].capitulo ? true :  false}
+                                onClick={async () => {setConteudo(await AvancaCapitulo(match.params.versao_id, match.params.testamento_id, match.params.livro_id, Number(conteudo?.capituloAtual)))}}
+                                //o setConteudo vai receber os dados e ja armazenar dentro dele
                                 variant="contained"
                             >
                                                                       {/* se match.params.capitulo == ao ultimo capitulo, permaneça o ultimo capitulo, senão add mais um */}
-                                {conteudo?.nomeLivro[0]?.livro_nome} - {Number(match.params.capitulo) == conteudo?.quantidadecapitulo[0].capitulo ? Number(match.params.capitulo) :  Number(match.params.capitulo) + 1}
+                                {conteudo?.nomeLivro[0]?.livro_nome} - {Number(conteudo?.capituloAtual) == conteudo?.quantidadecapitulo[0].capitulo ? Number(conteudo?.capituloAtual) :  Number(conteudo?.capituloAtual) + 1}
                                 <ArrowForwardIcon style={{ fontSize: 50, color:"black" }}/>
                             </Button>                            
                         </div>                    
@@ -161,17 +130,16 @@ export default function NovoPainelLeitura({match}){
                                 </div>
                             )
                         })}
-                    </article>    
-
-
+                    </article>  
                 </div>
                 <aside>
                     <div className="aside-select">
-                        <DialogSelect tituloBotao="Navegar pela história"/>
+                        <DialogSelect tituloBotao="MUDAR LEITURA"/>
                     </div>
+  
+                    <PainelMenuLateral/>
                 </aside>
-            </main>
-            
+            </main>            
             <Footer/>
         </>
     )
