@@ -117,7 +117,7 @@ class Busca_Biblia_BD {
 
         try{
             await Promise.all([promessa1, promessa2, promessa3, promessa4])
-            let retorno = {conteudo: await promessa1, nomeLivro: await promessa2, quantidadecapitulo: await promessa3, nomeVersao: await promessa4}
+            let retorno = {conteudo: await promessa1, nomeLivro: await promessa2, quantidadecapitulo: await promessa3, nomeVersao: await promessa4, capituloAtual: capitulo}
             return retorno
         }catch(erro){
             console.log(erro)
