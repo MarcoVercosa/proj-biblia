@@ -174,7 +174,7 @@ export default function HinoHarpa() {
                     </menu>
                 }
 
-                <div style={{display: "flex"}}>
+                <div style={{display: "flex", width:"100%", marginLeft:"10px"}}>
                     <article className="hinoharpaleitura-article">
                         <h3>{tituloHino}</h3>
                         {letraHino &&
@@ -213,7 +213,7 @@ export default function HinoHarpa() {
                             }
                         </menu>
                     </article>      
-                    <aside className="menu-lateral">
+                    <aside className="aside-select">
                         <PainelMenuLateral />
                     </aside>            
                 </div>

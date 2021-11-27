@@ -12,15 +12,25 @@
 }
 
 .painel-leitura-main-div-div{    
-    /* background-image : url(background.jpg); */
     border-radius: 40px;
     padding: 25px; 
     border-right: 2px solid  rgb(95, 95, 95);
     border-radius: 10px; 
+    animation-duration: 2s;
+    animation-name: slidein;
 }
 .painel-leitura-main-div-div-descricao{
     display: flex;
     justify-content: space-between;
+
+}
+@keyframes slidein {
+    from {
+        opacity: 0;
+        }  
+        to {
+        opacity: 1;
+    }
 }
 
 .painel-leitura-main-div-div-descricao, h2 p {    
@@ -68,7 +78,7 @@
     justify-content: center;
 } 
 
-aside{
+.aside-selectide{
     width: 34%;
     text-align: center;
     border: 2px solid  rgb(95, 95, 95);
@@ -76,7 +86,7 @@ aside{
     margin-left: 1px;
 
 }
-.aside-select{
+.aside-select-div{
  margin-top: 10%;
 }
 

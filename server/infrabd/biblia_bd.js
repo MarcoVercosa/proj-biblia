@@ -130,8 +130,9 @@ class Busca_Biblia_BD {
         `SELECT versao_id,versiculos.livro_id, conteudo, capitulo, versiculo, livro_nome, livro_abreviado, livro_testamento_id
          FROM biblia.versiculos 
          INNER JOIN biblia.livros ON livros.livro_id = versiculos.livro_id
-         WHERE versao_id="3" AND conteudo like '%${palavra_pesquisa}%'`
-         //busca as colunas da tabela versiculos, inclui algunas da tabela livros
+         WHERE versao_id="3" AND  MATCH(conteudo) AGAINST ('${palavra_pesquisa}')`
+         // tras as colunas da tabela versiculos, inclui algunas da tabela livros. 
+         //AGAINST é como o LIKE, mas tras o resultado se tiver a palavra exata
         return new Promise((resolve, reject)=>{
             conectaBD.query(sql_query_busca_por_palavra , (erro, resultado)=> {
                 if(erro){

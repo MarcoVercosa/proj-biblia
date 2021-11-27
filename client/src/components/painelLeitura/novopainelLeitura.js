@@ -94,8 +94,8 @@ export default function NovoPainelLeitura({match}){
                                 style={{fontSize:"17px", fontFamily:"Garamond", fontStyle:"italic", borderRadius:"20px"}}
                                 disabled={Number(conteudo?.capituloAtual) == 1 ? true :  false}
                                 onClick={async () => {setConteudo(await RetornaCapitulo(match.params.versao_id, match.params.testamento_id, match.params.livro_id, Number(conteudo?.capituloAtual)))
-                                    // SetVersiculo(versiculo.style.color="black")
-                                    //o setVersiculo irpá alterar a cor do paragrafo Para evitar que ao retornar de página  o versiculo da url continue vermelho
+                                    SetVersiculo("na")
+                                    //o setVersiculo altera para "na" indicando que não haverá mais versiculos a serem grifados de vermelho
                                 }}
                                 variant="contained">
                                 <ArrowBackIcon style={{ fontSize: 50, color:"black" }}/>
@@ -119,14 +119,12 @@ export default function NovoPainelLeitura({match}){
                                 onClick={async () => {
                                     SetVersiculo("na")
                                     setConteudo(await AvancaCapitulo(match.params.versao_id, match.params.testamento_id, match.params.livro_id, Number(conteudo?.capituloAtual)))
-                                //o setConteudo vai receber os dados e ja armazenar dentro dele
-                                    // SetVersiculo(versiculo.style.color="black")
-                                    //o setVersiculo irpá alterar a cor do paragrafo Para evitar que ao avançar/ de página  o versiculo da url continue vermelho
-                                    
+                                    //setConteudo vai receber os dados e ja armazenar dentro dele
+                                    //o setVersiculo altera para "na" indicando que não haverá mais versiculos a serem grifados de vermelho                                    
                                 }}
                                 variant="contained"
                             >
-                                                                      {/* se match.params.capitulo == ao ultimo capitulo, permaneça o ultimo capitulo, senão add mais um */}
+                                                                      {/* se o capitulo for igual ao ultimo capitulo, permaneça o ultimo capitulo, senão add mais um */}
                                 {conteudo?.nomeLivro[0]?.livro_nome} - {Number(conteudo?.capituloAtual) == conteudo?.quantidadecapitulo[0].capitulo ? Number(conteudo?.capituloAtual) :  Number(conteudo?.capituloAtual) + 1}
                                 <ArrowForwardIcon style={{ fontSize: 50, color:"black" }}/>
                             </Button>                            
@@ -145,8 +143,8 @@ export default function NovoPainelLeitura({match}){
                         })}
                     </article>  
                 </div>
-                <aside>
-                    <div className="aside-select">
+                <aside className="aside-select">
+                    <div className="aside-select-div">
                         <DialogSelect tituloBotao="MUDAR LEITURA"/>
                     </div>
   

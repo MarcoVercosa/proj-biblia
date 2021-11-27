@@ -46,8 +46,7 @@
 }
 
 .hinoharpaleitura-article{
-    margin:0px 0 15px 10px;
-    background-image : url(../painelLeitura/background.jpg);
+    margin:0px 0 15px 5px;
     width: 65%;
     border-radius: 25px;
     padding: 15px;
@@ -57,6 +56,8 @@
     border: 2px solid  rgb(95, 95, 95);
     border-radius: 10px;
 }
+
+
 
 .hinoharpa-article-div-form{
     display: block
@@ -86,7 +87,8 @@
     justify-content: center;
     text-align: center;
     transition: all 1s;
-    cursor: pointer  
+    cursor: pointer;
+
 }
 
 .hinoharpa-busca-menu div:hover{
