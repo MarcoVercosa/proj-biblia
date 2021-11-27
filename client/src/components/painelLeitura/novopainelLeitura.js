@@ -21,6 +21,7 @@ export default function NovoPainelLeitura({match}){
     const [conteudo, setConteudo] = useState(false)
     const [optionComponent, setOptionComponent] = useState()
     const [curiosidades, setCuriosidades] = useState(false)
+    const [versiculo, SetVersiculo] =  useState(match.params.versiculo)
 
     useEffect(async()=>{
         //assim que a página é carregada, busca na api o conteudo do capitulo, dado os parâmetros abaixo
@@ -39,11 +40,8 @@ export default function NovoPainelLeitura({match}){
         setOptionComponent(options)
         setConteudo(data)
         BuscaCuriosodades(data.nomeLivro[0].livro_nome)
-        window.scroll({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
+        SetVersiculo(match.params.versiculo)
+ 
     },[match.params.capitulo])
 
     async function BuscaCuriosodades(recebeLivro) {
@@ -79,7 +77,13 @@ export default function NovoPainelLeitura({match}){
                         {
                             conteudo && conteudo.conteudo.map((dado, index)=>{
                                 return (                                
-                                    <p className="painel-leitura-main-div-p" key={index }><spam>{index +1 + " - "}</spam> {dado.conteudo} </p>                                
+                                    <p id={index +1} className="painel-leitura-main-div-p" key={index }
+                                         style={{color: versiculo == index + 1 ? "red" : "black"}}
+                                    >
+                                        {/* quando vier o parametro versiculo na url q é enviado somente pela página de pesquisa, então sublinhe o versiculo pesquisado */}
+                                        <spam>{index +1 + " - "}</spam> 
+                                        {dado.conteudo}
+                                    </p>                                
                                 )   
                             })
                         }
@@ -89,7 +93,10 @@ export default function NovoPainelLeitura({match}){
                             <Button 
                                 style={{fontSize:"17px", fontFamily:"Garamond", fontStyle:"italic", borderRadius:"20px"}}
                                 disabled={Number(conteudo?.capituloAtual) == 1 ? true :  false}
-                                onClick={async () => {setConteudo(await RetornaCapitulo(match.params.versao_id, match.params.testamento_id, match.params.livro_id, Number(conteudo?.capituloAtual)))}}
+                                onClick={async () => {setConteudo(await RetornaCapitulo(match.params.versao_id, match.params.testamento_id, match.params.livro_id, Number(conteudo?.capituloAtual)))
+                                    // SetVersiculo(versiculo.style.color="black")
+                                    //o setVersiculo irpá alterar a cor do paragrafo Para evitar que ao retornar de página  o versiculo da url continue vermelho
+                                }}
                                 variant="contained">
                                 <ArrowBackIcon style={{ fontSize: 50, color:"black" }}/>
                                                                       {/* se match.params.capitulo == ao primeiro capitulo, permaneça o número 1, senão subtraia um */}
@@ -109,8 +116,14 @@ export default function NovoPainelLeitura({match}){
                                 style={{fontSize:"17px", fontFamily:"Garamond", fontStyle:"italic", borderRadius:"20px"}}
                                 // desativa o botão se o numero do capitulo para avançar  for maior q o ultimo capitulo do livro
                                 disabled={Number(conteudo?.capituloAtual) == conteudo?.quantidadecapitulo[0].capitulo ? true :  false}
-                                onClick={async () => {setConteudo(await AvancaCapitulo(match.params.versao_id, match.params.testamento_id, match.params.livro_id, Number(conteudo?.capituloAtual)))}}
+                                onClick={async () => {
+                                    SetVersiculo("na")
+                                    setConteudo(await AvancaCapitulo(match.params.versao_id, match.params.testamento_id, match.params.livro_id, Number(conteudo?.capituloAtual)))
                                 //o setConteudo vai receber os dados e ja armazenar dentro dele
+                                    // SetVersiculo(versiculo.style.color="black")
+                                    //o setVersiculo irpá alterar a cor do paragrafo Para evitar que ao avançar/ de página  o versiculo da url continue vermelho
+                                    
+                                }}
                                 variant="contained"
                             >
                                                                       {/* se match.params.capitulo == ao ultimo capitulo, permaneça o ultimo capitulo, senão add mais um */}

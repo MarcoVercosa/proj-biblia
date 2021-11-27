@@ -27,8 +27,6 @@ export default function PesquisaBiblia(props) {
         if (resultado.data.length < 1) {
             setErroBusca(true) //Ativa o erro
             setBarraProgresso(false)
-
-
         } else {
             setDadosPesquisaPaginacao([{ tamanho: resultado.data.length, paginacao: resultado.data.slice(paginaVolta, paginaAvanca), saberQuePagina: 1 }])
             setDadosPesquisa(resultado)

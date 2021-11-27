@@ -5,7 +5,7 @@ import Biblia from "./components/biblia/biblia"
 import PainelLeitura from "./components/painelLeitura/painelLeitura"
 import NovoPainelLeitura from './components/painelLeitura/novopainelLeitura';
 import HinoHarpa from "./components/hinoHarpa/hinoHarpa"
-import PesquisaBiblia from "./components/pesquisaBiblia/pesquisabiblia"
+import NovaPesquisaBiblia from "./components/pesquisaBiblia/novapesquisabiblia"
 import Sobre from "./components/sobre/sobre"
 import PaginaErro from "./components/paginaErro/paginaErro"
 import './index.css';
@@ -21,11 +21,11 @@ ReactDOM.render(
       <Route path="/" exact={true} component={App} />
       <Route path="/biblianvi" exact={true} component={Biblia} />
       <Route path="/biblianvi/painelleitura/:idade/:livro/:capitulo/:versiculo" component={PainelLeitura} />{/* recebe 3 parametros */}
-      <Route path="/biblianvi/novopainelleitura/:versao_id/:testamento_id/:livro_id/:capitulo" component={NovoPainelLeitura} />
+      <Route path="/biblianvi/novopainelleitura/:versao_id/:testamento_id/:livro_id/:capitulo/:versiculo" component={NovoPainelLeitura} />
 
       <Route path="/harpacrista" component={HinoHarpa} />
       {/* <Route path="/populaharpa" component={PopularBDHarpa} /> */}
-      <Route path="/biblianvi/pesquisa/:palavrapesquisabiblia" component={PesquisaBiblia} />
+      <Route path="/biblianvi/pesquisa/:palavrapesquisabiblia" component={NovaPesquisaBiblia} />
       <Route path="/sobre" component={Sobre} ></Route>
       <Route path="*" component={PaginaErro} />
 

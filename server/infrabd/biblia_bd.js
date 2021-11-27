@@ -77,8 +77,8 @@ class Busca_Biblia_BD {
         })
         const promessa2 = new Promise((resolve, reject) => {
             //query busca nome do livro e seu nome abreviado, dado o numero do testamento e o id do livro
-            const sql_buscaNomeLivroPesquisado = `SELECT livro_nome, livro_abreviado FROM biblia.livros WHERE livro_testamento_id=${testamento_id} AND livro_id=${livro_id}`
-            conectaBD.query(sql_buscaNomeLivroPesquisado, (erro, resultado) => {
+            const sql = `SELECT livro_nome, livro_abreviado FROM biblia.livros WHERE livro_testamento_id=${testamento_id} AND livro_id=${livro_id}`
+            conectaBD.query(sql, (erro, resultado) => {
                 if (erro) {
                     reject(erro)
                 }   else {
@@ -123,10 +123,25 @@ class Busca_Biblia_BD {
             console.log(erro)
             return erro
         }
+    } 
 
-
-    }      
-    
+    PesquisaPorPalavra(palavra_pesquisa){
+        const sql_query_busca_por_palavra = 
+        `SELECT versao_id,versiculos.livro_id, conteudo, capitulo, versiculo, livro_nome, livro_abreviado, livro_testamento_id
+         FROM biblia.versiculos 
+         INNER JOIN biblia.livros ON livros.livro_id = versiculos.livro_id
+         WHERE versao_id="3" AND conteudo like '%${palavra_pesquisa}%'`
+         //busca as colunas da tabela versiculos, inclui algunas da tabela livros
+        return new Promise((resolve, reject)=>{
+            conectaBD.query(sql_query_busca_por_palavra , (erro, resultado)=> {
+                if(erro){
+                    reject(erro)
+                }else{
+                    resolve(resultado)
+                }
+            })
+        })
+    }
 }
 
 module.exports = Busca_Biblia_BD

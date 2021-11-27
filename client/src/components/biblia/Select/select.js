@@ -154,6 +154,7 @@ export default function DialogSelect({tituloBotao}) {
         }else{
             return "none"
         }
+        //se os campos  estiverem prrenchidos, a funao retorna display: "block", senão "none" e não habilita
     }
 
     return (
@@ -164,7 +165,7 @@ export default function DialogSelect({tituloBotao}) {
                 style={{ fontSize: "20px", fontFamily: "Times New Roman",backgroundColor:"#14a37f", color:"white" }}
                 onClick={handleClickOpen}                
             >
-                <GrainIcon fontSize="large" style={{marginRight:"20px"}}/>
+                <GrainIcon fontSize="large" style={{marginRight:"1px"}}/>
                 {tituloBotao}
             </Button>
 
@@ -265,7 +266,7 @@ export default function DialogSelect({tituloBotao}) {
                     </Button>
 
 
-                    <Link style={{display:LiberaOK()}} to={`/biblianvi/novopainelleitura/${camposSelecionados.versao_id}/${camposSelecionados.testamento_id}/${camposSelecionados?.livro_id?.livro_id}/${camposSelecionados.capitulo}`}>
+                    <Link style={{display:LiberaOK()}} to={`/biblianvi/novopainelleitura/${camposSelecionados.versao_id}/${camposSelecionados.testamento_id}/${camposSelecionados?.livro_id?.livro_id}/${camposSelecionados.capitulo}/na`}>
                         <Button onClick={handleClose} color="primary">
                             Ok
                         </Button>

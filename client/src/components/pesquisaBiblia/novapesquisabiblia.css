@@ -1,0 +1,39 @@
+.article-pesquisa{
+    display: flex;
+    width: 100%;
+}
+
+.article-pesquisa-div{
+    width: 65%;
+    /* padding: 30px; */
+}
+.article-pesquisa-div-titulo{
+    text-align: center;
+    font-family:"Garamond";
+    font-style:"italic"; 
+    font-size: 21px;
+    
+}
+
+.article-pesquisa-div-div{
+    /* background-color: red; */
+    border: 2px solid  rgb(187, 187, 187);
+    border-radius: 10px; 
+    margin-left: 20px;
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.article-pesquisa-div-p{
+    font-family:"Garamond";
+    font-style:"italic"; 
+    font-size: 21px;  
+}
+.article-pesquisa-menu-div{
+    margin-top: 6%;
+    width: 35%;
+    border: 2px solid  rgb(95, 95, 95);
+    border-radius: 10px;
+    color:rgb(208, 168, 150)
+}
+
