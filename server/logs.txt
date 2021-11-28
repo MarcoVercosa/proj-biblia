@@ -4,3 +4,51 @@
              - http://localhost:3000 com o método - GET na rota - /buscalivroantigotesta
 3/10/2021 -- 23:31 => NEGADO acesso da origem
              - http://localhost:3000 com o método - GET  na rota - /buscalivroantigotesta
+0/10/2021 -- 1:39 => NEGADO acesso da origem
+         - http://localhost:3000 com o método - GET  na rota - /mais/buscaversao
+0/10/2021 -- 1:43 => NEGADO acesso da origem
+         - http://localhost:3000 com o método - GET  na rota - /mais/buscaversao
+0/10/2021 -- 1:43 => NEGADO acesso da origem
+         - http://localhost:3000 com o método - GET  na rota - /mais/buscaversao
+0/10/2021 -- 1:43 => NEGADO acesso da origem
+         - http://localhost:3000 com o método - GET  na rota - /mais/buscaversao
+0/10/2021 -- 1:43 => NEGADO acesso da origem
+         - http://localhost:3000 com o método - GET  na rota - /mais/buscaversao
+0/10/2021-- 1:44 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+0/10/2021 -- 1:46 => NEGADO acesso da origem
+         - http://localhost:3000 com o método - GET  na rota - /mais/buscaconteudo/5/2/54/4
+0/10/2021 -- 1:46 => NEGADO acesso da origem
+         - http://localhost:3000 com o método - GET  na rota - /mais/buscaconteudo/5/2/54/4
+0/10/2021 -- 1:47 => NEGADO acesso da origem
+         - http://localhost:3000 com o método - GET  na rota - /mais/buscaconteudo/8/1/19/16
+0/10/2021-- 1:49 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/8/1/19/16
+0/10/2021-- 2:11 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/8/1/19/16
+0/10/2021-- 2:13 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/8/1/19/16
+0/10/2021-- 2:13 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/Salmos
+0/10/2021-- 2:17 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+0/10/2021-- 2:17 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+0/10/2021-- 2:17 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+0/10/2021-- 2:18 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+0/10/2021-- 2:18 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+0/10/2021-- 2:18 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+0/10/2021-- 2:21 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+0/10/2021-- 2:21 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+0/10/2021-- 2:21 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/10
+0/10/2021-- 2:21 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatituloporpalavra/louvarei
+0/10/2021-- 2:21 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/69

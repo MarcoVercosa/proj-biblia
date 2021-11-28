@@ -1,5 +1,4 @@
 const conectaBD = require("../infrabd/conexao")
-const Tabelas = require("../infrabd/tabelas")
 const router = require("../http/routes/index")
 // const router = require("../http/routes/rotas/rotasJson")
 
@@ -19,7 +18,6 @@ function Busca() {
                     console.log("Conectado no banco de dados com sucesso no seguinte horário: ")
                     console.log("Hoje é " + now.getDate() + " do mês " + now.getMonth() + " de " + now.getFullYear() + "---" + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds())
 
-                    Tabelas.init(conectaBD)
                     app.use(express.json())
                     app.use(router)
 

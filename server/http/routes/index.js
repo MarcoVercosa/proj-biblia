@@ -2,7 +2,8 @@ const express = require("express")
 let router = express()
 const cors = require('cors');
 
-const rota_biblia_Json = require("./rotas/rota_biblia_Json")
+const rota_biblia_hinoharpa = require ("./rotas/rota_biblia_hinoharpa")
+const rota_biblia_curiosidades = require("./rotas/rota_biblia_curiosidades")
 const rota_biblia_mysql = require("./rotas/rota_biblia_mysql")
 
 
@@ -16,10 +17,9 @@ router.use((req, res, next) => {
     next();
 });
 
-router.use("/", rota_biblia_Json)
-//Rotas da biblia NVI somente do formato JSON
-
+router.use("/curiosidades", rota_biblia_curiosidades)
 router.use("/mais", rota_biblia_mysql)
+router.use("/hinoharpa", rota_biblia_hinoharpa)
 
 
 module.exports = router

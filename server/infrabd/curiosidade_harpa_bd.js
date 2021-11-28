@@ -2,8 +2,6 @@ const conectaBD = require("./conexao")
 
 class BuscaDadosBD {
 
-
-
     ListaNumeroHino(res) {// busca somente o numero de todos os hinos
 
         const sql = "SELECT numero FROM biblia13v.louvores" //query que traz todas as informs da tabela
@@ -46,19 +44,19 @@ class BuscaDadosBD {
         })
     }
 
-    AdicionaCuriosidades(dadosPost, res) {//usado para cadastro de curiosidades
+    // AdicionaCuriosidades(dadosPost, res) {//usado para cadastro de curiosidades
 
-        const sql = `INSERT INTO biblia13v.curiosidades SET ?`
-        conectaBD.query(sql, dadosPost, (erro, resultado) => {
-            if (erro) {
-                return (erro)
-            } else {
-                return (resultado)
-            }
-        })
-        console.log("ADD curiosidades no BD")
+    //     const sql = `INSERT INTO biblia13v.curiosidades SET ?`
+    //     conectaBD.query(sql, dadosPost, (erro, resultado) => {
+    //         if (erro) {
+    //             return (erro)
+    //         } else {
+    //             return (resultado)
+    //         }
+    //     })
+    //     console.log("ADD curiosidades no BD")
 
-    }
+    // }
 
     BuscaCuriosidade(palavra, res) {
         const sql = `SELECT livro, conteudo FROM biblia13v.curiosidades WHERE livro LIKE "%${palavra}%"`
