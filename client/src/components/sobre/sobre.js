@@ -15,7 +15,7 @@ export default function Sobre() {
 
             <article className="sobre-article">
                 <div className="sobre-article-div">
-                    <h2>Sobreeeeeeeeeee</h2>
+                    <h2>Sobre</h2>
                     <p>Olá, meu nome é Marco. Uma pessoa cheia de defeitos e que comete falhas, mas que sempre tenta fazer o melhor e melhorar para agradar a <strong>Deus</strong>.</p>
                     <p><strong>A vida de um cristão é feita de busca incansável pela boa, perfeita e agradável presença de Deus e de boas obras, obras que ajudam seu próximo e que agradam o Pai, filho e o Espírito Santo segundo a vontade de Deus.</strong></p>
                     <p>Mas eu sempre achei que as obras que faço ou que já fiz ainda são pouquíssimas perto do que Deus já fez por mim.</p>

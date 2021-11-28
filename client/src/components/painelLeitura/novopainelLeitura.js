@@ -42,7 +42,7 @@ export default function NovoPainelLeitura({match}){
         BuscaCuriosodades(data.nomeLivro[0].livro_nome)
         SetVersiculo(match.params.versiculo)
  
-    },[match.params.capitulo])
+    },[match.params.capitulo, match.params.livro_id, match.params.versao_id])
 
     async function BuscaCuriosodades(recebeLivro) {
         const resultado = await GetAPI(`buscacuriosidade/${recebeLivro}`)

@@ -21,7 +21,7 @@ class BuscaDadosBD {
 
     BuscaHinoPorNumero(numero, res) {//busca o título dado o numero
 
-        const sql = `SELECT letra, titulo FROM hinoHarpa.louvores WHERE numero=${numero}`
+        const sql = `SELECT letra, titulo FROM biblia13v.louvores WHERE numero=${numero}`
         conectaBD.query(sql, (erro, resultado) => {
 
             if (erro) {
@@ -35,7 +35,7 @@ class BuscaDadosBD {
 
     BuscaHinoPorPalavra(palavra, res) {//busque numero e titulo onde titulo tenha a palavra recebida
 
-        const sql = `SELECT numero, titulo FROM hinoHarpa.louvores WHERE letra LIKE "%${palavra}%"`
+        const sql = `SELECT numero, titulo FROM biblia13v.louvores WHERE letra LIKE "%${palavra}%"`
         conectaBD.query(sql, (erro, resultado) => {
 
             if (erro) {
@@ -48,7 +48,7 @@ class BuscaDadosBD {
 
     AdicionaCuriosidades(dadosPost, res) {//usado para cadastro de curiosidades
 
-        const sql = `INSERT INTO curiosidades SET ?`
+        const sql = `INSERT INTO biblia13v.curiosidades SET ?`
         conectaBD.query(sql, dadosPost, (erro, resultado) => {
             if (erro) {
                 return (erro)
@@ -61,7 +61,7 @@ class BuscaDadosBD {
     }
 
     BuscaCuriosidade(palavra, res) {
-        const sql = `SELECT livro, conteudo FROM hinoHarpa.curiosidades WHERE livro LIKE "%${palavra}%"`
+        const sql = `SELECT livro, conteudo FROM biblia13v.curiosidades WHERE livro LIKE "%${palavra}%"`
         conectaBD.query(sql, (erro, resultado) => {
             if (erro) {
                 console.log(erro)
@@ -71,8 +71,6 @@ class BuscaDadosBD {
             }
         })
     }
-
-
 }
 
 module.exports = new BuscaDadosBD
