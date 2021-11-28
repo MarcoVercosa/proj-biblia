@@ -45,7 +45,7 @@ export default function NovoPainelLeitura({match}){
     },[match.params.capitulo, match.params.livro_id, match.params.versao_id])
 
     async function BuscaCuriosodades(recebeLivro) {
-        const resultado = await GetAPI(`buscacuriosidade/${recebeLivro}`)
+        const resultado = await GetAPI(`curiosidades/buscacuriosidade/${recebeLivro}`)
         setCuriosidades(resultado)
     }  
 

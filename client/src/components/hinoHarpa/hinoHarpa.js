@@ -37,7 +37,7 @@ export default function HinoHarpa() {
 
     useEffect(async () => {
 
-        const resultado = await GetAPI("buscanumeroharpa")
+        const resultado = await GetAPI("hinoharpa/buscanumeroharpa")
         setNumerosHinos(resultado)
 
     }, [])
@@ -49,7 +49,7 @@ export default function HinoHarpa() {
 
         if (recebe) {
             setAlteraCampoNumero(recebe)
-            const buscaHino = await GetAPI(`buscatitulopornumero/${recebe}`)
+            const buscaHino = await GetAPI(`hinoharpa/buscatitulopornumero/${recebe}`)
             //console.log(letraHino)
             var armazena = []
             armazena = buscaHino.data[0].letra.split("%")
@@ -58,7 +58,7 @@ export default function HinoHarpa() {
             setTituloHino(buscaHino.data[0].titulo) //armazena o titulo do hino
         } else {
 
-            const buscaHino = await GetAPI(`buscatitulopornumero/${alteraCampoNumero}`)
+            const buscaHino = await GetAPI(`hinoharpa/buscatitulopornumero/${alteraCampoNumero}`)
             //console.log(letraHino)
             var armazena = []
             armazena = buscaHino.data[0].letra.split("%")
@@ -73,7 +73,7 @@ export default function HinoHarpa() {
             alert("Digite ao menos 2 letras para iniciar a pesquisa")
             return
         }
-        const recebe = await GetAPI(`buscatituloporpalavra/${campoTituloBusca}`)
+        const recebe = await GetAPI(`hinoharpa/buscatituloporpalavra/${campoTituloBusca}`)
         if (recebe.data.length < 1) {// se não retornar nada
             setErroPesquisaPorPalavra(true)
             setDadosBuscaPesquisaPorTitulo(false)

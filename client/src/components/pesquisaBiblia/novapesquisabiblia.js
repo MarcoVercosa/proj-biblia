@@ -4,6 +4,7 @@ import SearchAppBar from "../header/header"
 import PainelMenuLateral from '../painelMenuLateral/painelMenuLateral';
 import Footer from '../footer/footer';
 import GetAPI from '../../fetch/api';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 import "./novapesquisabiblia.css"
 
@@ -26,7 +27,7 @@ export default function NovaPesquisaBiblia({match}){
         return (
             <>
                 <SearchAppBar/>
-                    <h1>Carregando</h1>
+                    <LinearProgress/>
                 <Footer/>
             </>
         )
