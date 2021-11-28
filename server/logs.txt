@@ -284,3 +284,47 @@
          - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
 0/10/2021-- 13:56 => LIBERADO acesso da origem
          - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/11
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/8
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscatestamento
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscalivros/2
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscacapitulo/6/47
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/6/2/47/8
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Cor%C3%ADntios
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/6/2/47/9
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/6/2/47/12
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/6/2/47/13
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/6/2/47/8
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Cor%C3%ADntios
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/6/2/47/14
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/6/2/47/8
+0/10/2021-- 14:8 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Cor%C3%ADntios
+0/10/2021-- 14:9 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/14/2/47/8
+0/10/2021-- 14:9 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/14/2/47/8
+0/10/2021-- 14:9 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/nnj/2/47/8
+0/10/2021-- 14:9 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/nnj/2/47/8
+0/10/2021-- 14:9 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/5/2/47/8
+0/10/2021-- 14:9 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Cor%C3%ADntios
