@@ -51,7 +51,22 @@ export default function NovoPainelLeitura({match}){
 
     if(conteudo?.sqlMessage || conteudo?.conteudo?.length < 1){
         return (
-            <h1>Página não encontrada</h1>
+            <>
+            <SearchAppBar />
+            <article className="pesquisabibianotfound-article">
+                <div className="notfound-article-article-div">
+                    <div style={{textAlign: "center"  }}>
+                        <spam ><i class="far fa-frown fa-8x"></i></spam>
+                    </div>                
+                    <h2 style={{textAlign: "center"  }}>Página não encontrada.</h2>
+                </div>
+                <div className="pesquisabibianotfound-article-div-menulateral">
+                    <PainelMenuLateral />
+                </div>
+               
+            </article >
+            <Footer />
+        </>
         )
     }
     if(!conteudo){

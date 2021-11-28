@@ -37,3 +37,18 @@
     color:rgb(208, 168, 150)
 }
 
+.pesquisabibianotfound-article{
+    width: 100%;
+    display: flex;
+    /* border: 2px solid  rgb(95, 95, 95);
+    border-radius: 10px; */
+}
+.notfound-article-article-div{
+    width: 62%;
+
+}
+
+.pesquisabibianotfound-article-div-menulateral{
+    width: 35%;  
+
+}

@@ -192,7 +192,19 @@ code {
   }
   .pesquisabibia-article-div-paginas-li-right span i{
     margin-left: 20px;
-  } 
+  }
+  .article-pesquisa-menu-div{
+    display: none
+  }
+  .article-pesquisa-div{
+    width: 100%;
+  }
+  .notfound-article-article-div{
+    width: 100%;
+  }
+  .pesquisabibianotfound-article-div-menulateral{
+    display: none
+  }
 
 
 
@@ -239,6 +251,14 @@ code {
   }
   .sobre-article-div-menu{
     display: none;
+  }
+
+  /* ERRO */
+  .erro-article-div-div{
+    display: none;
+  }
+  .erro-article-div{
+    width: 100%;
   }
 
 }

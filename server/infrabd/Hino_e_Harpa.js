@@ -6,7 +6,7 @@ class BuscaDadosBD {
 
     ListaNumeroHino(res) {// busca somente o numero de todos os hinos
 
-        const sql = "SELECT numero FROM hinoHarpa.louvores" //query que traz todas as informs da tabela
+        const sql = "SELECT numero FROM biblia13v.louvores" //query que traz todas as informs da tabela
         conectaBD.query(sql, (erro, resultado) => {
             if (erro) {
                 console.log(erro)

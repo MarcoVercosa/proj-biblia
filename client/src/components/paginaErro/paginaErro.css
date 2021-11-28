@@ -1,21 +1,19 @@
 .erro-article{
-    display: inline-block;
-    margin:15px 0 15px 10px;
-    background-color: rgb(237, 233, 233);
-    width: 65%;
-    min-height: 500px;
-    border-radius: 25px;
-    padding: 15px;
+    display: flex;
 }
 
 .erro-article-div {
-    display: flex;
-    justify-content: center;
     text-align: center;
-    
-    
+    width: 65%;  
+    margin-top: 12%;
+
 }
 
 .erro-article-div spam{
-        color:#14a37f
+    color:#14a37f
+}
+
+.erro-article-div-div{
+    border: 2px solid  rgb(95, 95, 95);
+    border-radius: 10px;
 }

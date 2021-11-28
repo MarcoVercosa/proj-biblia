@@ -10,15 +10,48 @@ import "./novapesquisabiblia.css"
 
 export default function NovaPesquisaBiblia({match}){
 
-    const [conteudo, setConteudo] = useState(false)
+    const [conteudo, setConteudo] = useState([])
+    const [carregando, setCarregando] = useState(true)
 
     useEffect(async()=>{
 
         const {data}  = await GetAPI(`mais/pesquisa/${match.params.palavrapesquisabiblia}`)
         console.log(data)
         setConteudo(data)
+        setCarregando(false)
 
     }, [])
+
+    if(carregando){
+        return (
+            <>
+                <SearchAppBar/>
+                    <h1>Carregando</h1>
+                <Footer/>
+            </>
+        )
+    }
+
+    if(conteudo.length < 1){
+        return (
+            <>
+            <SearchAppBar />
+            <article className="pesquisabibianotfound-article">
+                <div className="notfound-article-article-div">
+                    <div style={{textAlign: "center"  }}>
+                        <spam ><i class="far fa-frown fa-8x"></i></spam>
+                    </div>                
+                    <h2 style={{textAlign: "center"  }}>Desculpe, não encontramos a palavra *{match.params.palavrapesquisabiblia}* que você solicitou .</h2>
+                </div>
+                <div className="pesquisabibianotfound-article-div-menulateral">
+                    <PainelMenuLateral />
+                </div>
+               
+            </article >
+            <Footer />
+        </>
+        )
+    }
     
     return (
         <>

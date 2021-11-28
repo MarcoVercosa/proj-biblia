@@ -15,8 +15,12 @@ export default function PaginaErro() {
                     <spam><i class="fas fa-exclamation-triangle fa-5x"></i></spam>
                     <h1>Desculpe, página não encontrada!</h1>
                 </div>
+                <div className="erro-article-div-div">
+                    <PainelMenuLateral />
+                </div>
             </article>
-            <PainelMenuLateral />
+ 
+            
             <Footer />
         </>
 
