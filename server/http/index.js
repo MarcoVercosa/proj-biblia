@@ -1,5 +1,5 @@
 const conectaBD = require("../infrabd/conexao")
-const router = require("../http/routes/index")
+const router = require("./routes/index_routes")
 // const router = require("../http/routes/rotas/rotasJson")
 
 const express = require("express")
