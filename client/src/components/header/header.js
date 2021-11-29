@@ -105,7 +105,7 @@ function SearchAppBar() {
                 return
             }
             // alert("Pressione o botão buscar para encontrar o que deseja")
-            window.location.href = `/biblianvi/pesquisa/${dataPesquisa}`
+            window.location.href = `/biblia/pesquisa/${dataPesquisa}`
         }
     }
 
@@ -127,7 +127,7 @@ function SearchAppBar() {
                     >
                         <Link className='li-vamos' to="/">
                             <MenuItem onClick={handleClose}>INÍCIO</MenuItem></Link>
-                        <Link className='li-vamos' to="/biblianvi#selecionar">
+                        <Link className='li-vamos' to="/biblia">
                             <MenuItem onClick={handleClose}>LEITURA DA BÍBLIA</MenuItem></Link>
                         <Link className='li-vamos' to="/harpacrista">
                             <MenuItem onClick={handleClose}>HINOS DA HARPA</MenuItem></Link>
