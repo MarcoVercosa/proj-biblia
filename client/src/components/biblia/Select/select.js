@@ -266,7 +266,7 @@ export default function DialogSelect({tituloBotao}) {
                     </Button>
 
 
-                    <Link style={{display:LiberaOK()}} to={`/biblianvi/novopainelleitura/${camposSelecionados.versao_id}/${camposSelecionados.testamento_id}/${camposSelecionados?.livro_id?.livro_id}/${camposSelecionados.capitulo}/na`}>
+                    <Link style={{display:LiberaOK()}} to={`/biblia/painelleitura/${camposSelecionados.versao_id}/${camposSelecionados.testamento_id}/${camposSelecionados?.livro_id?.livro_id}/${camposSelecionados.capitulo}/na`}>
                         <Button onClick={handleClose} color="primary">
                             Ok
                         </Button>

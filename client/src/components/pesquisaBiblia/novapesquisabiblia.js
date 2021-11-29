@@ -39,7 +39,7 @@ export default function NovaPesquisaBiblia({match}){
             <SearchAppBar />
             <article className="pesquisabibianotfound-article">
                 <div className="notfound-article-article-div">
-                    <div style={{textAlign: "center"  }}>
+                    <div style={{textAlign: "center", marginTop:"100px"  }}>
                         <spam ><i class="far fa-frown fa-8x"></i></spam>
                     </div>                
                     <h2 style={{textAlign: "center"  }}>Desculpe, não encontramos a palavra *{match.params.palavrapesquisabiblia}* que você solicitou .</h2>

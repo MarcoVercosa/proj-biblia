@@ -17,7 +17,7 @@ export default function Menu() {
 
                 </Link>
 
-                <Link className='li-vamos' to="/biblianvi#selecionar">
+                <Link className='li-vamos' to="/biblia">
                     <li className='li-vamos'>
                         LEITURA DA BÍBLIA
                     </li>

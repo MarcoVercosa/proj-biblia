@@ -1,123 +1,110 @@
-.painelleiturabiblia-menu{
-    display: inline-block;
-    position: relative;
-    margin-left: 0px;
-
-}
-.painelleitura-article{
-    display: inline-block;
-    margin:15px 0 15px 0px;
-    background-color: rgb(237, 233, 233);
-    width: 60%;
-    border-radius: 25px;
-    padding: 15px;
-    /* display: inline-block; */
-    
-}
-
-.painelleitura-article-div{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 96%;
-}
-
-.painelleitura-article-paragrafo{
-
-    font-family: 'Lora', serif;
-    font-size: 22px;
-}
-
-.painelleitura-article-paragrafo spam{
-background-color: #d5d4d4;
-padding: 6px;
-border-radius: 15px;
-}
-
-.painelleitura-article-h3{
-
-    font-family: 'Lora', serif;
-    font-size: 30px
-
-}
-
-.painelleitura-article-paginacao{
-    /* display: flex;
-    
-    justify-content: left;
-    text-align: left;
-    vertical-align: left; */
+.painel-leitura-main{
     display: flex;
-    width: 56.5%;
-    margin-left: 13px;
-    
-}
-
-.painelleitura-article-ul {
-
-    display:flex;
+    justify-content:flex-start;  
     width: 100%;
-    justify-content: space-between;
-    list-style: none;
-    padding: 15px;
-    background-color:#3f9168;
-    border-radius: 15px;
-    margin: 0 auto;
-
- 
-}
-.painelleitura-article-li {
-    font-family: 'Lora', serif;
-    font-size: 27px;
-    cursor: pointer;
-    color: White;  
-    border-radius: 15px;
-    transition: all 0.5s;
     
-        
 }
 
-.painelleitura-article-li:hover{
-    background-color: rgb(147, 204, 177);
-    border-radius: 15px;
-    /* padding: 5px; */
-    transform: scale(1.1);
+.painel-leitura-main-div{
+    width: 65%;   
 
 }
-a{
-    text-decoration: none;
+
+.painel-leitura-main-div-div{    
+    border-radius: 40px;
+    padding: 25px; 
+    border-right: 2px solid  rgb(95, 95, 95);
+    border-radius: 10px; 
+    animation-duration: 2s;
+    animation-name: slidein;
+}
+.painel-leitura-main-div-div-descricao{
+    display: flex;
+    justify-content: space-between;
+
+}
+@keyframes slidein {
+    from {
+        opacity: 0;
+        }  
+        to {
+        opacity: 1;
+    }
 }
 
-.painelleitura-article-select{
+.painel-leitura-main-div-div-descricao, h2 p {    
+    font-family:"Garamond";
+    font-style:"italic";
+}
 
-    font-family: 'Lora', serif;
+.painel-leitura-main-div-p{
+    font-family: Garamond;
+    font-size: 21px;
+    font-style: italic;
+    padding: 5px;
+    transition: all 0.5s;
+}
+.painel-leitura-main-div-p:hover{
+    background-color: rgb(223, 223, 155);
+    border-radius: 25px;
+}
+
+.painel-leitura-main-div-setas{
+    display: flex;
+    width: 90%;
+    margin-top: 2%;
+    margin-left: 4%;
+    margin-bottom: 5%;
+    justify-content: space-around;
+    
+}
+
+.painel-leitura-main-div-setas-esquerda{
+    display: flex;
+
+}
+
+.painel-leitura-main-div-select select{
+    font-family: 'Garamond', serif;
+    font-style: italic;
     font-size: 30px;
     cursor: pointer;
     border-radius: 12px;
     margin-left: 4px;
-    background-color: #91bba6;
-    color: white;
+    background-color: #e8e8e8;
+    color: rgb(26, 25, 25);
     text-align: center;
     justify-content: center;
+} 
+
+.aside-select{
+    width: 34%;
+    text-align: center;
+    border: 2px solid  rgb(95, 95, 95);
+    border-radius: 10px;
+    margin-left: 1px;
+
+}
+.aside-select-div{
+ margin-top: 10%;
 }
 
 .painelleitura-article-article{
     display: grid;
-    grid-template-columns:  0.2fr 0.2fr 0.2fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));    
     grid-gap: 20px;
-    margin-left: 12px;
-    
-      
+    margin-left: 12px;  
+    border: 2px solid  rgb(95, 95, 95);
+    border-radius: 10px;
 }
-/* style={{ backgroundColor: "#3f9168", borderRadius: "20px", marginTop: "10px", padding: "15px" }} */
-.painelleitura-article-article div {    
-    border-radius: 20px;;
+.painelleitura-article-article-div {    
     border-radius: 40px;
     margin-bottom: 10px;
     margin-top: 25px;
     padding: 10px;
     font-family: 'Lora', serif;
     transition: all 1s;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .painelleitura-article-article div:hover{
@@ -132,6 +119,3 @@ a{
 .painelleitura-article-article-div-p-um{
 font-size: 25px;
 }
-
-
-

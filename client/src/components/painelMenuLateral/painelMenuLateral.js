@@ -16,7 +16,7 @@ export default function PainelMenuLateral() {
 
                 </Link>
 
-                <Link className='li-vamos' to="/biblianvi#selecionar">
+                <Link className='li-vamos' to="/biblia">
                     <li className='menu-painelleitura-li'>
                         <i className="fas fa-bible fa-2x icone"></i> LEITURA DA BÍBLIA
                     </li>

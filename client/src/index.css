@@ -122,6 +122,14 @@ code {
   }
   .painel-leitura-main-div{
     width: 100%;
+
+  }
+  .painel-leitura-main-div-div{
+  width: 96%;
+  padding: 5px;
+  }
+  .painel-leitura-main-div-div-descricao{
+    margin-left: 6px;
   }
 
 
@@ -144,71 +152,31 @@ code {
 
   /* Página PESQUISAS */
 
-  .pesquisabibia-article-div-palavra{
-    width: 100%;
 
-  }
-  .pesquisabibia-article{
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-  }
-
-  .pesquisabibia-article-div-um{
-    grid-template-columns: 100%;
-    margin: 0 auto;
-    padding: 0;
-  }
-  .pesquisabibia-article-div-dois{
-    margin: 0 auto;
-    padding: 0;
-  }
-
-  .pesquisabibia-article-div-paginas{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-  .pesquisabibia-article-div-paginas-li-ul{
-    flex-direction: column;
-    width: auto;
-    justify-content:center;
-    text-align: center;
-  }
-  .pesquisabibia-article-div-paginas-li-ul li{
-    display: flex;
-    justify-content:center;
-    text-align: center;
-  }
-
-  .pesquisabibia-article-div-paginas-li-left{
-    margin: 0 
-  }
-  .pesquisabibia-article-div-paginas-li-right{
-    margin: 0 
-  }
-  .pesquisabibia-article-div-paginas-li-left span i{
-    margin-right: 20px;
-  }
-  .pesquisabibia-article-div-paginas-li-right span i{
-    margin-left: 20px;
-  }
   .article-pesquisa-menu-div{
     display: none
   }
   .article-pesquisa-div{
     width: 100%;
   }
+  .article-pesquisa-div-div{
+    width: 94%;
+    margin-left: 5px
+  }
   .notfound-article-article-div{
     width: 100%;
   }
   .pesquisabibianotfound-article-div-menulateral{
     display: none
-  }
+  } 
 
 
 
   /* HINOS HARPA */
+
+  .hinoharpa-nav{
+    width: 99.5%;
+  }
 
   .hinoharp-article{
     flex-direction: column;
@@ -224,6 +192,9 @@ code {
       width: 93%;
       padding: 4px  ;
       margin: 0 auto;
+  }
+  .hinoharpaleitura-div{
+    margin-left: 2px;
   }
   .hinoharpa-busca-menu{
     grid-template-columns: 50% 50%;

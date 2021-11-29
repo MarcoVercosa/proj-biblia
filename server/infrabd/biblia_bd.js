@@ -8,7 +8,7 @@ class Busca_Biblia_BD {
 
             conectaBD.query(sql, (erro, resultado) => {
                 if (erro) {
-                    console.log(erro)
+                    // console.log(erro)
                     reject(erro)
                 } else {
 
@@ -68,9 +68,7 @@ class Busca_Biblia_BD {
             conectaBD.query(sql, (erro, resultado) => {
                 if (erro) {
                     reject(erro)
-                    // } else { resolve(resultado) }
                 }   else { 
-                    // console.log(resultado)
                     resolve(resultado)                    
                 }
             })
@@ -120,7 +118,7 @@ class Busca_Biblia_BD {
             let retorno = {conteudo: await promessa1, nomeLivro: await promessa2, quantidadecapitulo: await promessa3, nomeVersao: await promessa4, capituloAtual: capitulo}
             return retorno
         }catch(erro){
-            console.log(erro)
+            // console.log(erro)
             return erro
         }
     } 

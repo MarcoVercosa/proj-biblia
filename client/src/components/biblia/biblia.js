@@ -5,7 +5,6 @@ import Menu from "../../components/menu/menu";
 import DialogSelect from "./Select/select";
 import Footer from "../../components/footer/footer";
 
-import Carrosel from "./carrosel";
 
 export default function Biblia() {
 

@@ -174,7 +174,7 @@ export default function HinoHarpa() {
                     </menu>
                 }
 
-                <div style={{display: "flex", width:"100%", marginLeft:"10px"}}>
+                <div className="hinoharpaleitura-div" style={{display: "flex", width:"100%", marginLeft:"2px"}}>
                     <article className="hinoharpaleitura-article">
                         <h3>{tituloHino}</h3>
                         {letraHino &&
