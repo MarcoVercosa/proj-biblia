@@ -538,3 +538,15 @@
          - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/2/54/2
 0/10/2021-- 23:1 => LIBERADO acesso da origem
          - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/I%20Tim%C3%B3teo
+1/10/2021-- 22:58 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+1/10/2021-- 22:58 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscatestamento
+1/10/2021-- 22:58 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscalivros/2
+1/10/2021-- 22:58 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscacapitulo/6/52
+1/10/2021-- 22:58 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/6/2/52/2
+1/10/2021-- 22:58 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/I%20Tessalonicenses
