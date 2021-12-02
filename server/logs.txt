@@ -588,3 +588,31 @@
          - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/prego
 4/11/2021-- 11:43 => LIBERADO acesso da origem
          - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/prego
+4/11/2021-- 11:48 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+4/11/2021-- 11:48 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscatestamento
+4/11/2021-- 11:48 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscalivros/2
+4/11/2021-- 11:48 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscacapitulo/1/52
+4/11/2021-- 11:48 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/1/2/52/2
+4/11/2021-- 11:48 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/I%20Tessalonicenses
+4/11/2021-- 11:48 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/1/2/52/3
+4/11/2021-- 11:49 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/1/2/52/4
+4/11/2021-- 11:49 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/1/2/52/5
+4/11/2021-- 11:49 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/1/2/52/4
+4/11/2021-- 11:49 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/1/2/52/3
+4/11/2021-- 11:49 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/1/2/52/2
+4/11/2021-- 11:49 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/1/2/52/1
+4/11/2021-- 11:49 => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/prego

@@ -72,7 +72,7 @@ export default function NovaPesquisaBiblia({match}){
                                         </p>
                                     </div> 
                                     <div className="article-pesquisa-div-div-livro">
-                                        <LinkAncora  to={`/biblianvi/painelleitura/${dados.versao_id}/${dados.livro_testamento_id}/${dados.livro_id}/${dados.capitulo}/${dados.versiculo}#${dados.versiculo}`}>
+                                        <LinkAncora  to={`/biblia/painelleitura/${dados.versao_id}/${dados.livro_testamento_id}/${dados.livro_id}/${dados.capitulo}/${dados.versiculo}#${dados.versiculo}`}>
                                             <p className= "article-pesquisa-div-p">{dados.livro_nome} "{dados.livro_abreviado}" - {dados.capitulo}: {dados.versiculo}</p>
                                         </LinkAncora>
                                     </div>
