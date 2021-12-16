@@ -56,7 +56,7 @@ export default function Article() {
                 </div>
                 {/* <p>A Bíblia Nova Versão Internacional não foi traduzida de uma outra tradução bíblica,
                 mas foi traduzida diretamente dos manuscritos dos idiomas originais hebraico,
-                aramaico e grego, o que torna o conteúdo da tradução NVI mais confiável ainda.</p> */}
+                aramaico e grego, o que torna o conteúdo da tradução NVI mais confiável aindaaa.</p> */}
             </div>
 
             <div className="artigo-article-div-dois">
