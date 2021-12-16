@@ -6,7 +6,7 @@ const conectaBD = mysql.createPool({
     port: 3306,
     user: "root",
     password: "deusepoder",
-    database: "biblias13v.sql"
+    database: "biblia13v"
 
 })
 

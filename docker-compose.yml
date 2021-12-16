@@ -1,0 +1,86 @@
+version: '3'
+
+services:
+  mysqlsrv:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+
+    volumes:
+      #- /volumes_containers/proj_biblia/vol_mysql:/var/lib/mysql/
+
+      - /volumes_containers/proj_biblia/vol_mysql/biblias13v.sql.sql:/docker-entrypoint-initdb.d/hinoHarpa.sql
+      #arquivos com extensões .sh, .sqle .sql.gzque são que encontrados em /docker-entrypoint-initdb.d dentro do container são executados
+      # automaticamente pelo proprio mysql em ordem alfabética..
+
+      - /volumes_containers/proj_biblia/vol_mysql/script_mysql.sh:/docker-entrypoint-initdb.d/script_mysql.sh
+
+    environment:
+      MYSQL_ROOT_PASSWORD: "M@deld4166"
+      MYSQL_DATABASE: "biblias13v.sql"
+    ports:
+      - "3308:3306"
+    restart: unless-stopped
+
+    networks:
+      - network-mysql-nodejs
+
+  node:
+    image: "node:8"
+    working_dir: /home/node/app
+    environment:
+      - NODE_env=production
+    ports:
+      - 9000:9000
+    restart: unless-stopped
+    depends_on:
+      - mysqlsrv
+    networks:
+      - network-mysql-nodejs
+    volumes:
+      - /volumes_containers/proj_biblia/vol_node:/home/node/app
+    command: "node index.js"
+
+  nginxreact:
+    image: nginx
+    volumes:
+      - /volumes_containers/proj_biblia/vol_nginx/fontevida.com:/etc/nginx/fontevida.com
+      - /volumes_containers/proj_biblia/vol_nginx/nginx.conf:/etc/nginx/nginx.conf
+      - /volumes_containers/proj_biblia/vol_nginx/html/:/var/www/fontevida.com/html/
+      - /volumes_containers/proj_biblia/vol_nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 80:80
+    depends_on:
+      - node
+    networks:
+      - network-mysql-nodejs
+
+networks:
+  network-mysql-nodejs:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.29.0.0/16
+          # gateway: 172.29.0.1
+
+          #-----------------------------------------------------------------------------------------------------------------------
+          #!/bin/sh
+
+          # Esse é o script --script_mysql.sh-- executado na linha 19
+
+          # mysql -u root -pdeusepoder --execute="CREATE USER 'docker_biblia'@'localhost' IDENTIFIED BY 'M@deld4166'; GRANT ALL PRIVILEGES ON * . * TO 'docker_biblia'@'localhost'; UPDATE mysql.user SET host='%' WHERE user='docker_biblia'; FLUSH PRIVILEGES;"
+
+          # CREATE USER 'docker_biblia'@'localhost' IDENTIFIED BY 'M@deld4166';
+          # linha acima: cria usuario com a senha M@...
+
+          # GRANT ALL PRIVILEGES ON * . * TO 'docker_biblia'@'localhost';
+          # linha acima: add privilégios em todas as tabelas
+
+          # UPDATE mysql.user SET host="%" WHERE user="docker_biblia";
+          # linha acima: conf o servidor para permitir acesso pelo user de qualquer origem
+
+          # FLUSH PRIVILEGES;
+          # linha acima:  reload dos privégios
+
+          #-----------------------------------------------------------------------------------------------------------------------
+
+
