@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 const RotasHinoHarpa = require("express").Router()
 
-const LiberaOrigemRegistraLog = require("./midware/checkorigem")
+import { LiberaOrigemRegistraLog } from "./midware/checkorigem"
 
 
 import { hinoHarpaNumerosController } from "../../../useCases/hinoHarpa/hinoHarpaNumeros/index";

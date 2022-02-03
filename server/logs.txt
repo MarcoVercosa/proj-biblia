@@ -290,3 +290,23 @@
          - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatituloporpalavra/rosa
 4/1/2022-- 3 horas e 25 minutos => LIBERADO acesso da origem
          - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/196
+4/1/2022-- 3 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+4/1/2022-- 3 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscatestamento
+4/1/2022-- 3 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscalivros/1
+4/1/2022-- 3 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscacapitulo/3/16
+4/1/2022-- 3 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/1/16/10
+4/1/2022-- 3 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/Neemias
+4/1/2022-- 3 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/1/16/5
+4/1/2022-- 3 horas e 45 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/1/16/10
+4/1/2022-- 3 horas e 45 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/Neemias
+4/1/2022-- 3 horas e 45 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/machado

@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
 
-const LiberaOrigemRegistraLog = require("./midware/checkorigem")
+import { LiberaOrigemRegistraLog } from "./midware/checkorigem"
 //MIDWARE CHECA E PERMITE SE A ORIGEM SOLICITANTE É O SITE VIDADAFONTE.COM.BR E SE A SOLICITAÇÃO É GET   
 
 const RotasBibliaConteudo = require("express").Router()

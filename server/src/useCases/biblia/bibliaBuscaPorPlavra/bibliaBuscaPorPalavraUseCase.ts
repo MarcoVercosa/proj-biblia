@@ -8,12 +8,12 @@ interface IBibliaBuscaPorPlavraUseCase {
 
 export class BibliaBuscaPorPalavraUseCase implements IBibliaBuscaPorPlavraUseCase {
 
-    constructor(private bibliaBuscaPorPlavraRepository: BibliaBuscaPorPalavraRepository) {
+    constructor(private bibliaBuscaPorPalavraRepository: BibliaBuscaPorPalavraRepository) {
 
     }
 
     async Execute(palavra_pesquisa: string): Promise<IResultado> {
-        let resultado: IResultado = await this.bibliaBuscaPorPlavraRepository.PesquisaPorPalavra(palavra_pesquisa)
+        let resultado: IResultado = await this.bibliaBuscaPorPalavraRepository.PesquisaPorPalavra(palavra_pesquisa)
         return resultado
     }
 

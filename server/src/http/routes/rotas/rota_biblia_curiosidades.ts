@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { Router } from "express"
-import LiberaOrigemRegistraLog from "./midware/checkorigem"
+import { LiberaOrigemRegistraLog } from "./midware/checkorigem"
 import { curiosidadesController } from "../../../useCases/curiosidades/index"
 
 // =========== CURIOSIDADES =================

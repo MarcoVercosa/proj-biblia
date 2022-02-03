@@ -6,4 +6,5 @@ let bibliaBuscaPorPalavraRepository = new BibliaBuscaPorPalavraRepository()
 let bibliaBuscaPorPalavraUseCase = new BibliaBuscaPorPalavraUseCase(bibliaBuscaPorPalavraRepository)
 let bibliaBuscaPorPalavraController = new BibliaBuscaPorPalavraController(bibliaBuscaPorPalavraUseCase)
 
+
 export { bibliaBuscaPorPalavraController }
