@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 
-import SearchAppBar from "../../components/header/header"
+import Header from "../../components/header/header"
 import DialogSelect from "../../components/biblia/Select/select"
 import LinearProgress from '@material-ui/core/LinearProgress';
 import PainelMenuLateral from "../../components/painelMenuLateral/painelMenuLateral";
@@ -12,9 +12,9 @@ import Button from '@material-ui/core/Button';
 import "./painelLeitura.css"
 
 
-import {AvancaCapitulo} from "../../components/painelLeitura/funcoes/AvancaRetornaButtons" 
-import {RetornaCapitulo} from "../../components/painelLeitura/funcoes/AvancaRetornaButtons"
-import { SelectOption } from "../../components/painelLeitura/funcoes/SelectOption"; 
+import {AvancaCapitulo} from "./funcoes/AvancaRetornaButtons" 
+import {RetornaCapitulo} from "./funcoes/AvancaRetornaButtons"
+import { SelectOption } from "./funcoes/SelectOption"; 
 
 
 export default function PainelLeitura({match}){
@@ -80,7 +80,7 @@ export default function PainelLeitura({match}){
     
     return (
         <>
-            <SearchAppBar/>
+            <Header/>
             <main className="painel-leitura-main">
                 <div className="painel-leitura-main-div">
                     <div className="painel-leitura-main-div-div">

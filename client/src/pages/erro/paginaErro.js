@@ -1,5 +1,5 @@
 import { React } from "react"
-import SearchAppBar from "../../components/header/header"
+import Header from "../../components/header/header"
 import PainelMenuLateral from "../../components/painelMenuLateral/painelMenuLateral"
 import Footer from "../../components/footer/footer"
 import "./paginaErro.css"
@@ -8,7 +8,7 @@ export default function PaginaErro() {
 
     return (
         <>
-            <SearchAppBar />
+            <Header />
 
             <article className="erro-article">
                 <div className="erro-article-div">

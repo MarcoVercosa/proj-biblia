@@ -1,7 +1,7 @@
 import React from 'react';
-import "./article.css"
+import "./articleHome.css"
 
-export default function Article() {
+export default function ArticleHome() {
 
     return (
 

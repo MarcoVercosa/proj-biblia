@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import "./biblia.css";
-import SearchAppBar from "../../components/header/header";
-import Menu from "../../components/menu/menu";
-import DialogSelect from "./Select/select";
+import "./bibliaSelect.css";
+import Header from "../../components/header/header";
+import MenuSuperior from "../../components/menuSuperior/menuSuperior";
+import DialogSelect from "../../components/biblia/Select/select"
 import Footer from "../../components/footer/footer";
 
 
-export default function Biblia() {
+export default function BibliaSelect() {
 
   useEffect(() => {
     window.scroll({
@@ -19,8 +19,8 @@ export default function Biblia() {
 
   return (
     <>
-      <SearchAppBar />
-      <Menu />
+      <Header />
+      <MenuSuperior />
 
       <main
         style={{

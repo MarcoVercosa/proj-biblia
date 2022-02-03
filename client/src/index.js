@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from "react-router-dom"
-import Biblia from "./components/biblia/biblia"
+// import Biblia from "./components/biblia/biblia"
 // import PainelLeitura from "./components/painelLeitura/painelLeitura"
 // import HinoHarpa from "./components/hinoHarpa/hinoHarpa"
 // import NovaPesquisaBiblia from "./components/pesquisaBiblia/novapesquisabiblia"
@@ -13,10 +13,10 @@ import './index.css';
 
 
 import Home from "./pages/home/home"
-import BibliaSelect from "./pages/biblia_select/bibliaSelect"
-import PainelLeitura from "./pages/painel_leitura/painelLeitura"
-import HinoHarpa from "./pages/harpa_crista/hinoHarpa"
-import NovaPesquisaBiblia from "./pages/painel_pesquisa_por_palavra/painelPesquisaPorPalavra"
+import BibliaSelect from "./pages/bibliaSelect/bibliaSelect"
+import PainelLeitura from "./pages/painelLeitura/painelLeitura"
+import HinoHarpa from "./pages/harpaCrista/hinoHarpa"
+import NovaPesquisaBiblia from "./pages/painelPesquisaPorPalavra/painelPesquisaPorPalavra"
 import Sobre from "./pages/sobre/sobre"
 import PaginaErro from "./pages/erro/paginaErro"
 

@@ -9,7 +9,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   /* background-color: #bbe6e1; */
-  background-image : url(./components/painelLeitura/background.jpg);
+  background-image : url(./assets/background.jpg);
   display: block
   
 }
@@ -35,7 +35,7 @@ code {
 
   /* desativa menu acima imagem pagina inicial componente <menu/> */
   .menu-ul{ 
-    display: none;
+    display: none !important;
   }
   /* Imagem página inicial */
   .menu-menu .menu-imagem{
@@ -44,20 +44,20 @@ code {
 
   /* FOOTER */
   .footer-footer{
-  height: auto;
+  height: auto !important;
   margin-top: 10px
   }
 
   .footer-ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
     padding: 0;
     margin: 0 auto;
   }
   .footer-ul li{
-    padding: 0;
-    margin:0 auto;
+    padding: 0 !important;
+    margin:0 auto !important;
   }
 
 
@@ -121,12 +121,12 @@ code {
     display: none;
   }
   .painel-leitura-main-div{
-    width: 100%;
+    width: 100% !important;
 
   }
   .painel-leitura-main-div-div{
-  width: 96%;
-  padding: 5px;
+  width: 96% !important;
+  padding: 5px !important;
   }
   .painel-leitura-main-div-div-descricao{
     margin-left: 6px;
@@ -157,14 +157,15 @@ code {
     display: none
   }
   .article-pesquisa-div{
-    width: 100%;
+    width: 100% !important;
   }
   .article-pesquisa-div-div{
-    width: 94%;
-    margin-left: 5px
+    width: 94% !important;
+    margin-left: 5px !important
   }
   .notfound-article-article-div{
-    width: 100%;
+    width: 100% !important;
+    height: 76vh;
   }
   .pesquisabibianotfound-article-div-menulateral{
     display: none
@@ -175,50 +176,51 @@ code {
   /* HINOS HARPA */
 
   .hinoharpa-nav{
-    width: 99.5%;
+    width: 99.5% !important;
   }
 
   .hinoharp-article{
-    flex-direction: column;
+    flex-direction: column !important;
   }
   .hinoharpa-article-div-numero{
-      width: 100%;      
+      width: 100%!important;      
   }
 
   .hinoharpa-article-div-titulo{
-      width: 100% ;      
+      width: 100% !important;      
   }
   .hinoharpaleitura-article{
-      width: 93%;
-      padding: 4px  ;
-      margin: 0 auto;
+      width: 93% !important;
+      padding: 4px  !important;
+      margin: 0 auto !important;
   }
   .hinoharpaleitura-div{
-    margin-left: 2px;
+    margin-left: 2px !important;
   }
   .hinoharpa-busca-menu{
-    grid-template-columns: 50% 50%;
-    margin: 0 auto;
-    padding: 0;    
+    grid-template-columns: 50% 50% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;    
   }
   .hinoharpa-busca-menu div{
-    margin: 0 auto;
-    padding: 0;  
-    width: auto;    
+    margin: 0 auto !important;
+    padding: 0 !important;  
+    width: auto !important;    
   }
   
   /* SOBRE */
 
   .sobre-article{
-    width: 100%;
-    padding: 0;
-    margin: 10px 0 0 0 
+    width: 100% !important;
+    padding: 0 !important;
+    padding: 0 !important;
+    margin: 10px 0 0 0  !important
   }
   .sobre-article-div{
-    padding: 3px;
-    width: 94%;
-    margin-left: 6px;
-    padding: 10px;
+    padding: 3px !important;
+    width: 94% !important;
+    margin-left: 6px !important;
+    padding: 10px !important;
   }
   .sobre-article-div-menu{
     display: none;
@@ -229,7 +231,7 @@ code {
     display: none;
   }
   .erro-article-div{
-    width: 100%;
+    width: 100% !important;
   }
 
 }

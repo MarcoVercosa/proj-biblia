@@ -348,3 +348,113 @@
          - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
 4/1/2022-- 4 horas e 39 minutos => LIBERADO acesso da origem
          - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/machado
+4/1/2022-- 19 horas e 21 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+4/1/2022-- 19 horas e 25 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+4/1/2022-- 19 horas e 27 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+4/1/2022-- 19 horas e 27 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscatestamento
+4/1/2022-- 19 horas e 27 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscalivros/2
+4/1/2022-- 19 horas e 27 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscacapitulo/3/55
+4/1/2022-- 19 horas e 27 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/2/55/2
+4/1/2022-- 19 horas e 27 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Tim%C3%B3teo
+4/1/2022-- 19 horas e 31 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/2/55/2
+4/1/2022-- 19 horas e 31 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Tim%C3%B3teo
+4/1/2022-- 19 horas e 31 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/2/55/2
+4/1/2022-- 19 horas e 31 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Tim%C3%B3teo
+4/1/2022-- 19 horas e 31 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/2/55/3
+4/1/2022-- 19 horas e 31 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/2/55/4
+4/1/2022-- 19 horas e 36 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/2/55/2
+4/1/2022-- 19 horas e 36 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Tim%C3%B3teo
+4/1/2022-- 19 horas e 39 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/2/55/2
+4/1/2022-- 19 horas e 39 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Tim%C3%B3teo
+4/1/2022-- 19 horas e 41 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/2/55/2
+4/1/2022-- 19 horas e 41 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Tim%C3%B3teo
+4/1/2022-- 19 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/2/55/2
+4/1/2022-- 19 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Tim%C3%B3teo
+4/1/2022-- 19 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+4/1/2022-- 19 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscatestamento
+4/1/2022-- 19 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscalivros/2
+4/1/2022-- 19 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscacapitulo/3/55
+4/1/2022-- 19 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/2/55/2
+4/1/2022-- 19 horas e 43 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Tim%C3%B3teo
+4/1/2022-- 19 horas e 47 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+4/1/2022-- 19 horas e 47 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscatestamento
+4/1/2022-- 19 horas e 47 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscalivros/1
+4/1/2022-- 19 horas e 47 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscacapitulo/2/17
+4/1/2022-- 19 horas e 47 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/2/1/17/3
+4/1/2022-- 19 horas e 47 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/Ester
+4/1/2022-- 19 horas e 56 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+4/1/2022-- 19 horas e 56 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscatestamento
+4/1/2022-- 19 horas e 56 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscalivros/1
+4/1/2022-- 19 horas e 56 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscacapitulo/4/16
+4/1/2022-- 19 horas e 56 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/4/1/16/9
+4/1/2022-- 19 horas e 56 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/Neemias
+4/1/2022-- 19 horas e 58 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/4/1/16/10
+4/1/2022-- 19 horas e 58 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/4/1/16/11
+4/1/2022-- 19 horas e 58 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/machado
+4/1/2022-- 19 horas e 59 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/cdcdcdcd
+4/1/2022-- 20 horas e 2 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+4/1/2022-- 20 horas e 5 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/4
+4/1/2022-- 20 horas e 5 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+4/1/2022-- 20 horas e 6 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/4
+4/1/2022-- 20 horas e 6 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatituloporpalavra/chuva
+4/1/2022-- 20 horas e 10 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+4/1/2022-- 20 horas e 10 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscatestamento
+4/1/2022-- 20 horas e 10 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscalivros/2
+4/1/2022-- 20 horas e 10 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscacapitulo/3/58
+4/1/2022-- 20 horas e 10 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/2/58/11
+4/1/2022-- 20 horas e 10 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/Hebreus

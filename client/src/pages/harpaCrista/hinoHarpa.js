@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react';
 
-import SearchAppBar from "../header/header"
+import Header from "../../components/header/header"
 import Footer from "../../components/footer/footer"
 import LinearIndeterminate from "../../components/progresso/progresso"
 import PainelMenuLateral from "../../components/painelMenuLateral/painelMenuLateral"
@@ -101,7 +101,7 @@ export default function HinoHarpa() {
 
         <>
             <nav className="hinoharpa-nav">
-                <SearchAppBar />
+                <Header />
 
                 <article className="hinoharp-article">
                     {/* style={{ display: "block" }} */}

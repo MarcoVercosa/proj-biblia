@@ -1,9 +1,9 @@
 import React from 'react';
 import './home.css';
-import SearchAppBar from "../../components/header/header"
-import Menu from "../../components/menu/menu"
+import Header from "../../components/header/header"
+import Menu from "../../components/menuSuperior/menuSuperior"
 
-import Article from "../../components/article/article"
+import ArticleHome from "../../components/articleHome/articleHome"
 import Footer from "../../components/footer/footer"
 
 
@@ -12,9 +12,9 @@ function Home() {
     
     <div className="App">
 
-      <SearchAppBar />
+      <Header />
       <Menu isTheHome={true}/>
-      <Article />
+      <ArticleHome />
       <Footer />
 
 
