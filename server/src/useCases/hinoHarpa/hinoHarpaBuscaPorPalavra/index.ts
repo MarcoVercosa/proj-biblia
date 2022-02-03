@@ -1,4 +1,4 @@
-import { HinoHarpaBuscaPorPalavraRepository } from "../../../repositories/hinoHarpaBuscaPorPalavra/hinoHarpaBuscaPorPalavraRepository"
+import { HinoHarpaBuscaPorPalavraRepository } from "../../../repositories/hinoHarpa/hinoHarpaBuscaPorPalavra/hinoHarpaBuscaPorPalavraRepository"
 import { HinoHarpaBuscaPorPalavraUseCase } from "./hinoHarpaBuscaPorPalavraUseCase"
 import { HinoHarpaBuscaPorPalavraController } from "./hinoHarpaBuscaPorPalavraController"
 

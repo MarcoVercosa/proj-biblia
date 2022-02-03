@@ -11,7 +11,7 @@ class Busca_Biblia_BD {
                     // console.log(erro)
                     reject(erro)
                 } else {
-
+                    console.log(resultado)
                     resolve(resultado)
                 }
             })
@@ -27,6 +27,7 @@ class Busca_Biblia_BD {
                 if (erro) {
                     reject(erro)
                 } else {
+                    console.log(resultado)
                     resolve(resultado)
                 }
             })
@@ -40,6 +41,7 @@ class Busca_Biblia_BD {
                 if (erro) {
                     reject(erro)
                 } else {
+                    console.log(resultado)
                     resolve(resultado)
                 }
             })

@@ -17,9 +17,9 @@ export class CuriosidadesRepository implements ICuriosidadesRepository {
             const sql = `SELECT livro, conteudo FROM biblia13v.curiosidades WHERE livro LIKE "%${palavra}%"`
             conectaBD.query(sql, (erro: any, resultado: Array<IResultado>) => {
                 if (erro) {
-                    reject(erro)
+                    return reject(erro)
                 } else {
-                    resolve(resultado) as Array<IResultado>
+                    return resolve(resultado) as Array<IResultado>
                 }
             })
         })

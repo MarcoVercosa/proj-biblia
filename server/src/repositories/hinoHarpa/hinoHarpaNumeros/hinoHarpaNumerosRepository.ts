@@ -1,4 +1,4 @@
-import conectaBD from "../../infrabd/conexao";
+import conectaBD from "../../../infrabd/conexao";
 import { IHinoHarpaNumerosRepository } from "./IHinoHarpaNumerosRepository"
 
 export class HinoHarpaNumerosRepository implements IHinoHarpaNumerosRepository {

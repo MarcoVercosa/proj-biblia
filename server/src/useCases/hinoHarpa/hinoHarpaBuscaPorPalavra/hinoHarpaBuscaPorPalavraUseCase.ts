@@ -1,4 +1,4 @@
-import { IHinoHarpaBuscaPorPalavraRepository } from "../../../repositories/hinoHarpaBuscaPorPalavra/IHinoHarpaBuscaPorPalavraRepository"
+import { IHinoHarpaBuscaPorPalavraRepository } from "../../../repositories/hinoHarpa/hinoHarpaBuscaPorPalavra/IHinoHarpaBuscaPorPalavraRepository"
 
 interface IResultado {
     numero: number;

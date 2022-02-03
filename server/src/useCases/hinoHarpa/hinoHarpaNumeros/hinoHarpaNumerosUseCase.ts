@@ -1,13 +1,16 @@
-import { HinoHarpaNumerosRepository } from "../../../repositories/hinoHarpaNumeros/hinoHarpaNumerosRepository";
+import { IHinoHarpaNumerosRepository } from "../../../repositories/hinoHarpa/hinoHarpaNumeros/IHinoHarpaNumerosRepository";
 
+interface IHinoHarpaNumerosUseCase {
+    Execute(): Promise<Array<{ numero: number }>>
+}
 
-export class HinoHarpaNumerosUseCase {
+export class HinoHarpaNumerosUseCase implements IHinoHarpaNumerosUseCase {
 
     constructor(
-        private hinoHarpaRepository: HinoHarpaNumerosRepository
+        private hinoHarpaRepository: IHinoHarpaNumerosRepository
     ) { }
 
-    async Execute(request: any) {
+    async Execute() {
         let resultado: Array<{ numero: number }> = await this.hinoHarpaRepository.ListaNumeroHino()
         return resultado
     }

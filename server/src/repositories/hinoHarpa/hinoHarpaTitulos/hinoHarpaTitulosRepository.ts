@@ -1,4 +1,4 @@
-const conectaBD = require("../../infrabd/conexao")
+const conectaBD = require("../../../infrabd/conexao")
 
 interface IResultado {
     letra: string;

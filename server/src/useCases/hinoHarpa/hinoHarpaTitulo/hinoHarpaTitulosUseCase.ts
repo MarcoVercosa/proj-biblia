@@ -1,4 +1,4 @@
-import { HinoHarpaTitulosRepository } from "../../../repositories/hinoHarpaTitulos/hinoHarpaTitulosRepository"
+import { HinoHarpaTitulosRepository } from "../../../repositories/hinoHarpa/hinoHarpaTitulos/hinoHarpaTitulosRepository"
 
 interface IHinoHarpaTitulosUseCase {
     letra: string;
