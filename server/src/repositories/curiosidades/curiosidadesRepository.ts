@@ -1,5 +1,5 @@
 import conectaBD from "../../infrabd/conexao";
-import { ICuriosidadesRepository } from "./ICuriosidadesHarpa";
+import { ICuriosidadesRepository } from "../../entities/ICuriosidadesHarpa";
 
 interface IResultado {
     livro: string,

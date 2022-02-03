@@ -32,4 +32,4 @@ RotasHinoHarpa.get("/buscatituloporpalavra/:id", LiberaOrigemRegistraLog, (reque
 
 })
 
-module.exports = RotasHinoHarpa
+export { RotasHinoHarpa }

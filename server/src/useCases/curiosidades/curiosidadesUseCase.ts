@@ -1,4 +1,4 @@
-import { ICuriosidadesRepository } from "../../repositories/curiosidades/ICuriosidadesHarpa";
+import { ICuriosidadesRepository } from "../../entities/ICuriosidadesHarpa";
 
 interface IResultado {
     livro: string;

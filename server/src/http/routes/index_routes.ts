@@ -3,9 +3,9 @@ const express = require("express")
 let router = express()
 const cors = require('cors');
 
-const rota_biblia_hinoharpa = require("./rotas/rota_biblia_hinoharpa")
+import { RotasHinoHarpa } from "./rotas/rota_biblia_hinoharpa"
 import { RotaCuriosidades } from "./rotas/rota_biblia_curiosidades"
-const rota_biblia_mysql = require("./rotas/rota_biblia_mysql")
+import { RotasBibliaConteudo } from "./rotas/rota_Biblia_Conteudo"
 
 
 
@@ -19,8 +19,8 @@ router.use((req: Request, res: Response, next: NextFunction) => {
 });
 
 router.use("/curiosidades", RotaCuriosidades)
-router.use("/mais", rota_biblia_mysql)
-router.use("/hinoharpa", rota_biblia_hinoharpa)
+router.use("/mais", RotasBibliaConteudo)
+router.use("/hinoharpa", RotasHinoHarpa)
 
 
 module.exports = router

@@ -1,4 +1,4 @@
-import { BibliaLivrosRepository } from "../../repositories/biblia/bibliaLivros/bibliaLivrosRepository";
+import { BibliaLivrosRepository } from "../../../repositories/biblia/bibliaLivros/bibliaLivrosRepository";
 import { BibliaLivrosUseCase } from "./bibliaLivrosUseCase";
 import { BibliaLivrosController } from "./bibliaLivrosController";
 

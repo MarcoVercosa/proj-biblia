@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
 import { BibliaLivrosUseCase } from "./bibliaLivrosUseCase";
-import { IResultado } from "../../repositories/biblia/bibliaLivros/IBibliaLivrosRepository"
+import { IResultado } from "../../../entities/IBibliaLivrosRepository"
 
 interface IBibliaLivrosController {
     Handle: (request: Request, response: Response) => Promise<Response<IResultado[]>>
@@ -20,7 +20,6 @@ export class BibliaLivrosController implements IBibliaLivrosController {
         } catch (err: any) {
             return response.status(400).json(err.message)
         }
-
 
     }
 }

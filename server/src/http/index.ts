@@ -1,15 +1,14 @@
 const conectaBD = require("../infrabd/conexao")
 const router = require("./routes/index_routes")
-// const router = require("../http/routes/rotas/rotasJson")
 
 const express = require("express")
 const app = express()
 
-function Busca() {
+function Busca(): Promise<string> {
     console.log("Iniciando tentativa de conexão")
 
     return new Promise((resolve, reject) => {
-        conectaBD.getConnection((erro) => {
+        conectaBD.getConnection((erro: any) => {
 
             try {
                 if (!erro) {
@@ -29,7 +28,6 @@ function Busca() {
                     throw (erro)
                 }
             } catch (err) {
-
                 reject(err)
             }
         })
@@ -37,7 +35,7 @@ function Busca() {
 }
 
 
-setTimeout(() => {
+setTimeout((): void => {
     Busca().then(dado => console.log(dado)).catch((err) => {
         console.log("TEMOS O SEGUINTE ERRO " + err)
 
@@ -45,15 +43,13 @@ setTimeout(() => {
     })
 }, 1000)
 
-function NovaTentativa(err) {
+function NovaTentativa(err: any): void {
     console.log("Solicitando nova tentativa")
     setTimeout(() => {
-
         Busca().then(dado => console.log(dado)).catch((erro) => {
             console.log("TEMOS O SEGUINTE ERRO " + err)
             NovaTentativa(erro)
         })
-
     }, 5000)
 }
 
