@@ -488,3 +488,31 @@
          - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/Salmos
 5/1/2022-- 2 horas e 39 minutos => LIBERADO acesso da origem
          - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+5/1/2022-- 3 horas e 4 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+5/1/2022-- 3 horas e 4 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+5/1/2022-- 3 horas e 4 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscatestamento
+5/1/2022-- 3 horas e 4 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscalivros/1
+5/1/2022-- 3 horas e 4 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscacapitulo/2/15
+5/1/2022-- 3 horas e 4 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/2/1/15/8
+5/1/2022-- 3 horas e 4 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/Esdras
+5/1/2022-- 3 horas e 4 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/2/1/15/9
+5/1/2022-- 3 horas e 4 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+5/1/2022-- 3 horas e 4 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/7
+5/1/2022-- 3 horas e 4 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatituloporpalavra/sol
+5/1/2022-- 3 horas e 4 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/1
+5/1/2022-- 3 horas e 5 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+5/1/2022-- 3 horas e 5 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/4
