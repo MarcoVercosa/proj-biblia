@@ -14,7 +14,6 @@ function Busca(): Promise<string> {
 
             try {
                 if (!erro) {
-
                     let now = new Date()
                     console.log("Conectado no banco de dados com sucesso no seguinte horário: ")
                     console.log("Hoje é " + now.getDate() + " do mês " + now.getMonth() + " de " + now.getFullYear() + "---" + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds())
