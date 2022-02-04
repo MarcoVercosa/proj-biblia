@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.hinoHarpaBuscaPorPalavraController = void 0;
+const hinoHarpaBuscaPorPalavraRepository_1 = require("../../../repositories/hinoHarpa/hinoHarpaBuscaPorPalavra/hinoHarpaBuscaPorPalavraRepository");
+const hinoHarpaBuscaPorPalavraUseCase_1 = require("./hinoHarpaBuscaPorPalavraUseCase");
+const hinoHarpaBuscaPorPalavraController_1 = require("./hinoHarpaBuscaPorPalavraController");
+const hinoHarpaBuscaPorPalavraRepository = new hinoHarpaBuscaPorPalavraRepository_1.HinoHarpaBuscaPorPalavraRepository();
+const hinoHarpaBuscaPorPalavraUseCase = new hinoHarpaBuscaPorPalavraUseCase_1.HinoHarpaBuscaPorPalavraUseCase(hinoHarpaBuscaPorPalavraRepository);
+const hinoHarpaBuscaPorPalavraController = new hinoHarpaBuscaPorPalavraController_1.HinoHarpaBuscaPorPalavraController(hinoHarpaBuscaPorPalavraUseCase);
+exports.hinoHarpaBuscaPorPalavraController = hinoHarpaBuscaPorPalavraController;

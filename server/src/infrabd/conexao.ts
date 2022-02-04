@@ -10,4 +10,4 @@ const conectaBD: Pool = mysql.createPool({
 
 })
 
-module.exports = conectaBD
+export { conectaBD }

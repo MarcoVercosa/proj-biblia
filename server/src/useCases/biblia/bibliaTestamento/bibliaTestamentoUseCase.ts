@@ -1,4 +1,4 @@
-import { IBibliaTestamentoRepository } from "../../../repositories/biblia/bibliaTestamento/IBibliaTestamentoRepository"
+import { IBibliaTestamentoRepository } from "../../../entities/IBibliaTestamentoRepository"
 
 interface IResultado {
     testamento_id: Number;

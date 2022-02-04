@@ -1,5 +1,5 @@
-import conectaBD from "../../../infrabd/conexao";
-import { IHinoHarpaBuscaPorPalavraRepository } from "./IHinoHarpaBuscaPorPalavraRepository";
+import { conectaBD } from "../../../infrabd/conexao";
+import { IHinoHarpaBuscaPorPalavraRepository } from "../../../entities/IHinoHarpaBuscaPorPalavraRepository";
 
 export interface IResultado {
     numero: number;

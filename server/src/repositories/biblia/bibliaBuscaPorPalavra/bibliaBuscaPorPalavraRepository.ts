@@ -1,4 +1,4 @@
-import conectaBD from "../../../infrabd/conexao"
+import { conectaBD } from "../../../infrabd/conexao"
 import { IBibliaBuscaPorPlavraRepository, IResultado } from "../../../entities/IBibliaBuscaPorPalavraRepository"
 
 

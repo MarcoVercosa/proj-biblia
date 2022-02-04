@@ -1,4 +1,4 @@
-import { IBibliaVersaoRepository } from "../../../repositories/biblia/bibliaVersao/IBibliaVersaoRepository";
+import { IBibliaVersaoRepository } from "../../../entities/IBibliaVersaoRepository";
 
 interface IResultado {
     versao_id: string;

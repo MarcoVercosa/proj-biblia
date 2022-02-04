@@ -1,5 +1,5 @@
-import conectaBD from "../../../infrabd/conexao"
-import { IBibliaVersaoRepository } from "./IBibliaVersaoRepository"
+import { conectaBD } from "../../../infrabd/conexao"
+import { IBibliaVersaoRepository } from "../../..//entities/IBibliaVersaoRepository"
 
 interface IResultado {
     versao_id: Number;

@@ -1,4 +1,4 @@
-const conectaBD = require("../infrabd/conexao")
+import { conectaBD } from "../infrabd/conexao"
 const router = require("./routes/index_routes")
 
 const express = require("express")

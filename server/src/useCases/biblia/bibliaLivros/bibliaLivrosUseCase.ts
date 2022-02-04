@@ -1,5 +1,5 @@
-import { IBibliaLivrosRepository } from "../../../repositories/biblia/bibliaLivros/IBibliaLivrosRepository";
-import { IResultado } from "../../../repositories/biblia/bibliaLivros/IBibliaLivrosRepository";
+import { IBibliaLivrosRepository } from "../../../entities//IBibliaLivrosRepository";
+import { IResultado } from "../../../entities//IBibliaLivrosRepository";
 
 interface IBibliaLivrosUseCase {
     Execute: (testamento_id: number) => Promise<IResultado[]>

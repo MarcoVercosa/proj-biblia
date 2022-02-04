@@ -1,4 +1,4 @@
-import { IBibliaConteudoRepository, IResultado } from "../../../repositories/biblia/bibliaConteudo/IBibliaConteudoRepository";
+import { IBibliaConteudoRepository, IResultado } from "../../../entities/IBibliaConteudoRepository";
 
 interface IBibliaConteudoUseCase {
     Execute: (versao_id: number, livro_id: number, testamento_id: number, capitulo: number) => Promise<IResultado>

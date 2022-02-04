@@ -1,5 +1,5 @@
 import { BibliaCapitulosRepository } from "../../../repositories/biblia/bibliaCapitulos/bibliaCapitulosRepository";
-import { IResultado } from "../../../repositories/biblia/bibliaCapitulos/IBibliaCapitulosRepository";
+import { IResultado } from "../../../entities/IBibliaCapitulosRepository";
 
 interface IBibliaCapitulosUseCase {
     Execute: (versao_id: number, livro_id: number) => Promise<IResultado[]>

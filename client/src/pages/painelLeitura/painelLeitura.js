@@ -26,7 +26,6 @@ export default function PainelLeitura({match}){
     useEffect(async()=>{
         //assim que a página é carregada, busca na api o conteudo do capitulo, dado os parâmetros abaixo
         const {data}  = await GetAPI(`mais/buscaconteudo/${match.params.versao_id}/${match.params.testamento_id}/${match.params.livro_id}/${match.params.capitulo}`)
-        console.log(data)
         //Se identificar alguma falha - < 1 se não encontrar nada no BD, sqlMessage se o BD der algum erro 
         if(data.conteudo?.length < 1 || data.sqlMessage){
             setConteudo(data)

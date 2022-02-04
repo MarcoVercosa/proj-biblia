@@ -69,7 +69,6 @@ export default function DialogSelect({tituloBotao}) {
             conteudo: "selecione",
             conteudo_id: undefined
         })
-        console.log(camposSelecionados)
         // window.location.href= `/biblianvi/novopainelleitura/${camposSelecionados.versao_id}/${camposSelecionados.testamento_id}/${camposSelecionados?.livro_id?.livro_id}/${camposSelecionados.capitulo}`
     };
 
@@ -117,7 +116,6 @@ export default function DialogSelect({tituloBotao}) {
         if(opcao==="livro"){
             //obtem os id do livro
             let Get_ID = {}
-            console.log(livro)
             livro.map((dados) => { 
                 // if(dadoSelecionado == dados.livro_nome){Get_ID.push({livro_id: dados.livro_id, livro_abreviado:dados.livro_abreviado, livro_posicao:dados.livro_posicao, livro_testamento_id: dados.livro_testamento_id })}
                 if(dadoSelecionado == dados.livro_nome){ Get_ID = {livro_id: dados.livro_id, livro_abreviado: dados.livro_abreviado, livro_posicao: dados.livro_posicao, livro_testamentp_id: dados.livro_testamento_id }}

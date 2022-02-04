@@ -1,4 +1,4 @@
-const conectaBD = require("../../../infrabd/conexao")
+import { conectaBD } from "../../../infrabd/conexao"
 
 interface IResultado {
     letra: string;

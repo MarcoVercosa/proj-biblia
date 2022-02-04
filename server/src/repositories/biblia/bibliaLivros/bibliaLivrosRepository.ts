@@ -1,7 +1,7 @@
-import conectaBD from "../../../infrabd/conexao"
+import { conectaBD } from "../../../infrabd/conexao"
 
-import { IBibliaLivrosRepository } from "./IBibliaLivrosRepository"
-import { IResultado } from "./IBibliaLivrosRepository"
+import { IBibliaLivrosRepository } from "./../../../entities/IBibliaLivrosRepository"
+import { IResultado } from "./../../../entities/IBibliaLivrosRepository"
 
 
 export class BibliaLivrosRepository implements IBibliaLivrosRepository {

@@ -1,5 +1,5 @@
-import conectaBD from "../../../infrabd/conexao"
-import { IBibliaTestamentoRepository } from "./IBibliaTestamentoRepository"
+import { conectaBD } from "../../../infrabd/conexao"
+import { IBibliaTestamentoRepository } from "../../../entities/IBibliaTestamentoRepository"
 
 interface IResultado {
     testamento_id: Number;

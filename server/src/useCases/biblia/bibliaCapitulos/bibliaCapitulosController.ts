@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
 import { BibliaCapitulosUseCase } from "./bibliaCapitulosUseCase";
-import { IResultado } from "../../../repositories/biblia/bibliaCapitulos/IBibliaCapitulosRepository"
+import { IResultado } from "../../../entities/IBibliaCapitulosRepository"
 
 interface IBibliaCapitulosController {
     Handle: (request: Request, response: Response) => Promise<Response<IResultado[]>>

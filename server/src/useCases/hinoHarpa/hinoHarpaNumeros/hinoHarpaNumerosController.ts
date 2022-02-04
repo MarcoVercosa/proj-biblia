@@ -14,7 +14,7 @@ export class HinoHarpaNumerosController implements IHinoHarpaController {
     async Handle(request: Request, response: Response): Promise<void> {
 
         try {
-            let resultado: Array<{ numero: number }> = await this.hinoHarpaUseCase.Execute(request)
+            let resultado: Array<{ numero: number }> = await this.hinoHarpaUseCase.Execute()
             response.status(200).json(resultado)
         }
         catch (err: any) {

@@ -1,4 +1,4 @@
-import { IHinoHarpaNumerosRepository } from "../../../repositories/hinoHarpa/hinoHarpaNumeros/IHinoHarpaNumerosRepository";
+import { IHinoHarpaNumerosRepository } from "../../../entities/IHinoHarpaNumerosRepository";
 
 interface IHinoHarpaNumerosUseCase {
     Execute(): Promise<Array<{ numero: number }>>

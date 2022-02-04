@@ -1,5 +1,5 @@
-import conectaBD from "../../../infrabd/conexao"
-import { IPromessa1, IPromessa2, IPromessa3, IPromessa4, IResultado, IBibliaConteudoRepository } from "./IBibliaConteudoRepository"
+import { conectaBD } from "../../../infrabd/conexao"
+import { IPromessa1, IPromessa2, IPromessa3, IPromessa4, IResultado, IBibliaConteudoRepository } from "./../../../entities/IBibliaConteudoRepository"
 
 export class BibliaConteudoRepository implements IBibliaConteudoRepository {
 
