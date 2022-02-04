@@ -10,7 +10,7 @@ export class BibliaTestamentoRepository implements IBibliaTestamentoRepository {
 
     BuscaTestamento(): Promise<IResultado[]> {
         return new Promise((resolve, reject) => {
-            const sql = "SELECT * FROM biblia13v.testamentos"
+            const sql = "SELECT * FROM biblias13v.testamentos"
             conectaBD.query(sql, (erro: any, resultado: Promise<IResultado[]>) => {
                 if (erro) {
                     return reject(erro)

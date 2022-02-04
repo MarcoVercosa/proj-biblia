@@ -5,7 +5,7 @@ const conexao_1 = require("../../../infrabd/conexao");
 class BibliaVersaoRepository {
     BuscaVersaoBiblia() {
         return new Promise((resolve, reject) => {
-            const sql = "SELECT * FROM biblia13v.versoes;";
+            const sql = "SELECT * FROM biblias13v.versoes;";
             conexao_1.conectaBD.query(sql, (erro, resultado) => {
                 if (erro) {
                     // console.log(erro)

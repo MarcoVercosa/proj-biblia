@@ -16,7 +16,7 @@ class BibliaConteudoRepository {
         return __awaiter(this, void 0, void 0, function* () {
             const promessa1 = new Promise((resolve, reject) => {
                 //busca os versículos do capitulo, dado a versao o identificador do livro e o capitulo
-                const sql = `SELECT conteudo FROM  biblia13v.versiculos WHERE versao_id=${versao_id} AND livro_id=${livro_id} AND capitulo=${capitulo} `;
+                const sql = `SELECT conteudo FROM  biblias13v.versiculos WHERE versao_id=${versao_id} AND livro_id=${livro_id} AND capitulo=${capitulo} `;
                 conexao_1.conectaBD.query(sql, (erro, resultado) => {
                     if (erro) {
                         reject(erro);
@@ -28,7 +28,7 @@ class BibliaConteudoRepository {
             });
             const promessa2 = new Promise((resolve, reject) => {
                 //query busca nome do livro e seu nome abreviado, dado o numero do testamento e o id do livro
-                const sql = `SELECT livro_nome, livro_abreviado FROM biblia13v.livros WHERE livro_testamento_id=${testamento_id} AND livro_id=${livro_id}`;
+                const sql = `SELECT livro_nome, livro_abreviado FROM biblias13v.livros WHERE livro_testamento_id=${testamento_id} AND livro_id=${livro_id}`;
                 conexao_1.conectaBD.query(sql, (erro, resultado) => {
                     if (erro) {
                         reject(erro);
@@ -39,7 +39,7 @@ class BibliaConteudoRepository {
                 });
             });
             const promessa3 = new Promise((resolve, reject) => {
-                const sql_buscaQuantidadeCapitulos = `SELECT capitulo FROM biblia13v.versiculos WHERE livro_id=${livro_id} AND versao_id=${versao_id} ORDER BY capitulo DESC LIMIT 1`;
+                const sql_buscaQuantidadeCapitulos = `SELECT capitulo FROM biblias13v.versiculos WHERE livro_id=${livro_id} AND versao_id=${versao_id} ORDER BY capitulo DESC LIMIT 1`;
                 //Query busca q tabela inteira de capitulos dado o nome do livro e retorna somente o ultimo valor, que é o mais alto, permitindo saber quantos capitulos o livro tem
                 conexao_1.conectaBD.query(sql_buscaQuantidadeCapitulos, (erro, resultado) => {
                     if (erro) {
@@ -52,7 +52,7 @@ class BibliaConteudoRepository {
             });
             const promessa4 = new Promise((resolve, reject) => {
                 //query retorna a versao do Livro
-                const sql_busvaNomeVersao = `SELECT versao_nome FROM biblia13v.versoes WHERE versao_id=${versao_id}`;
+                const sql_busvaNomeVersao = `SELECT versao_nome FROM biblias13v.versoes WHERE versao_id=${versao_id}`;
                 conexao_1.conectaBD.query(sql_busvaNomeVersao, (erro, resultado) => {
                     if (erro) {
                         reject(erro);

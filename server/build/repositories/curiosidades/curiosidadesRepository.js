@@ -6,7 +6,7 @@ class CuriosidadesRepository {
     constructor() { }
     BuscaCuriosidade(palavra) {
         return new Promise((resolve, reject) => {
-            const sql = `SELECT livro, conteudo FROM biblia13v.curiosidades WHERE livro LIKE "%${palavra}%"`;
+            const sql = `SELECT livro, conteudo FROM biblias13v.curiosidades WHERE livro LIKE "%${palavra}%"`;
             conexao_1.conectaBD.query(sql, (erro, resultado) => {
                 if (erro) {
                     return reject(erro);

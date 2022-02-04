@@ -486,3 +486,5 @@
          - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/4/1/19/21
 4/1/2022-- 20 horas e 34 minutos => LIBERADO acesso da origem
          - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/Salmos
+5/1/2022-- 2 horas e 39 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa

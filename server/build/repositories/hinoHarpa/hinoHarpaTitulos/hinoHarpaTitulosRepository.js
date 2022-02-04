@@ -4,7 +4,7 @@ exports.HinoHarpaTitulosRepository = void 0;
 const conexao_1 = require("../../../infrabd/conexao");
 class HinoHarpaTitulosRepository {
     BuscaHinoPorNumero(numero) {
-        const sql = `SELECT letra, titulo FROM biblia13v.louvores WHERE numero=${numero}`;
+        const sql = `SELECT letra, titulo FROM biblias13v.louvores WHERE numero=${numero}`;
         return new Promise((resolve, reject) => {
             conexao_1.conectaBD.query(sql, (erro, resultado) => {
                 if (erro) {

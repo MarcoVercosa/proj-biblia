@@ -8,8 +8,8 @@ export class BibliaBuscaPorPalavraRepository implements IBibliaBuscaPorPlavraRep
 
         const sql_query_busca_por_palavra: string =
             `SELECT versao_id,versiculos.livro_id, conteudo, capitulo, versiculo, livro_nome, livro_abreviado, livro_testamento_id
-         FROM biblia13v.versiculos 
-         INNER JOIN biblia13v.livros ON livros.livro_id = versiculos.livro_id
+         FROM biblias13v.versiculos 
+         INNER JOIN biblias13v.livros ON livros.livro_id = versiculos.livro_id
          WHERE versao_id="3" AND  MATCH(conteudo) AGAINST ('${palavra_pesquisa}')
          ORDER BY livros.livro_id
          LIMIT 300`

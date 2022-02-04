@@ -10,7 +10,7 @@ export class BibliaVersaoRepository implements IBibliaVersaoRepository {
 
     BuscaVersaoBiblia(): Promise<IResultado[]> {
         return new Promise((resolve, reject) => {
-            const sql: string = "SELECT * FROM biblia13v.versoes;"
+            const sql: string = "SELECT * FROM biblias13v.versoes;"
 
             conectaBD.query(sql, (erro: any, resultado: Promise<IResultado[]>) => {
                 if (erro) {

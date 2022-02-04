@@ -9,7 +9,7 @@ export interface IResultado {
 export class HinoHarpaBuscaPorPalavraRepository implements IHinoHarpaBuscaPorPalavraRepository {
 
     BuscaHinoPorPalavra(palavra: string): Promise<IResultado> {
-        const sql = `SELECT numero, titulo FROM biblia13v.louvores WHERE letra LIKE "%${palavra}%"`
+        const sql = `SELECT numero, titulo FROM biblias13v.louvores WHERE letra LIKE "%${palavra}%"`
         return new Promise((resolve, reject) => {
             conectaBD.query(sql, (erro: any, resultado: IResultado) => {
 

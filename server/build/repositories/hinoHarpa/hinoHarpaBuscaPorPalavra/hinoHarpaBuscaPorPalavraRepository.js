@@ -4,7 +4,7 @@ exports.HinoHarpaBuscaPorPalavraRepository = void 0;
 const conexao_1 = require("../../../infrabd/conexao");
 class HinoHarpaBuscaPorPalavraRepository {
     BuscaHinoPorPalavra(palavra) {
-        const sql = `SELECT numero, titulo FROM biblia13v.louvores WHERE letra LIKE "%${palavra}%"`;
+        const sql = `SELECT numero, titulo FROM biblias13v.louvores WHERE letra LIKE "%${palavra}%"`;
         return new Promise((resolve, reject) => {
             conexao_1.conectaBD.query(sql, (erro, resultado) => {
                 if (erro) {
