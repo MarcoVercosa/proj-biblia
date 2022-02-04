@@ -11,5 +11,5 @@
 # production
 #/build
 
-.env
+#.env
 
