@@ -1,0 +1,64 @@
+.biblia-main{
+
+display: flex;
+justify-content: center;
+text-align: center;
+margin-top: 55px;
+}
+
+.biblia-div-um{
+
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    width: 65%;   
+    text-align: center;
+    border-radius: 25px;
+}
+
+.biblia-div-um div{
+    color:  #14a37f;
+    font-family: 'Lora', serif;
+    font-size: 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    
+}
+
+.biblia-div-velho{
+    
+    margin-left:50px;
+    
+
+}
+
+.biblia-div-novo{
+    /* background-color: #19a582; */
+    margin-left: 25px;
+    margin-right: 50px;
+    cursor: pointer;
+
+}
+.biblia-div-select{  
+    background-color: green;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 35%;
+  margin: 0 auto;
+  border-radius: 25px; 
+  transition: all 0.5s;
+}
+
+.biblia-div-select:hover{      
+    -webkit-transform: scale(1.5);
+    transform: scale(1.1);
+}
+.biblia-icone{
+color:#01926e;
+}
+
+.biblia-main-img{
+    border-radius: 150px;
+}

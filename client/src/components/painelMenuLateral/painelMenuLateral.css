@@ -1,0 +1,41 @@
+.painelleitura-menu{
+    display: inline-block;
+    width: 90%;
+    vertical-align: top;
+    border-radius: 20px;
+    margin-left: 15px;  
+    padding: 0;
+}
+
+.menu-painelleitura-ul{
+    list-style: none;
+    padding: 0;
+}
+.li-vamos{
+    justify-content:left;
+    text-align:left;
+    align-items:flex-start
+}
+
+.menu-painelleitura-li{
+    padding: 15px;
+    border-radius: 15px;
+    color: rgb(0, 0, 0); 
+    transition: all 500ms ease;
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    text-decoration: none;
+    cursor: pointer;
+    justify-content:left;
+    text-align:left;
+    align-items:flex-start
+}
+.icone{
+    margin-right: 15px;
+    transition: all 0.5s;
+}
+
+.icone:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
