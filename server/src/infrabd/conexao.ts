@@ -1,13 +1,14 @@
-// const mysql = require("mysql")
+require('dotenv').config()
+
 import mysql, { Pool } from "mysql"
 
 const conectaBD: Pool = mysql.createPool({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "deusepoder",
-    database: "biblia13v"
 
+    host: process.env.hostBD,
+    port: Number(process.env.portBD),
+    user: process.env.userBD,
+    password: process.env.passwordBD,
+    database: process.env.databaseBD
 })
 
 export { conectaBD }

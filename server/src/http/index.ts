@@ -1,8 +1,10 @@
+require('dotenv').config()
 import { conectaBD } from "../infrabd/conexao"
 const router = require("./routes/index_routes")
 
 const express = require("express")
 const app = express()
+let port = process.env.portHTTP
 
 function Busca(): Promise<string> {
     console.log("Iniciando tentativa de conexão")
@@ -20,7 +22,7 @@ function Busca(): Promise<string> {
                     app.use(express.json())
                     app.use(router)
 
-                    app.listen(9000, () => { (console.log("Servidor rodando na porta 9000 !")) })
+                    app.listen(port, () => { (console.log(`Servidor rodando na porta ${port} !`)) })
                     resolve("Aceito")
 
                 } else {

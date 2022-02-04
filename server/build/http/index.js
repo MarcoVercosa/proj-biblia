@@ -1,9 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+require('dotenv').config();
 const conexao_1 = require("../infrabd/conexao");
 const router = require("./routes/index_routes");
 const express = require("express");
 const app = express();
+let port = process.env.portHTTP;
 function Busca() {
     console.log("Iniciando tentativa de conexão");
     return new Promise((resolve, reject) => {
@@ -15,7 +17,7 @@ function Busca() {
                     console.log("Hoje é " + now.getDate() + " do mês " + now.getMonth() + " de " + now.getFullYear() + "---" + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds());
                     app.use(express.json());
                     app.use(router);
-                    app.listen(9000, () => { (console.log("Servidor rodando na porta 9000 !")); });
+                    app.listen(port, () => { (console.log(`Servidor rodando na porta ${port} !`)); });
                     resolve("Aceito");
                 }
                 else {
