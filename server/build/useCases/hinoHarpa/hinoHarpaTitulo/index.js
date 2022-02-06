@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.hinoHarpaTitulosController = void 0;
+const hinoHarpaTitulosUseCase_1 = require("./hinoHarpaTitulosUseCase");
+const hinoHarpaTitulosController_1 = require("./hinoHarpaTitulosController");
+const hinoHarpaTitulosRepository_1 = require("../../../repositories/hinoHarpa/hinoHarpaTitulos/hinoHarpaTitulosRepository");
+const hinoharpaTitulosRepository = new hinoHarpaTitulosRepository_1.HinoHarpaTitulosRepository();
+const hinoHarpaTitulosUseCase = new hinoHarpaTitulosUseCase_1.HinoHarpaTitulosUseCase(hinoharpaTitulosRepository);
+const hinoHarpaTitulosController = new hinoHarpaTitulosController_1.HinoHarpaTitulosController(hinoHarpaTitulosUseCase);
+exports.hinoHarpaTitulosController = hinoHarpaTitulosController;

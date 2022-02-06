@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.bibliaTestamentoController = void 0;
+const bibliaTestamentoRepository_1 = require("../../../repositories/biblia/bibliaTestamento/bibliaTestamentoRepository");
+const bibliaTestamentoUseCase_1 = require("./bibliaTestamentoUseCase");
+const bibliaTestamentoController_1 = require("./bibliaTestamentoController");
+let bibliaTestamentoRepository = new bibliaTestamentoRepository_1.BibliaTestamentoRepository();
+let bibliaTestamentoUseCase = new bibliaTestamentoUseCase_1.BibliaTestamentoUseCase(bibliaTestamentoRepository);
+let bibliaTestamentoController = new bibliaTestamentoController_1.BibliaTestamentoController(bibliaTestamentoUseCase);
+exports.bibliaTestamentoController = bibliaTestamentoController;

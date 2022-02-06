@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.bibliaConteudoController = void 0;
+const bibliaConteudoRepository_1 = require("../../../repositories/biblia/bibliaConteudo/bibliaConteudoRepository");
+const bibliaConteudoUseCase_1 = require("./bibliaConteudoUseCase");
+const bibliaConteudoController_1 = require("./bibliaConteudoController");
+let bibliaConteudoRepository = new bibliaConteudoRepository_1.BibliaConteudoRepository();
+let bibliaConteudoUseCase = new bibliaConteudoUseCase_1.BibliaConteudoUseCase(bibliaConteudoRepository);
+let bibliaConteudoController = new bibliaConteudoController_1.BibliaConteudoController(bibliaConteudoUseCase);
+exports.bibliaConteudoController = bibliaConteudoController;

@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-function SearchAppBar() {
+function Header() {
     const [anchorEl, setAnchorEl] = useState(null);
 
     const handleClick = (event) => {
@@ -163,4 +163,4 @@ function SearchAppBar() {
     );
 }
 
-export default memo(SearchAppBar)
+export default memo(Header)
