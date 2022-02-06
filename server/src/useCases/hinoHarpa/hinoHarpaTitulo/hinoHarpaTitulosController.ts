@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { HinoHarpaTitulosUseCase } from "./hinoHarpaTitulosUseCase";
 
 interface IHinoHarpaTitulosController {
-    Handle(request: Request, response: Response): void
+    Handle(request: Request, response: Response): Promise<Response<IResultado>>
 }
 interface IResultado {
     letra: string;
@@ -15,7 +15,7 @@ export class HinoHarpaTitulosController implements IHinoHarpaTitulosController {
         private hinoHarpaUseCase: HinoHarpaTitulosUseCase
     ) { }
 
-    async Handle(request: Request, response: Response): Promise<Response> {
+    async Handle(request: Request, response: Response): Promise<Response<IResultado>> {
         const numero: number = parseInt(request.params.id)
 
         try {

@@ -558,3 +558,11 @@
          - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/2/48/3
 4/11/2021-- 11:53 => LIBERADO acesso da origem
          - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/2/48/4
+0/1/2022 -- 0horas e 18 minutos => NEGADO acesso da origem
+         - undefined com o método - GET  na rota - /mais/buscaversao
+0/1/2022 -- 1horas e 54 minutos => NEGADO acesso da origem
+         - undefined com o método - GET  na rota - /curiosidades/buscacuriosidade/Ef%C3%A9sios
+0/1/2022 -- 1horas e 55 minutos => NEGADO acesso da origem
+         - undefined com o método - GET  na rota - /curiosidades/buscacuriosidade/Ef%C3%A9sios
+0/1/2022 -- 1horas e 56 minutos => NEGADO acesso da origem
+         - undefined com o método - GET  na rota - /mais/buscaversao

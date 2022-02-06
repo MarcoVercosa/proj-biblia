@@ -10,7 +10,7 @@ export class CuriosidadesController {
 
     constructor(
 
-        private curiosodadesHarpaUseCase: CuriosidadesUseCase
+        private curiosodadesUseCase: CuriosidadesUseCase
 
     ) { }
 
@@ -19,7 +19,7 @@ export class CuriosidadesController {
         const palavra = request.params.id
 
         try {
-            let resultado: IResultado = await this.curiosodadesHarpaUseCase.Execute(palavra)
+            let resultado: IResultado = await this.curiosodadesUseCase.Execute(palavra)
             return response.status(200).json(resultado)
         } catch (err: any) {
             return response.status(400).json({

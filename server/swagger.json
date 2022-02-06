@@ -1,0 +1,231 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "API retorno dados da Bilia sagrada, cânticos da Harpa e curiosidades",
+        "version": "1.0.0",
+        "title": "API VIDA DA FONTE",
+        "termsOfService": "http://localhost:9000/",
+        "contact": {
+            "email": "marco2011sky@gmail.com"
+        }
+    },
+    "host": "http://localhost:9000/api-documentation/",
+    "basePath": "/v2",
+    "tags": [
+        {
+            "name": "curiosidades",
+            "description": "Busca curiosidades conforme o livro selacionado",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://vidadafonte.com.br/"
+            }
+        },
+        {
+            "name": "hino harpa",
+            "description": "Cânticos Hino Harpa"
+        },
+        {
+            "name": "conteudo biblia",
+            "description": "Conteúdo da Biblia",
+            "externalDocs": {
+                "description": "Find out more about our store",
+                "url": "http://vidadafonte.com.br/"
+            }
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/curiosidades/buscacuriosidade/:id": {
+            "get": {
+                "tags": [
+                    "curiosidades"
+                ],
+                "summary": "Retorna curiosidades conforme o livro selecionado para ser lido",
+                "description": "Esta rota recebe um id (nome do livro) e retorna suas respectivas curiosidades",
+                "operationId": "Obtem Curiosidades por id",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "nome livro selecionado da biblia",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "403": {
+                        "description": "Forbiden, Não permitido devido a segurança de origem confirgurado no Midware"
+                    },
+                    "400": {
+                        "description": "Algum erro durante a busca das informações"
+                    },
+                    "200": {
+                        "description": "Resultados encontrados e enviados",
+                        "schema": {
+                            "$ref": "#/definitions/curiosidades"
+                        }
+                    }
+                }
+            }
+        },
+        "/hinoharpa/buscanumeroharpa": {
+            "get": {
+                "tags": [
+                    "hino harpa"
+                ],
+                "summary": "Retorna o numero de cada cântico disponível",
+                "description": "Esta rota não recebe nenhum parâmetro e retorna somente uma array dos respectivos numeros dos hinos",
+                "operationId": "Obtem Hino Harpa",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "403": {
+                        "description": "Forbiden, Não permitido devido a segurança de origem confirgurado no Midware"
+                    },
+                    "400": {
+                        "description": "Algum erro durante a busca das informações"
+                    },
+                    "200": {
+                        "description": "Resultados encontrados e enviados",
+                        "schema": {
+                            "$ref": "#/definitions/retornanumeroshinoharpa"
+                        }
+                    }
+                }
+            }
+        },
+        "/hinoharpa/buscatitulopornumero/:id": {
+            "get": {
+                "tags": [
+                    "hino harpa"
+                ],
+                "summary": "Retorna o cântico conforme o numero enviado",
+                "description": "Esta rota recebe um id (número cântico) e retorna o cântico",
+                "operationId": "Obtem Hino Harpa ",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "numero do cântico selecionado",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "403": {
+                        "description": "Forbiden, Não permitido devido a segurança de origem confirgurado no Midware"
+                    },
+                    "400": {
+                        "description": "Algum erro durante a busca das informações"
+                    },
+                    "200": {
+                        "description": "Resultados encontrados e enviados",
+                        "schema": {
+                            "$ref": "#/definitions/retornacanticopornumero"
+                        }
+                    }
+                }
+            }
+        },
+        "/hinoharpa/buscatituloporpalavra/:id": {
+            "get": {
+                "tags": [
+                    "hino harpa"
+                ],
+                "summary": "Retorna os cânticos que possuem a palavra informada",
+                "description": "Esta rota recebe um id (palavra chave) e retorna os cânticos encontrados",
+                "operationId": "Obtem Hino Harpa ",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Palavra a ser pesquisada",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "403": {
+                        "description": "Forbiden, Não permitido devido a segurança de origem confirgurado no Midware"
+                    },
+                    "400": {
+                        "description": "Algum erro durante a busca das informações"
+                    },
+                    "200": {
+                        "description": "Resultados encontrados e enviados",
+                        "schema": {
+                            "$ref": "#/definitions/retornacanticospalavrachave"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "curiosidades": {
+            "type": "object",
+            "properties": {
+                "livro": {
+                    "type": "string"
+                },
+                "conteudo": {
+                    "type": "string"
+                }
+            },
+            "application/json": {
+                "name": "curiosidades"
+            }
+        },
+        "retornanumeroshinoharpa": {
+            "type": "object",
+            "properties": {
+                "numero": {
+                    "type": "integer"
+                }
+            },
+            "application/json": {
+                "name": "retornanumeroshinoharpa"
+            }
+        },
+        "retornacanticopornumero": {
+            "type": "object",
+            "properties": {
+                "letra": {
+                    "type": "string"
+                },
+                "titulo": {
+                    "type": "string"
+                }
+            },
+            "application/json": {
+                "name": "retornacanticopornumero"
+            }
+        },
+        "retornacanticospalavrachave": {
+            "type": "object",
+            "properties": {
+                "numero": {
+                    "type": "integer"
+                },
+                "titulo": {
+                    "type": "string"
+                }
+            },
+            "application/json": {
+                "name": "retornacanticopornumero"
+            }
+        }
+    }
+}
