@@ -646,3 +646,5 @@
          - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/I%20Samuel
 1/1/2022-- 1 horas e 8 minutos => LIBERADO acesso da origem
          - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/1/9/14
+1/1/2022-- 1 horas e 34 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
