@@ -168,5 +168,4 @@ export default function PainelLeitura({match}){
             <Footer/>
         </>
     )
-
 }
