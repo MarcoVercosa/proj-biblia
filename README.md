@@ -68,6 +68,10 @@ Site criado para disponibilizar as 13 versões da bíblia e os 524 hinos da harp
  -> express
 
  -> mysql
+ 
+ <img align="center" width="90" height="40" src="https://miro.medium.com/max/1400/1*R36nHDnQ9i7vizbSJqTb1g.png">
+ A API está --documentada-- com a lib Swagger (http://localhost:9000/api-documentation/).
+ Se o ambiente (.env) estiver como "developer" a rota com documentação ficará disponível.
 
 # Arquitetura:
 - BACK-END: Utiliza as boas práticas do MVC e os princípios do S.O.L.I.D, onde permitiu a criação de um códido limpo, organizado e de fácil manutenção.
