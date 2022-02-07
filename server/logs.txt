@@ -584,3 +584,19 @@
          - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/2/1/15/2
 1/1/2022-- 0 horas e 29 minutos => LIBERADO acesso da origem
          - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/Esdras
+1/1/2022-- 0 horas e 35 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+1/1/2022-- 0 horas e 35 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatituloporpalavra/ben%C3%A7%C3%A3o
+1/1/2022-- 0 horas e 35 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/56
+1/1/2022-- 0 horas e 35 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatituloporpalavra/machado
+1/1/2022-- 0 horas e 35 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatituloporpalavra/l%C3%A2mina
+1/1/2022-- 0 horas e 35 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatituloporpalavra/navalha
+1/1/2022-- 0 horas e 36 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatituloporpalavra/ardente
+1/1/2022-- 0 horas e 36 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/436
