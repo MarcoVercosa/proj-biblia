@@ -11,14 +11,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CuriosidadesController = void 0;
 class CuriosidadesController {
-    constructor(curiosodadesHarpaUseCase) {
-        this.curiosodadesHarpaUseCase = curiosodadesHarpaUseCase;
+    constructor(curiosodadesUseCase) {
+        this.curiosodadesUseCase = curiosodadesUseCase;
     }
     Handle(request, response) {
         return __awaiter(this, void 0, void 0, function* () {
             const palavra = request.params.id;
             try {
-                let resultado = yield this.curiosodadesHarpaUseCase.Execute(palavra);
+                let resultado = yield this.curiosodadesUseCase.Execute(palavra);
                 return response.status(200).json(resultado);
             }
             catch (err) {

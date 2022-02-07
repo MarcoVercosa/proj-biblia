@@ -2,7 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 require('dotenv').config();
 const conexao_1 = require("../infrabd/conexao");
-const router = require("./routes/index_routes");
+// const router = require("./routes/index_routes")
+const index_routes_1 = require("./routes/index_routes");
 const express = require("express");
 const app = express();
 let port = process.env.portHTTP;
@@ -16,7 +17,7 @@ function Busca() {
                     console.log("Conectado no banco de dados com sucesso no seguinte horário: ");
                     console.log("Hoje é " + now.getDate() + " do mês " + now.getMonth() + " de " + now.getFullYear() + "---" + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds());
                     app.use(express.json());
-                    app.use(router);
+                    app.use(index_routes_1.router);
                     app.listen(port, () => { (console.log(`Servidor rodando na porta ${port} !`)); });
                     resolve("Aceito");
                 }

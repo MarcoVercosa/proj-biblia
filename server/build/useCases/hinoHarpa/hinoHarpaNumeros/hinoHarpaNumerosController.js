@@ -18,10 +18,10 @@ class HinoHarpaNumerosController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 let resultado = yield this.hinoHarpaUseCase.Execute();
-                response.status(200).json(resultado);
+                return response.status(200).json(resultado);
             }
             catch (err) {
-                response.status(400).json({
+                return response.status(400).json({
                     message: err.message || 'Unexpected error.'
                 });
             }
