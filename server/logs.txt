@@ -600,3 +600,27 @@
          - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatituloporpalavra/ardente
 1/1/2022-- 0 horas e 36 minutos => LIBERADO acesso da origem
          - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/436
+1/1/2022-- 0 horas e 49 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+1/1/2022-- 0 horas e 49 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscatestamento
+1/1/2022-- 0 horas e 49 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscalivros/1
+1/1/2022-- 0 horas e 49 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscacapitulo/3/1
+1/1/2022-- 0 horas e 49 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/1/1/11
+1/1/2022-- 0 horas e 49 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/G%C3%AAnesis
+1/1/2022-- 0 horas e 52 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+1/1/2022-- 0 horas e 52 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscatestamento
+1/1/2022-- 0 horas e 52 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscalivros/1
+1/1/2022-- 0 horas e 52 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscacapitulo/2/1
+1/1/2022-- 0 horas e 52 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/2/1/1/7
+1/1/2022-- 0 horas e 52 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/G%C3%AAnesis
