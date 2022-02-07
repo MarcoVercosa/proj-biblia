@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { HinoHarpaBuscaPorPalavraUseCase } from "./hinoHarpaBuscaPorPalavraUseCase";
 
 interface IHinoHarpaBuscaPorPalavraController {
-    Handle(request: Request, response: Response): Promise<Response>
+    Handle(request: Request, response: Response): Promise<Response<IResultado>>
 }
 
 interface IResultado {
@@ -16,7 +16,7 @@ export class HinoHarpaBuscaPorPalavraController implements IHinoHarpaBuscaPorPal
         private hinoHarpaBuscaPorPalavraUseCase: HinoHarpaBuscaPorPalavraUseCase
     ) { }
 
-    async Handle(request: Request, response: Response): Promise<Response> {
+    async Handle(request: Request, response: Response): Promise<Response<IResultado>> {
         const palavra: string = request.params.id
         try {
             let resultado: IResultado = await this.hinoHarpaBuscaPorPalavraUseCase.Execute(palavra)

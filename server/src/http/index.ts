@@ -1,6 +1,7 @@
 require('dotenv').config()
 import { conectaBD } from "../infrabd/conexao"
-const router = require("./routes/index_routes")
+// const router = require("./routes/index_routes")
+import { router } from "./routes/index_routes"
 
 const express = require("express")
 const app = express()

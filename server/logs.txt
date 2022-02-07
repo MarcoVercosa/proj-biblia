@@ -566,3 +566,21 @@
          - undefined com o método - GET  na rota - /curiosidades/buscacuriosidade/Ef%C3%A9sios
 0/1/2022 -- 1horas e 56 minutos => NEGADO acesso da origem
          - undefined com o método - GET  na rota - /mais/buscaversao
+1/1/2022-- 0 horas e 28 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+1/1/2022-- 0 horas e 28 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/6
+1/1/2022-- 0 horas e 29 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+1/1/2022-- 0 horas e 29 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+1/1/2022-- 0 horas e 29 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscatestamento
+1/1/2022-- 0 horas e 29 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscalivros/1
+1/1/2022-- 0 horas e 29 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscacapitulo/2/15
+1/1/2022-- 0 horas e 29 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/2/1/15/2
+1/1/2022-- 0 horas e 29 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/Esdras

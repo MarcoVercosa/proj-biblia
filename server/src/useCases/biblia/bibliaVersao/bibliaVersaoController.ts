@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Response } from "express";
 import { BibliaVersaoUseCase } from "./bibliaVersaoUseCase";
 
 interface IResultado {
@@ -6,7 +6,11 @@ interface IResultado {
     versao_nome: string
 }
 
-export class BibliaVersaoController {
+interface IBibliaVersaoController {
+    Handle: (response: Response) => Promise<Response<IResultado>>
+}
+
+export class BibliaVersaoController implements IBibliaVersaoController {
 
     constructor(
         private bibliaVersaoUseCase: BibliaVersaoUseCase

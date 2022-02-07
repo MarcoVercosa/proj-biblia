@@ -1,7 +1,6 @@
+require('dotenv').config()
 import swaggerUi from "swagger-ui-express"
-
 import { Request, Response, NextFunction } from "express";
-
 const express = require("express")
 let router = express()
 const cors = require('cors');
@@ -9,7 +8,7 @@ const cors = require('cors');
 import { RotasHinoHarpa } from "./rotas/rota_biblia_hinoharpa"
 import { RotaCuriosidades } from "./rotas/rota_biblia_curiosidades"
 import { RotasBibliaConteudo } from "./rotas/rota_Biblia_Conteudo"
-import SwaggerDocs from "../../../swagger.json"
+import SwaggerDocs from "../../doc/swagger.json"
 
 
 
@@ -26,7 +25,8 @@ router.use("/curiosidades", RotaCuriosidades)
 router.use("/mais", RotasBibliaConteudo)
 router.use("/hinoharpa", RotasHinoHarpa)
 
-router.use("/api-documentation", swaggerUi.serve, swaggerUi.setup(SwaggerDocs))
+if (process.env.NODE_ENV === "developer") {
+    router.use("/api-documentation", swaggerUi.serve, swaggerUi.setup(SwaggerDocs))
+}
 
-
-module.exports = router
+export { router }
