@@ -5,7 +5,8 @@
   "main": "http/index.js",
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/http/index.ts",
-    "devjs": "nodemon src/http/index.ts"
+    "devjs": "nodemon src/http/index.ts",
+    "prod": "node build/http/index.js"
   },
   "author": "MAVS",
   "license": "ISC",
