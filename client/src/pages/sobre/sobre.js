@@ -3,6 +3,7 @@ import SearchAppBar from "../../components/header/header"
 import PainelMenuLateral from "../../components/painelMenuLateral/painelMenuLateral"
 import Footer from "../../components/footer/footer"
 import "./sobre.css"
+import HEAD from '../../components/headHelmet/head';
 
 
 export default function Sobre() {
@@ -12,7 +13,7 @@ export default function Sobre() {
 
         <>
             <SearchAppBar />
-
+            <HEAD title="Fonte de vida - Biblia Online - Sobre" description = "Biblia online - 13 versões da palavra de Deus e os 254 hinos da harpa cristã disponíveis para você" url="http://vidadafonte.com.br/sobre"  keyWord={"Vida da fonte - Sobre"}/>
             <article className="sobre-article">
                 <div className="sobre-article-div">
                     <h2>Sobre</h2>

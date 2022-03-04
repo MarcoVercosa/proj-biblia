@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
-
+import { Helmet } from "react-helmet";
+import HEAD from "../../components/headHelmet/head";
 import Header from "../../components/header/header"
 import DialogSelect from "../../components/biblia/Select/select"
 import LinearProgress from '@material-ui/core/LinearProgress';
@@ -18,10 +19,13 @@ import { SelectOption } from "./funcoes/SelectOption";
 
 
 export default function PainelLeitura({match}){
+    console.log(match)
     const [conteudo, setConteudo] = useState(false)
     const [optionComponent, setOptionComponent] = useState()
     const [curiosidades, setCuriosidades] = useState(false)
     const [versiculo, SetVersiculo] =  useState(match.params.versiculo)
+    const [dadosHead, setDadosHead] =  useState("Leitura da bíblia")
+    const [dadosHeadKeyWord, setDadosHeadKeyWord] =  useState("")
 
     useEffect(async()=>{
         //assim que a página é carregada, busca na api o conteudo do capitulo, dado os parâmetros abaixo
@@ -40,6 +44,8 @@ export default function PainelLeitura({match}){
         setConteudo(data)
         BuscaCuriosodades(data.nomeLivro[0].livro_nome)
         SetVersiculo(match.params.versiculo)
+        setDadosHead(`${data?.nomeLivro[0]?.livro_nome}: ${data?.capituloAtual} - ${data.conteudo[0].conteudo} ...`)
+        setDadosHeadKeyWord(`${data?.nomeLivro[0]?.livro_nome} - ${data?.capituloAtual} - Vida da fonte`)
  
     },[match.params.capitulo, match.params.livro_id, match.params.versao_id])
 
@@ -80,6 +86,7 @@ export default function PainelLeitura({match}){
     return (
         <>
             <Header/>
+            <HEAD title={dadosHead}  description = {dadosHead} url={`http://vidadafonte.com.br${match.url}`} keyWord={dadosHeadKeyWord}/>
             <main className="painel-leitura-main">
                 <div className="painel-leitura-main-div">
                     <div className="painel-leitura-main-div-div">

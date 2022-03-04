@@ -1,18 +1,15 @@
 import { React, useState, useEffect } from 'react';
-
+import { Helmet } from "react-helmet";
 import Header from "../../components/header/header"
 import Footer from "../../components/footer/footer"
 import LinearIndeterminate from "../../components/progresso/progresso"
 import PainelMenuLateral from "../../components/painelMenuLateral/painelMenuLateral"
 import "./hinoHarpa.css"
 import GetAPI from "../../fetch/api"
-
 import { makeStyles } from '@material-ui/core/styles';
-
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-
-
+import HEAD from '../../components/headHelmet/head';
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -36,21 +33,14 @@ export default function HinoHarpa() {
     const [erroPesquisaPorPalavra, setErroPesquisaPorPalavra] = useState(false)
 
     useEffect(async () => {
-
         const resultado = await GetAPI("hinoharpa/buscanumeroharpa")
         setNumerosHinos(resultado)
-
     }, [])
-
-
-
-
+    
     async function BuscarHinoPorNumero(recebe) {//recebe só terá valor se for chamada pelo buscar por título Gambi, pq demora para atualizar o estado do setAlteraCampoNumero
-
         if (recebe) {
             setAlteraCampoNumero(recebe)
             const buscaHino = await GetAPI(`hinoharpa/buscatitulopornumero/${recebe}`)
-            //console.log(letraHino)
             var armazena = []
             armazena = buscaHino.data[0].letra.split("%")
             setErroPesquisaPorPalavra(false)
@@ -59,7 +49,6 @@ export default function HinoHarpa() {
         } else {
 
             const buscaHino = await GetAPI(`hinoharpa/buscatitulopornumero/${alteraCampoNumero}`)
-            //console.log(letraHino)
             var armazena = []
             armazena = buscaHino.data[0].letra.split("%")
             setErroPesquisaPorPalavra(false)
@@ -67,7 +56,6 @@ export default function HinoHarpa() {
             setTituloHino(buscaHino.data[0].titulo) //armazena o titulo do hino
         }
     }
-
     async function BuscahinoPorLetraTitulo() {//busca título hino por letra
         if (campoTituloBusca === undefined || campoTituloBusca.length < 2) {
             alert("Digite ao menos 2 letras para iniciar a pesquisa")
@@ -81,31 +69,24 @@ export default function HinoHarpa() {
             setTituloHino(false)
 
         } else {
-            //console.log(recebe)
             setLetraHino(false)//não permitindo renderizar as letras do hino que estiver sendo mostrado
             setTituloHino(false)//não permitindo renderizar o titulo do hino que estiver sendo mostrado
 
             setDadosBuscaPesquisaPorTitulo(recebe) //armazena os dados da busca
             setErroPesquisaPorPalavra(false)
         }
-
     }
-
     if (!numerosHinos) {
         return (
             <LinearIndeterminate />
         )
     }
-
     return (
-
         <>
             <nav className="hinoharpa-nav">
+            <HEAD title="Fonte de vida - Biblia Online - Hino da harpa" description = "Os 524 hinos da harpa cristã disponíveis onde você estiver" url="http://vidadafonte.com.br/harpacrista"  keyWord={"Vida da fonte - Harpa cristã"}/>
                 <Header />
-
                 <article className="hinoharp-article">
-                    {/* style={{ display: "block" }} */}
-
                     <div className="hinoharpa-article-div-numero">
                         <label className="hinoharpa-article-div-label-numero" >NÚMERO</label>
 
@@ -121,7 +102,6 @@ export default function HinoHarpa() {
                                     )
                                 })}
                             </select>
-
                             <TextField
                                 multiline={true}
                                 rows={2}
@@ -134,9 +114,7 @@ export default function HinoHarpa() {
                             <Button style={{ backgroundColor: "#14a37f", color: "White", marginLeft: "15px" }} variant="contained" disabled={!alteraCampoNumero}
                                 onClick={() => { BuscarHinoPorNumero() }}
                             >BUSCAR</Button>
-
                         </form>
-
                     </div>
                     <div className="hinoharpa-article-div-titulo">
                         <div>
@@ -151,21 +129,15 @@ export default function HinoHarpa() {
                                 size="small" id="outlined-basic" label="DIGITE" variant="outlined"
                             />
                         </form>
-
                         <div>
                             <Button style={{ backgroundColor: "#14a37f", color: "White", marginLeft: "10px" }}
                                 variant="contained"
                                 onClick={() => { BuscahinoPorLetraTitulo() }}
                             >BUSCAR</Button>
                         </div>
-
                     </div>
-
                 </article>
                 <hr></hr>
-
-
-
                 {erroPesquisaPorPalavra
                     &&
                     <menu className="hinoharpa-busca-menu-erro">
@@ -173,7 +145,6 @@ export default function HinoHarpa() {
                         <p>Não encontrei o Hino desejado.</p>
                     </menu>
                 }
-
                 <div className="hinoharpaleitura-div" style={{display: "flex", width:"100%", marginLeft:"2px"}}>
                     <article className="hinoharpaleitura-article">
                         <h3>{tituloHino}</h3>
@@ -186,13 +157,9 @@ export default function HinoHarpa() {
                                     </>
                                 )
                         }   )}
-
-
                         <menu className="hinoharpa-busca-menu">
                             {dadosBuscaPesquisaPorTitulo &&
-
                                 dadosBuscaPesquisaPorTitulo.data.map((recebe, index) => {
-
                                     return (
                                         <div
                                             key={recebe.numero}
@@ -216,14 +183,10 @@ export default function HinoHarpa() {
                     <aside className="aside-select">
                         <PainelMenuLateral />
                     </aside>            
-                </div>
-                
-            </nav>
-   
-
+                </div>                
+            </nav>   
             <Footer />
         </>
     )
-
 
 }

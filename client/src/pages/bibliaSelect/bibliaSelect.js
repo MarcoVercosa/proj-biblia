@@ -4,6 +4,7 @@ import Header from "../../components/header/header";
 import MenuSuperior from "../../components/menuSuperior/menuSuperior";
 import DialogSelect from "../../components/biblia/Select/select"
 import Footer from "../../components/footer/footer";
+import HEAD from "../../components/headHelmet/head";
 
 
 export default function BibliaSelect() {
@@ -20,6 +21,7 @@ export default function BibliaSelect() {
   return (
     <>
       <Header />
+      <HEAD title="Vida da fonte - Selecione sua leitura" description = "Vida da fonte - Selecione sua leitura" url="http://vidadafonte.com.br/biblia" keyWord={"Fonte de Vida - Leitura"} />
       <MenuSuperior />
 
       <main
