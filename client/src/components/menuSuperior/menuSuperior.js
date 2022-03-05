@@ -1,6 +1,6 @@
 import React from 'react';
 import "./menuSuperior.css"
-import Imagem from "./Biblia.jpg"
+import Imagem from "../../assets/BibliaHome.jpg"
 import { HashLink as Link } from "react-router-hash-link"// o hash faz funcionar os links âncoras
 
 export default function MenuSuperior() {

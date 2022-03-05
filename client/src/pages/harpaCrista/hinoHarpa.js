@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from 'react';
-import { Helmet } from "react-helmet";
 import Header from "../../components/header/header"
 import Footer from "../../components/footer/footer"
 import LinearIndeterminate from "../../components/progresso/progresso"

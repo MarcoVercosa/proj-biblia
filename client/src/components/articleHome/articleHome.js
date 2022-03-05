@@ -11,7 +11,7 @@ export default function ArticleHome() {
             <div className="artigo-article-div-um">
 
                 <span><i className="fas fa-bible fa-4x"> </i></span>
-                <h3>Totamente OnLine ! São 13 versões da palavra de Deus disponíveis para você: </h3>
+                <h3>Totamente on line ! São 13 versões da palavra de Deus disponíveis para você: </h3>
                 <div className="artigo-article-div-versoes">
                     <p>
                         1993 – Almeida Revisada e Atualizada
