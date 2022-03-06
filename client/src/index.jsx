@@ -1,15 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from "react-router-dom"
-// import Biblia from "./components/biblia/biblia"
-// import PainelLeitura from "./components/painelLeitura/painelLeitura"
-// import HinoHarpa from "./components/hinoHarpa/hinoHarpa"
-// import NovaPesquisaBiblia from "./components/pesquisaBiblia/novapesquisabiblia"
-// import Sobre from "./components/sobre/sobre"
-// import PaginaErro from "./components/paginaErro/paginaErro"
 import './index.css';
-// import App from './App';
-
 
 
 import Home from "./pages/home/home"

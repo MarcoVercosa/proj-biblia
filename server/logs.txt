@@ -1406,3 +1406,19 @@
          - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Tim%C3%B3teo
 6/2/2022-- 3 horas e 19 minutos => LIBERADO acesso da origem
          - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/7/2/55/4
+0/2/2022-- 16 horas e 6 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+0/2/2022-- 16 horas e 7 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaversao
+0/2/2022-- 16 horas e 7 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscatestamento
+0/2/2022-- 16 horas e 7 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscalivros/1
+0/2/2022-- 16 horas e 7 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscacapitulo/3/14
+0/2/2022-- 16 horas e 7 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/buscaconteudo/3/1/14/15
+0/2/2022-- 16 horas e 7 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Cr%C3%B4nicas
+0/2/2022-- 16 horas e 7 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
