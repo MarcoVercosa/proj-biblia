@@ -1422,3 +1422,45 @@
          - http://localhost:3000 com o método - GET na rota - /curiosidades/buscacuriosidade/II%20Cr%C3%B4nicas
 0/2/2022-- 16 horas e 7 minutos => LIBERADO acesso da origem
          - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+2/2/2022-- 14 horas e 6 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/rosa
+2/2/2022-- 14 horas e 6 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/machado
+2/2/2022-- 14 horas e 6 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/machado%20para%20cortar
+2/2/2022-- 14 horas e 7 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/terra%20que%20jurou
+2/2/2022-- 14 horas e 8 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/terra%20que%20jurou
+2/2/2022-- 14 horas e 52 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+2/2/2022-- 14 horas e 52 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+2/2/2022-- 14 horas e 52 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+2/2/2022-- 14 horas e 52 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatituloporpalavra/casa
+2/2/2022-- 14 horas e 52 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+2/2/2022-- 14 horas e 52 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatituloporpalavra/poder%20pentecostal
+2/2/2022-- 14 horas e 52 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatitulopornumero/167
+2/2/2022-- 14 horas e 53 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscatituloporpalavra/outros%20que%20acordaram
+2/2/2022-- 14 horas e 53 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /hinoharpa/buscanumeroharpa
+2/2/2022-- 14 horas e 57 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/desta%20terra
+2/2/2022-- 14 horas e 57 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/onipotente%20descansar%C3%A1
+2/2/2022-- 14 horas e 58 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/potente
+2/2/2022-- 14 horas e 58 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/potente
+2/2/2022-- 14 horas e 59 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/onipotente
+2/2/2022-- 15 horas e 0 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/potente
+2/2/2022-- 15 horas e 0 minutos => LIBERADO acesso da origem
+         - http://localhost:3000 com o método - GET na rota - /mais/pesquisa/Humilhai-vos,%20pois,%20debaixo%20da%20potente%20m%C3%A3o%20de%20Deus,
