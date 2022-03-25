@@ -9,7 +9,7 @@ const fs_1 = __importDefault(require("fs"));
 function LiberaOrigemRegistraLog(request, response, next) {
     const origem = request.headers.origin || "indefinido";
     console.log(origem);
-    if (origem.match(/vidadafonte.com.br/) || origem.match(/localhost/) && request.method === "GET") {
+    if (origem.match(/vidadafonte.com.br/) && request.method === "GET") {
         // if (origem.match(/vidadafonte.com.br/) && req.method === "GET") {
         //se conter :vidadafonte.com.br na origem solicitante ou localhost e for do método get
         let now = new Date;

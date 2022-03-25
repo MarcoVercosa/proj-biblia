@@ -9,7 +9,7 @@
 }
 .article-pesquisa-div-titulo{
     text-align: center;
-    font-family:"Garamond";
+    font-family:'EB Garamond', serif;
     font-style:"italic"; 
     font-size: 21px;
     
@@ -25,7 +25,7 @@
     margin-bottom: 5px;
 }
 .article-pesquisa-div-p{
-    font-family:"Garamond";
+    font-family:'EB Garamond', serif;
     font-style:"italic"; 
     font-size: 21px;  
 }
