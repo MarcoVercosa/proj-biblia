@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.412d8d99.chunk.css",
+    "main.js": "/static/js/main.d5df408c.chunk.js",
+    "main.js.map": "/static/js/main.d5df408c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3863481a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3863481a.js.map",
+    "static/js/2.5db7a708.chunk.js": "/static/js/2.5db7a708.chunk.js",
+    "static/js/2.5db7a708.chunk.js.map": "/static/js/2.5db7a708.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.412d8d99.chunk.css.map": "/static/css/main.412d8d99.chunk.css.map",
+    "static/js/2.5db7a708.chunk.js.LICENSE.txt": "/static/js/2.5db7a708.chunk.js.LICENSE.txt",
+    "static/media/Biblia.ce1e1349.jpg": "/static/media/Biblia.ce1e1349.jpg",
+    "static/media/dois.596e39b0.png": "/static/media/dois.596e39b0.png",
+    "static/media/um.0e097720.jpg": "/static/media/um.0e097720.jpg",
+    "static/media/zero.3967ce14.jpg": "/static/media/zero.3967ce14.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3863481a.js",
+    "static/js/2.5db7a708.chunk.js",
+    "static/css/main.412d8d99.chunk.css",
+    "static/js/main.d5df408c.chunk.js"
+  ]
+}
