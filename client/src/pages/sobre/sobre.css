@@ -1,22 +1,25 @@
-.sobre-article{
+.sobre-article {
     display: flex;
-    margin:15px 0 15px 10px;    
-    width: 99%; 
+    margin: 15px 0 15px 10px;
+    width: 99%;
+    min-height: 85vh;
 }
 
-.sobre-article-div{
+.sobre-article-div {
     width: 60%;
     background-color: rgb(237, 233, 233);
     border-radius: 25px;
     padding: 15px;
 }
-.sobre-article-div spam{
-    margin-left: 10px;    
+
+.sobre-article-div spam {
+    margin-left: 10px;
 }
-.sobre-article-div-menu{
+
+.sobre-article-div-menu {
     margin-left: 5px;
     width: 38%;
-    border:  2px solid  rgb(95, 95, 95);
+    border: 2px solid rgb(95, 95, 95);
     border-radius: 10px;
-    
+
 }

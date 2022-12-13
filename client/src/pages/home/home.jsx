@@ -10,15 +10,13 @@ import HEAD from '../../components/headHelmet/head';
 
 function Home() {
   return (
-    
+
     <div className="App">
-      <HEAD title="Fonte de vida - Biblia Online - Home" description = "Biblia online - 13 versões da palavra de Deus e os 524 hinos da harpa cristã disponíveis para você" url="http://vidadafonte.com.br" keyWord={ "Fonte de vida - Biblia Online - Home"}/>
+      <HEAD title="Fonte de vida - Biblia Online - Home" description="Biblia online - 13 versões da palavra de Deus e os 524 hinos da harpa cristã disponíveis para você" url="http://vidadafonte.com.br" keyWord={"Fonte de vida - Biblia Online - Home"} />
       <Header />
-      <Menu isTheHome={true}/>
+      <Menu isTheHome={true} />
       <ArticleHome />
       <Footer />
-
-
     </div>
   );
 }

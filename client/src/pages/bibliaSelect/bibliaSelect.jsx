@@ -14,14 +14,14 @@ export default function BibliaSelect() {
       top: 200,
       left: 0,
       behavior: 'smooth'
-  });  
-  },[])
+    });
+  }, [])
 
 
   return (
     <>
       <Header />
-      <HEAD title="Vida da fonte - Selecione sua leitura" description = "Vida da fonte - Selecione sua leitura" url="http://vidadafonte.com.br/biblia" keyWord={"Fonte de Vida - Leitura"} />
+      <HEAD title="Vida da fonte - Selecione sua leitura" description="Vida da fonte - Selecione sua leitura" url="http://vidadafonte.com.br/biblia" keyWord={"Fonte de Vida - Leitura"} />
       <MenuSuperior />
 
       <main
@@ -30,13 +30,14 @@ export default function BibliaSelect() {
           textAlign: "center",
           justifyContent: "center",
           marginTop: "60px",
+          minHeight: "40vh",
         }}
       >
-        <div style={{marginTop:"25px", marginBottom:"150px"}}>
+        <div style={{ marginTop: "25px", marginBottom: "150px" }}>
           <DialogSelect tituloBotao="INICIAR LEITURA" />
         </div>
       </main>
-      <Footer/>
+      <Footer />
 
     </>
   );

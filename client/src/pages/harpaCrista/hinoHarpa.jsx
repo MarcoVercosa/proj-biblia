@@ -35,7 +35,7 @@ export default function HinoHarpa() {
         const resultado = await GetAPI("hinoharpa/buscanumeroharpa")
         setNumerosHinos(resultado)
     }, [])
-    
+
     async function BuscarHinoPorNumero(recebe) {//recebe só terá valor se for chamada pelo buscar por título Gambi, pq demora para atualizar o estado do setAlteraCampoNumero
         if (recebe) {
             setAlteraCampoNumero(recebe)
@@ -83,7 +83,7 @@ export default function HinoHarpa() {
     return (
         <>
             <nav className="hinoharpa-nav">
-            <HEAD title="Fonte de vida - Biblia Online - Hino da harpa" description = "Os 524 hinos da harpa cristã disponíveis onde você estiver" url="http://vidadafonte.com.br/harpacrista"  keyWord={"Vida da fonte - Harpa cristã"}/>
+                <HEAD title="Fonte de vida - Biblia Online - Hino da harpa" description="Os 524 hinos da harpa cristã disponíveis onde você estiver" url="http://vidadafonte.com.br/harpacrista" keyWord={"Vida da fonte - Harpa cristã"} />
                 <Header />
                 <article className="hinoharp-article">
                     <div className="hinoharpa-article-div-numero">
@@ -94,7 +94,7 @@ export default function HinoHarpa() {
                                 value={alteraCampoNumero}
                                 onChange={(recebe) => setAlteraCampoNumero(recebe.target.value)}
                             >
-                                <option></option>
+                                <option ></option>
                                 {numerosHinos.data.map((recebe, index) => {
                                     return (
                                         <option key={index} >{recebe.numero}</option>
@@ -103,8 +103,7 @@ export default function HinoHarpa() {
                             </select>
                             <TextField
                                 multiline={true}
-                                rows={2}
-                                style={{ marginLeft: "10px", width: "50%", justifyContent: "center", textAlign: "center", marginBottom: "10px" }}
+                                style={{ marginLeft: "10px", width: "50%", justifyContent: "center", textAlign: "center", marginBottom: "10px", height: "70px" }}
                                 disabled={true}
                                 size="small"
                                 id="outlined-basic"
@@ -144,7 +143,7 @@ export default function HinoHarpa() {
                         <p>Não encontrei o Hino desejado.</p>
                     </menu>
                 }
-                <div className="hinoharpaleitura-div" style={{display: "flex", width:"100%", marginLeft:"2px"}}>
+                <div className="hinoharpaleitura-div" style={{ display: "flex", width: "100%", marginLeft: "2px" }}>
                     <article className="hinoharpaleitura-article">
                         <h3>{tituloHino}</h3>
                         {letraHino &&
@@ -155,7 +154,7 @@ export default function HinoHarpa() {
                                         <p key={index}>{recebe}</p>
                                     </>
                                 )
-                        }   )}
+                            })}
                         <menu className="hinoharpa-busca-menu">
                             {dadosBuscaPesquisaPorTitulo &&
                                 dadosBuscaPesquisaPorTitulo.data.map((recebe, index) => {
@@ -178,13 +177,15 @@ export default function HinoHarpa() {
                                 })
                             }
                         </menu>
-                    </article>      
+                    </article>
                     <aside className="aside-select">
                         <PainelMenuLateral />
-                    </aside>            
-                </div>                
-            </nav>   
+                    </aside>
+                </div>
+
+            </nav>
             <Footer />
+
         </>
     )
 
