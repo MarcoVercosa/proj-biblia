@@ -1,4 +1,5 @@
 import { Configuration, OpenAIApi } from "openai";
+require('dotenv').config()
 
 interface IParams {
     response: {
@@ -19,8 +20,9 @@ export class DadosIAUseCase implements IDadosIAUseCase {
     ) { }
 
     async Execute(askeToAI: string): Promise<any> {
+        let apikey: string = process.env.APIDATAIA || ""
         const configuration = new Configuration({
-            apiKey: "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",
+            apiKey: apikey,
         });
         const openai = new OpenAIApi(configuration);
         if (!configuration.apiKey) {
