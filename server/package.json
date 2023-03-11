@@ -16,8 +16,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.1",
-    "mysql": "^2.18.1",
+    "mysql2": "^3.1.2",
     "nodemon": "^2.0.6",
+    "openai": "^3.2.1",
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {

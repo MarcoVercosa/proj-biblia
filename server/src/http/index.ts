@@ -7,7 +7,7 @@ const express = require("express")
 const app = express()
 let port = process.env.portHTTP
 
-function Busca(): Promise<string> {
+function StartServer(): Promise<string> {
     console.log("Iniciando tentativa de conexão")
 
     return new Promise((resolve, reject) => {
@@ -22,7 +22,7 @@ function Busca(): Promise<string> {
                     app.use(express.json())
                     app.use(router)
 
-                    app.listen(port, () => { (console.log(`Servidor rodando na porta ${port} !`)) })
+                    app.listen(port, '192.168.15.143', () => { (console.log(`Servidor rodando na porta ${port} !`)) })
                     resolve("Aceito")
 
                 } else {
@@ -38,7 +38,7 @@ function Busca(): Promise<string> {
 
 
 setTimeout((): void => {
-    Busca().then(dado => console.log(dado)).catch((err) => {
+    StartServer().then(dado => console.log(dado)).catch((err) => {
         console.log("TEMOS O SEGUINTE ERRO " + err)
 
         NovaTentativa(err)
@@ -48,7 +48,7 @@ setTimeout((): void => {
 function NovaTentativa(err: any): void {
     console.log("Solicitando nova tentativa")
     setTimeout(() => {
-        Busca().then(dado => console.log(dado)).catch((erro) => {
+        StartServer().then(dado => console.log(dado)).catch((erro) => {
             console.log("TEMOS O SEGUINTE ERRO " + err)
             NovaTentativa(erro)
         })

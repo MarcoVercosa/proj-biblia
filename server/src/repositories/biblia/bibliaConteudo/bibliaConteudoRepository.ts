@@ -6,7 +6,7 @@ export class BibliaConteudoRepository implements IBibliaConteudoRepository {
 
     async BuscaConteudo(versao_id: number, livro_id: number, testamento_id: number, capitulo: number): Promise<IResultado> {
         const promessa1: Promise<IPromessa1[]> = new Promise((resolve, reject) => {
-            //busca os versículos do capitulo, dado a versao o identificador do livro e o capitulo
+            //busca os versículos do capitulo, dado a versao, o identificador do livro e o capitulo
             const sql = `SELECT conteudo FROM  biblias13v.versiculos WHERE versao_id=${versao_id} AND livro_id=${livro_id} AND capitulo=${capitulo} `
             conectaBD.query(sql, (erro: any, resultado: Array<IPromessa1>) => {
                 if (erro) {

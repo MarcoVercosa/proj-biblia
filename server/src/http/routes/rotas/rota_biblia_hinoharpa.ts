@@ -28,6 +28,7 @@ RotasHinoHarpa.get("/buscatituloporpalavra/:id", LiberaOrigemRegistraLog, (reque
     // const buscaTitulo = request.params.id
     // //console.log("Solicitado busca de título via palavra Harpa Cristã")
     // AlteraDadosBD.BuscaHinoPorPalavra(buscaTitulo, response)
+
     hinoHarpaBuscaPorPalavraController.Handle(request, response)
 
 })

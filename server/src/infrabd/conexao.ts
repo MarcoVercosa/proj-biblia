@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-import mysql, { Pool } from "mysql"
+import mysql, { Pool } from "mysql2"
 
 const conectaBD: Pool = mysql.createPool({
 

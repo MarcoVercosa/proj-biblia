@@ -29,7 +29,10 @@ RotasBibliaConteudo.get("/buscalivros/:testamento_id", LiberaOrigemRegistraLog, 
 
 RotasBibliaConteudo.get("/buscacapitulo/:versao_id/:livro_id", LiberaOrigemRegistraLog, async (request: Request, response: Response) => {
     //busca os capitulos, conforme a versao e o livro
+
     bibliaCapitulosController.Handle(request, response)
+
+
 })
 
 RotasBibliaConteudo.get("/buscaconteudo/:versao_id/:testamento_id/:livro_id/:capitulo", LiberaOrigemRegistraLog, async (request: Request, response: Response) => {

@@ -110,7 +110,7 @@ function Header() {
     }
 
     return (
-        <div className={classes.root} styles={{opacity:"0,2" }}>
+        <div className={classes.root} styles={{ opacity: "0,2" }}>
             <AppBar position="relative" style={{ backgroundColor: "#14a37f" }}>
                 <Toolbar>
 
@@ -156,7 +156,7 @@ function Header() {
                         />
 
                     </div>
-       
+
                 </Toolbar>
             </AppBar>
         </div >

@@ -4,13 +4,13 @@ import { Request, Response, NextFunction } from "express"
 import fs from "fs"
 function LiberaOrigemRegistraLog(request: Request, response: Response, next: NextFunction) {
 
-    const origem = request.headers.origin || "indefinido"
+    const origem: string = request.headers.origin || "indefinido"
     console.log(origem)
 
-    if (origem.match(/vidadafonte.com.br/) || origem.match(/localhost/) && request.method === "GET") {
+    if (origem.match(/vidadafonte.com.br/) || origem.match(/marcosusepc/) || origem.match(/localhost/) || origem.match(/192.168/) || origem.match(/indefi/)) {
         // if (origem.match(/vidadafonte.com.br/) && req.method === "GET") {
         //se conter :vidadafonte.com.br na origem solicitante ou localhost e for do método get
-        let now = new Date
+        let now: Date = new Date
         fs.appendFile("./logs.txt", `${now.getDay()}/${now.getMonth()}/${now.getFullYear()}-- ${now.getHours()} horas e ${now.getMinutes()} minutos => LIBERADO acesso da origem
          - ${request.headers.origin} com o método - ${request.method} na rota - ${request.originalUrl}\n`, (err: any) => {
 
