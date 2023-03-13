@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { Logger } from "../../services/logs/createLogs";
 import { DadosIAUseCase } from "./dadosIAUseCase";
 
 interface IParams {
@@ -31,7 +32,7 @@ export class DadosIAController implements IDadosIAController {
             return response.status(resultado.response.status).json({ response: resultado.response })
 
         } catch (error) {
-            console.log(error)
+            Logger.error("OPENIA: " + error)
             return response.status(401).json({
                 response: {
                     message: error,

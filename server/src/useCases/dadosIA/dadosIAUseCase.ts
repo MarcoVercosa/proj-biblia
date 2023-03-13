@@ -1,4 +1,5 @@
 import { Configuration, OpenAIApi } from "openai";
+import { Logger } from "../../services/logs/createLogs";
 require('dotenv').config()
 
 interface IParams {
@@ -26,7 +27,7 @@ export class DadosIAUseCase implements IDadosIAUseCase {
         });
         const openai = new OpenAIApi(configuration);
         if (!configuration.apiKey) {
-            console.log("OpenAI API key not configured, please follow instructions in README.md")
+            Logger.error("OpenAI API key not configured, please follow instructions in README.md")
             return {
                 response: {
                     message: "OpenAI API key not configured, please follow instructions in README.md",
@@ -36,7 +37,7 @@ export class DadosIAUseCase implements IDadosIAUseCase {
             }
         }
         if (askeedToAI.trim().length === 0) {
-            console.log("Please enter a valid question")
+            Logger.warn("OpenAI - Please enter a valid question")
             return {
                 response: {
                     message: "Please enter a valid question",
@@ -53,7 +54,7 @@ export class DadosIAUseCase implements IDadosIAUseCase {
                 max_tokens: 400,
 
             });
-            console.log("deu certo")
+            Logger.http("Resposta OpenAI enviada")
             return {
                 response: {
                     result: completion.data.choices[0].text,
@@ -61,7 +62,7 @@ export class DadosIAUseCase implements IDadosIAUseCase {
                 }
             }
         } catch (error: any) {
-            console.log(`Error with OpenAI API request: ${error.message}`)
+            Logger.error(`Error with OpenAI API request: ${error.message}`)
             if (error.response) {
                 return {
                     response: {
@@ -71,7 +72,7 @@ export class DadosIAUseCase implements IDadosIAUseCase {
                     }
                 }
             } else {
-                console.log(`An error occurred during your request: ${error.message}`)
+                Logger.error(`An error occurred during your request: ${error.message}`)
                 return {
                     response: {
                         message: `An error occurred during your request: ${error.message}`,
