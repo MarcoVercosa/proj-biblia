@@ -5,11 +5,12 @@ const express = require("express")
 let router = express()
 const cors = require('cors');
 
-import { RotasHinoHarpa } from "./rotas/rota_biblia_hinoharpa"
-import { RotaCuriosidades } from "./rotas/rota_biblia_curiosidades"
-import { RotasBibliaConteudo } from "./rotas/rota_Biblia_Conteudo"
+import { RotasHinoHarpa } from "./rotas/rota_biblia_hinoharpa";
+import { RotaCuriosidades } from "./rotas/rota_biblia_curiosidades";
+import { RotasBibliaConteudo } from "./rotas/rota_Biblia_Conteudo";
 import { OpenAI } from "./rotas/rotaIA";
 import SwaggerDocs from "../../doc/swagger.json"
+import { Logger } from "../../services/logs/createLogs";
 
 
 
@@ -28,11 +29,12 @@ router.use("/hinoharpa", RotasHinoHarpa)
 router.use("/ai", OpenAI)
 
 
-if (process.env.NODE_ENV === "developer") {
-    console.log("Swagger ON")
+
+if (process.env.NODE_ENV === "development") {
+    Logger.http("Swagger ON")
     router.use("/api-documentation", swaggerUi.serve, swaggerUi.setup(SwaggerDocs))
 } else {
-    console.log("Swagger OFF")
+    Logger.http("Swagger OFF")
 }
 
 export { router }

@@ -4,9 +4,9 @@
   "description": "",
   "main": "http/index.js",
   "scripts": {
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/http/index.ts",
+    "dev": "NODE_ENV=development ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/http/index.ts",
     "devjs": "nodemon src/http/index.ts",
-    "prod": "node build/http/index.js"
+    "prod": "NODE_ENV=production node build/http/index.js"
   },
   "author": "MAVS",
   "license": "ISC",
@@ -19,7 +19,8 @@
     "mysql2": "^3.1.2",
     "nodemon": "^2.0.6",
     "openai": "^3.2.1",
-    "swagger-ui-express": "^4.3.0"
+    "swagger-ui-express": "^4.3.0",
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
