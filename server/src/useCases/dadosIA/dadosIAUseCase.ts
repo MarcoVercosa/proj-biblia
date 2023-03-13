@@ -19,13 +19,14 @@ export class DadosIAUseCase implements IDadosIAUseCase {
 
     ) { }
 
-    async Execute(askeToAI: string): Promise<any> {
+    async Execute(askeedToAI: string): Promise<any> {
         let apikey: string = process.env.APIDATAIA || ""
         const configuration = new Configuration({
             apiKey: apikey,
         });
         const openai = new OpenAIApi(configuration);
         if (!configuration.apiKey) {
+            console.log("OpenAI API key not configured, please follow instructions in README.md")
             return {
                 response: {
                     message: "OpenAI API key not configured, please follow instructions in README.md",
@@ -34,7 +35,8 @@ export class DadosIAUseCase implements IDadosIAUseCase {
                 }
             }
         }
-        if (askeToAI.trim().length === 0) {
+        if (askeedToAI.trim().length === 0) {
+            console.log("Please enter a valid question")
             return {
                 response: {
                     message: "Please enter a valid question",
@@ -46,11 +48,12 @@ export class DadosIAUseCase implements IDadosIAUseCase {
         try {
             const completion = await openai.createCompletion({
                 model: "text-davinci-003",
-                prompt: askeToAI,
+                prompt: askeedToAI,
                 temperature: 0,
                 max_tokens: 400,
 
             });
+            console.log("deu certo")
             return {
                 response: {
                     result: completion.data.choices[0].text,
@@ -58,6 +61,7 @@ export class DadosIAUseCase implements IDadosIAUseCase {
                 }
             }
         } catch (error: any) {
+            console.log(`Error with OpenAI API request: ${error.message}`)
             if (error.response) {
                 return {
                     response: {
@@ -67,7 +71,7 @@ export class DadosIAUseCase implements IDadosIAUseCase {
                     }
                 }
             } else {
-
+                console.log(`An error occurred during your request: ${error.message}`)
                 return {
                     response: {
                         message: `An error occurred during your request: ${error.message}`,
@@ -77,6 +81,5 @@ export class DadosIAUseCase implements IDadosIAUseCase {
                 }
             }
         }
-
     }
 }
