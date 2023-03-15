@@ -4,9 +4,9 @@
   "description": "",
   "main": "http/index.js",
   "scripts": {
-    "dev": "NODE_ENV=development ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/http/index.ts",
-    "devjs": "nodemon src/http/index.ts",
-    "prod": "NODE_ENV=production node build/http/index.js"
+    "dev": "NODE_ENV=development ts-node-dev --transpile-only --ignore-watch node_modules src/startServer.ts",
+    "devjs": "nodemon src/startServer.ts",
+    "prod": "NODE_ENV=production node build/startServer.js"
   },
   "author": "MAVS",
   "license": "ISC",

@@ -1,0 +1,114 @@
+{"level":"warn","message": "5653 is started","Date":"15-03-2023 00:24:43"}
+{"level":"warn","message": "5653 is started","Date":"15-03-2023 00:24:43"}
+{"level":"warn","message": "5653 is started","Date":"15-03-2023 00:24:43"}
+{"level":"warn","message": "5653 is started","Date":"15-03-2023 00:24:43"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:24:45"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:24:45"}
+{"level":"warn","message": "Server is started on process 5685","Date":"15-03-2023 00:24:45"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:24:45"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 5685 !","Date":"15-03-2023 00:24:45"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:24:45"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:24:45"}
+{"level":"warn","message": "Server is started on process 5691","Date":"15-03-2023 00:24:45"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:24:45"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 5691 !","Date":"15-03-2023 00:24:45"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:24:45"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:24:45"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:24:46"}
+{"level":"warn","message": "Server is started on process 5684","Date":"15-03-2023 00:24:46"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:24:46"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 5684 !","Date":"15-03-2023 00:24:46"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:24:46"}
+{"level":"warn","message": "Server is started on process 5697","Date":"15-03-2023 00:24:46"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:24:46"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 5697 !","Date":"15-03-2023 00:24:46"}
+{"level":"warn","message": " Worker 5697 - code null Signal SIGKILL died. Scheduling another process","Date":"15-03-2023 00:28:54"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:28:56"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:28:56"}
+{"level":"warn","message": "Server is started on process 5840","Date":"15-03-2023 00:28:56"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:28:56"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 5840 !","Date":"15-03-2023 00:28:56"}
+{"level":"warn","message": "6038 is started","Date":"15-03-2023 00:30:09"}
+{"level":"warn","message": "6038 is started","Date":"15-03-2023 00:30:09"}
+{"level":"warn","message": "6038 is started","Date":"15-03-2023 00:30:09"}
+{"level":"warn","message": "6038 is started","Date":"15-03-2023 00:30:09"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Server is started on process 6079","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Server is started on process 6073","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 6079 !","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 6073 !","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Server is started on process 6085","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 6085 !","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Server is started on process 6072","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 6072 !","Date":"15-03-2023 00:30:11"}
+{"level":"warn","message": "SIGTERM signal received: closing HTTP server and process6079","Date":"15-03-2023 00:30:54"}
+{"level":"warn","message": "SIGTERM signal received: closing HTTP server and process6073","Date":"15-03-2023 00:30:54"}
+{"level":"warn","message": "SIGTERM signal received: closing HTTP server and process6085","Date":"15-03-2023 00:30:54"}
+{"level":"warn","message": "SIGTERM signal received: closing HTTP server and process6072","Date":"15-03-2023 00:30:54"}
+{"level":"warn","message": "6180 is started","Date":"15-03-2023 00:30:58"}
+{"level":"warn","message": "6180 is started","Date":"15-03-2023 00:30:58"}
+{"level":"warn","message": "6180 is started","Date":"15-03-2023 00:30:58"}
+{"level":"warn","message": "6180 is started","Date":"15-03-2023 00:30:58"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Server is started on process 6223","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 6223 !","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Server is started on process 6217","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 6217 !","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Server is started on process 6211","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 6211 !","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Server is started on process 6210","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 6210 !","Date":"15-03-2023 00:31:00"}
+{"level":"warn","message": "SIGTERM signal received: closing HTTP server and process6217","Date":"15-03-2023 00:31:33"}
+{"level":"warn","message": "SIGTERM signal received: closing HTTP server and process6210","Date":"15-03-2023 00:31:33"}
+{"level":"warn","message": "SIGTERM signal received: closing HTTP server and process6223","Date":"15-03-2023 00:31:33"}
+{"level":"warn","message": "SIGTERM signal received: closing HTTP server and process6211","Date":"15-03-2023 00:31:33"}
+{"level":"warn","message": "6378 is started","Date":"15-03-2023 00:32:13"}
+{"level":"warn","message": "6378 is started","Date":"15-03-2023 00:32:13"}
+{"level":"warn","message": "6378 is started","Date":"15-03-2023 00:32:13"}
+{"level":"warn","message": "6378 is started","Date":"15-03-2023 00:32:13"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:32:15"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:32:15"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Server is started on process 6456","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 6456 !","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Server is started on process 6462","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 6462 !","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Server is started on process 6452","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 6452 !","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Servidor inciando tentativa de conexão ao banco de dados","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Conectado no banco de dados com sucesso","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Server is started on process 6469","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Servidor rodando na porta 9000 !","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "Servidor rodando na porta 9000 on process 6469 !","Date":"15-03-2023 00:32:16"}
+{"level":"warn","message": "SIGTERM signal received: closing HTTP server and process6462","Date":"15-03-2023 00:37:19"}
+{"level":"warn","message": "SIGTERM signal received: closing HTTP server and process6456","Date":"15-03-2023 00:37:19"}
+{"level":"warn","message": "SIGTERM signal received: closing HTTP server and process6452","Date":"15-03-2023 00:37:19"}
+{"level":"warn","message": "SIGTERM signal received: closing HTTP server and process6469","Date":"15-03-2023 00:37:19"}
