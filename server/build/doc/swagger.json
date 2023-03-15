@@ -1,0 +1,564 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "API retorno dados da Bilia sagrada, cânticos da Harpa e curiosidades",
+        "version": "1.0.0",
+        "title": "API VIDA DA FONTE",
+        "contact": {
+            "email": "marco2011sky@gmail.com"
+        }
+    },
+    "host": "http://localhost:9000/api-documentation/",
+    "basePath": "/v2",
+    "tags": [
+        {
+            "name": "curiosidades",
+            "description": "Busca curiosidades conforme o livro selacionado",
+            "externalDocs": {
+                "description": "Find out more",
+                "url": "http://vidadafonte.com.br/"
+            }
+        },
+        {
+            "name": "hino harpa",
+            "description": "Cânticos Hino Harpa"
+        },
+        {
+            "name": "conteudo biblia",
+            "description": "Conteúdo da Biblia",
+            "externalDocs": {
+                "description": "Find out more about our store",
+                "url": "http://vidadafonte.com.br/"
+            }
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/curiosidades/buscacuriosidade/:id": {
+            "get": {
+                "tags": [
+                    "curiosidades"
+                ],
+                "summary": "Retorna curiosidades conforme o livro selecionado para ser lido",
+                "description": "Esta rota recebe um id (nome do livro) e retorna suas respectivas curiosidades",
+                "operationId": "Obtem Curiosidades por id",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "nome livro selecionado da biblia",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "403": {
+                        "description": "Forbiden, Não permitido devido a segurança de origem confirgurado no Midware"
+                    },
+                    "400": {
+                        "description": "Algum erro durante a busca das informações"
+                    },
+                    "200": {
+                        "description": "Resultados encontrados e enviados",
+                        "schema": {
+                            "$ref": "#/definitions/curiosidades"
+                        }
+                    }
+                }
+            }
+        },
+        "/hinoharpa/buscanumeroharpa": {
+            "get": {
+                "tags": [
+                    "hino harpa"
+                ],
+                "summary": "Retorna o numero de cada cântico disponível",
+                "description": "Esta rota não recebe nenhum parâmetro e retorna somente uma array dos respectivos numeros dos hinos",
+                "operationId": "Obtem Hino Harpa",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "403": {
+                        "description": "Forbiden, Não permitido devido a segurança de origem confirgurado no Midware"
+                    },
+                    "400": {
+                        "description": "Algum erro durante a busca das informações"
+                    },
+                    "200": {
+                        "description": "Resultados encontrados e enviados",
+                        "schema": {
+                            "$ref": "#/definitions/retornanumeroshinoharpa"
+                        }
+                    }
+                }
+            }
+        },
+        "/hinoharpa/buscatitulopornumero/:id": {
+            "get": {
+                "tags": [
+                    "hino harpa"
+                ],
+                "summary": "Retorna o cântico conforme o numero enviado",
+                "description": "Esta rota recebe um id (número cântico) e retorna o cântico",
+                "operationId": "Obtem Hino Harpa ",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "numero do cântico selecionado",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "403": {
+                        "description": "Forbiden, Não permitido devido a segurança de origem confirgurado no Midware"
+                    },
+                    "400": {
+                        "description": "Algum erro durante a busca das informações"
+                    },
+                    "200": {
+                        "description": "Resultados encontrados e enviados",
+                        "schema": {
+                            "$ref": "#/definitions/retornacanticopornumero"
+                        }
+                    }
+                }
+            }
+        },
+        "/hinoharpa/buscatituloporpalavra/:id": {
+            "get": {
+                "tags": [
+                    "hino harpa"
+                ],
+                "summary": "Retorna os cânticos que possuem a palavra informada",
+                "description": "Esta rota recebe um id (palavra chave) e retorna os cânticos encontrados",
+                "operationId": "Obtem Hino Harpa ",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Palavra a ser pesquisada",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "403": {
+                        "description": "Forbiden, Não permitido devido a segurança de origem confirgurado no Midware"
+                    },
+                    "400": {
+                        "description": "Algum erro durante a busca das informações"
+                    },
+                    "200": {
+                        "description": "Resultados encontrados e enviados",
+                        "schema": {
+                            "$ref": "#/definitions/retornacanticospalavrachave"
+                        }
+                    }
+                }
+            }
+        },
+        "/mais/buscaversao": {
+            "get": {
+                "tags": [
+                    "conteudo biblia"
+                ],
+                "summary": "Retorna o ID e versão de cada versão da Biblia",
+                "description": "Esta rota não recebe nenhum parâmetro e retorna somente uma array das respectivas versões da Bíblia",
+                "operationId": "Obtem conteudo Biblia",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "403": {
+                        "description": "Forbiden, Não permitido devido a segurança de origem confirgurado no Midware"
+                    },
+                    "400": {
+                        "description": "Algum erro durante a busca das informações"
+                    },
+                    "200": {
+                        "description": "Resultados encontrados e enviados",
+                        "schema": {
+                            "$ref": "#/definitions/retornaversaobiblia"
+                        }
+                    }
+                }
+            }
+        },
+        "/mais/buscatestamento": {
+            "get": {
+                "tags": [
+                    "conteudo biblia"
+                ],
+                "summary": "Retorna os testamentos da Bíblia",
+                "description": "Esta rota não recebe nenhum parâmetro e retorna somente uma array dos testamentos da Bíblia",
+                "operationId": "Obtem conteudo Biblia",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "403": {
+                        "description": "Forbiden, Não permitido devido a segurança de origem confirgurado no Midware"
+                    },
+                    "400": {
+                        "description": "Algum erro durante a busca das informações"
+                    },
+                    "200": {
+                        "description": "Resultados encontrados e enviados",
+                        "schema": {
+                            "$ref": "#/definitions/retornatestamentobiblia"
+                        }
+                    }
+                }
+            }
+        },
+        "/mais/buscalivros/:testamento_id": {
+            "get": {
+                "tags": [
+                    "conteudo biblia"
+                ],
+                "summary": "Retorna  os livros de acordo com o testamento solicitado",
+                "description": "Esta rota recebe um id (palavra chave) e retorna os livros de acordo com com o id",
+                "operationId": "Obtem conteudo Biblia",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "testamento_id",
+                        "in": "path",
+                        "description": "Palavra a ser pesquisada",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "403": {
+                        "description": "Forbiden, Não permitido devido a segurança de origem confirgurado no Midware"
+                    },
+                    "400": {
+                        "description": "Algum erro durante a busca das informações"
+                    },
+                    "200": {
+                        "description": "Resultados encontrados e enviados",
+                        "schema": {
+                            "$ref": "#/definitions/retornalivrosbiblia"
+                        }
+                    }
+                }
+            }
+        },
+        "/mais/buscacapitulo/:versao_id/:livro_id": {
+            "get": {
+                "tags": [
+                    "conteudo biblia"
+                ],
+                "summary": "Retorna os capitulos, conforme a versao e o livro",
+                "description": "Esta rota recebe um id (versao_id)  e outro id (livro_id) e retorna os respectivos capitulos do livro selecionado",
+                "operationId": "Obtem conteudo Biblia",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "versao_id",
+                        "in": "path",
+                        "description": "Versao a ser pesquisada",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "livro_id",
+                        "in": "path",
+                        "description": "Livro a ser pesquisada",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "403": {
+                        "description": "Forbiden, Não permitido devido a segurança de origem confirgurado no Midware"
+                    },
+                    "400": {
+                        "description": "Algum erro durante a busca das informações"
+                    },
+                    "200": {
+                        "description": "Resultados encontrados e enviados",
+                        "schema": {
+                            "$ref": "#/definitions/retornacapitulosbiblia"
+                        }
+                    }
+                }
+            }
+        },
+        "/mais/buscaconteudo/:versao_id/:testamento_id/:livro_id/:capitulo": {
+            "get": {
+                "tags": [
+                    "conteudo biblia"
+                ],
+                "summary": "Retorna o conteudo ",
+                "description": "Esta rota recebe (versao_id, testamento_id, livro_id, capitulo) e retorna o conteudo",
+                "operationId": "Obtem conteudo Biblia",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "versao_id",
+                        "in": "path",
+                        "description": "Versao a ser pesquisada",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "testamento_id",
+                        "in": "path",
+                        "description": "testamento a ser pesquisada",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "livro_id",
+                        "in": "path",
+                        "description": "Livro a ser pesquisada",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "capitulo",
+                        "in": "path",
+                        "description": "capitulo a ser pesquisada",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "403": {
+                        "description": "Forbiden, Não permitido devido a segurança de origem confirgurado no Midware"
+                    },
+                    "400": {
+                        "description": "Algum erro durante a busca das informações"
+                    },
+                    "200": {
+                        "description": "Resultados encontrados e enviados",
+                        "schema": {
+                            "$ref": "#/definitions/retornaconteudobiblia"
+                        }
+                    }
+                }
+            }
+        },
+        "/mais/pesquisa/:palavra": {
+            "get": {
+                "tags": [
+                    "conteudo biblia"
+                ],
+                "summary": "Retorna os capitulos, conforme a palavra chave para a busca",
+                "description": "Esta rota recebe um id (palavra) e retorna os respectivos capitulos do livro selecionado",
+                "operationId": "Obtem conteudo Biblia",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "palavra",
+                        "in": "path",
+                        "description": "Versao a ser pesquisada",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "403": {
+                        "description": "Forbiden, Não permitido devido a segurança de origem confirgurado no Midware"
+                    },
+                    "400": {
+                        "description": "Algum erro durante a busca das informações"
+                    },
+                    "200": {
+                        "description": "Resultados encontrados e enviados",
+                        "schema": {
+                            "$ref": "#/definitions/retornabuscapalavraconteudobiblia"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "curiosidades": {
+            "type": "object",
+            "properties": {
+                "livro": {
+                    "type": "string"
+                },
+                "conteudo": {
+                    "type": "string"
+                }
+            },
+            "application/json": {
+                "name": "curiosidades"
+            }
+        },
+        "retornanumeroshinoharpa": {
+            "type": "object",
+            "properties": {
+                "numero": {
+                    "type": "integer"
+                }
+            },
+            "application/json": {
+                "name": "retornanumeroshinoharpa"
+            }
+        },
+        "retornacanticopornumero": {
+            "type": "object",
+            "properties": {
+                "letra": {
+                    "type": "string"
+                },
+                "titulo": {
+                    "type": "string"
+                }
+            },
+            "application/json": {
+                "name": "retornacanticopornumero"
+            }
+        },
+        "retornacanticospalavrachave": {
+            "type": "object",
+            "properties": {
+                "numero": {
+                    "type": "integer"
+                },
+                "titulo": {
+                    "type": "string"
+                }
+            },
+            "application/json": {
+                "name": "retornacanticopornumero"
+            }
+        },
+        "retornaversaobiblia": {
+            "type": "object",
+            "properties": {
+                "versao_id": {
+                    "type": "string"
+                },
+                "versao_nome": {
+                    "type": "string"
+                }
+            },
+            "application/json": {
+                "name": "retornaversaobiblia"
+            }
+        },
+        "retornatestamentobiblia": {
+            "type": "object",
+            "properties": {
+                "testamento_id": {
+                    "type": "integer"
+                },
+                "testamento_nome": {
+                    "type": "string"
+                }
+            },
+            "application/json": {
+                "name": "retornatestamentobiblia"
+            }
+        },
+        "retornalivrosbiblia": {
+            "type": "object",
+            "properties": {
+                "testamento_id": {
+                    "type": "integer"
+                },
+                "testamento_nome": {
+                    "type": "string"
+                }
+            },
+            "application/json": {
+                "name": "retornalivrosbiblia"
+            }
+        },
+        "retornacapitulosbiblia": {
+            "type": "object",
+            "properties": {
+                "capitulo": {
+                    "type": "integer"
+                }
+            },
+            "application/json": {
+                "name": "retornacapitulosbiblia"
+            }
+        },
+        "retornaconteudobiblia": {
+            "type": "object",
+            "properties": {
+                "conteudo": {
+                    "type": "string"
+                },
+                "nomeLivro": {
+                    "type": "string"
+                },
+                "quantidadecapitulo.capitulo": {
+                    "type": "integer"
+                },
+                "nomeVersao.versao_nome": {
+                    "type": "string"
+                },
+                "capituloAtual": {
+                    "type": "number"
+                }
+            },
+            "application/json": {
+                "name": "retornaconteudobiblia"
+            }
+        },
+        "retornabuscapalavraconteudobiblia": {
+            "type": "object",
+            "properties": {
+                "versao_id": {
+                    "type": "integer"
+                },
+                "livro_id": {
+                    "type": "integer"
+                },
+                "conteudo": {
+                    "type": "string"
+                },
+                "capitulo": {
+                    "type": "integer"
+                },
+                "versiculo": {
+                    "type": "number"
+                },
+                "livro_nome": {
+                    "type": "string"
+                },
+                " livro_abreviado": {
+                    "type": "string"
+                },
+                "livro_testamento_id": {
+                    "type": "integer"
+                }
+            },
+            "application/json": {
+                "name": "retornabuscapalavraconteudobiblia"
+            }
+        }
+    }
+}

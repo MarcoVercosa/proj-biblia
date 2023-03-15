@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.bibliaVersaoController = void 0;
+const bibliaVersaoRepository_1 = require("../../../repositories/biblia/bibliaVersao/bibliaVersaoRepository");
+const bibliaVersaoUseCase_1 = require("./bibliaVersaoUseCase");
+const bibliaVersaoController_1 = require("./bibliaVersaoController");
+let bibliaVersaoRepository = new bibliaVersaoRepository_1.BibliaVersaoRepository();
+let bibliaVersaoUseCase = new bibliaVersaoUseCase_1.BibliaVersaoUseCase(bibliaVersaoRepository);
+let bibliaVersaoController = new bibliaVersaoController_1.BibliaVersaoController(bibliaVersaoUseCase);
+exports.bibliaVersaoController = bibliaVersaoController;

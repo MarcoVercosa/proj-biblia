@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.curiosidadesController = exports.curiosidadesUseCase = void 0;
+const curiosidadesUseCase_1 = require("./curiosidadesUseCase");
+const curiosidadesController_1 = require("./curiosidadesController");
+const curiosidadesRepository_1 = require("../../repositories/curiosidades/curiosidadesRepository");
+const curiosidadesRepository = new curiosidadesRepository_1.CuriosidadesRepository();
+const curiosidadesUseCase = new curiosidadesUseCase_1.CuriosidadesUseCase(curiosidadesRepository);
+exports.curiosidadesUseCase = curiosidadesUseCase;
+const curiosidadesController = new curiosidadesController_1.CuriosidadesController(curiosidadesUseCase);
+exports.curiosidadesController = curiosidadesController;
